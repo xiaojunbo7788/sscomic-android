@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@color/black_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fragment_recharge_gold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/recharge_text2"
+                    android:text="- -"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/fragment_recharge_gold_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14dp"
+                    android:text="- -"
+                    android:textColor="@color/recharge_text2" />
+            </LinearLayout>
+
+            <View
+                android:background="@color/white1"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:gravity="center_vertical"
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fragment_recharge_shuquan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/nightModeTextColor"
+                    android:textSize="30dp"
+                    android:text="- -"/>
+
+                <TextView
+                    android:id="@+id/fragment_recharge_shuquan_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="14dp"
+                    android:textColor="@color/nightModeTextColor"
+                    android:text="- -" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/MineNewFragment_chongzhitaocan"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/fragment_movieticket_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <include layout="@layout/view_10"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="@string/PayActivity_zhifutheway"/>
+
+            <TextView
+                android:id="@+id/MineNewFragment_app_install_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/PayActivity_no_pay_channel"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <include layout="@layout/view_03"/>
+
+        <com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView
+            android:id="@+id/public_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include layout="@layout/view_10"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="@string/MineNewFragment_chongzhishuoming"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginRight="12dp"
+            android:paddingBottom="30dp"
+            android:id="@+id/activity_recharge_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:orientation="vertical"/>
+
+        <View
+            android:background="@color/main_search_bg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

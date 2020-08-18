@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_listitem_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingRight="10dp"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="125dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="91dp">
+
+            <ImageView
+                android:id="@+id/iv_listitem_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center_vertical" />
+
+            <ImageView
+                android:id="@+id/iv_listitem_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom|right"
+                android:background="@mipmap/chuanshanjia" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="91dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_listitem_ad_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="8dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_listitem_ad_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:singleLine="false"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_listitem_ad_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textColor="#666666"
+                android:textSize="12dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="bottom|left"
+                android:text="广告"
+                android:textColor="@color/gray_b0"
+                android:textSize="8dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_listitem_creative"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_jinritoutiao_bg"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tv_listitem_VIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>
+
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode ="true"
+    android:label="@string/app_name">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f7"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_sns_topbar"/>
+
+        <TextView
+            android:textColor="@color/gray_b0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:text="@string/activityProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@color/white"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
+
+                <EditText
+                    android:id="@+id/activity_feedback_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="@string/FeedBackActivity_des"
+                    android:inputType="textMultiLine"
+                    android:maxLength="200"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/gray"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/activity_feedback_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_9"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="10dp"
+                android:layout_marginRight="5dp"
+                android:text="0/200" />
+        </RelativeLayout>
+
+        <TextView
+            android:textColor="@color/gray_b0"
+            android:textSize="16dp"
+            android:text="@string/activityProblemOptional"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.ssreader.novel.ui.view.GridViewForScrollView
+            android:id="@+id/activity_feedback_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:verticalSpacing="3dp" />
+
+        <TextView
+            android:textColor="@color/gray_b0"
+            android:textSize="16dp"
+            android:text="@string/activityProblemPhoto"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <EditText
+                android:id="@+id/activity_edit_photoNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/black1"
+                android:textSize="14dp"
+                android:maxLength="30"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="@string/activityEditPhoto"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_feed_back_submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/red">
+
+        <TextView
+            android:text="@string/FeedBackActivity_tijiao"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:id="@+id/activitySubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</FrameLayout>

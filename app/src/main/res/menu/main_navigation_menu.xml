@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@mipmap/ic_friend"
+        android:title="我的喜欢" />
+    <item
+        android:icon="@mipmap/ic_fankui"
+        android:title="清理缓存" />
+    <item
+        android:id="@+id/activity_settings_support"
+        android:icon="@mipmap/comic_comment"
+        android:title="好评支持" />
+    <item
+        android:icon="@mipmap/ic_set"
+        android:title="关于我们" />
+</menu>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_vitualkey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="50dp">
+
+        <include layout="@layout/public_sns_topbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/activity_recharge_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="10dp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/mine_current_balance_tv"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/gray_b0"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+                <com.ssreader.novel.ui.view.GridViewForScrollView
+                    android:id="@+id/activity_recharge_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="1"
+                    android:scrollbars="none" />
+
+                <View
+                    android:background="@color/graybg"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/PayActivity_zhifutheway"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.ssreader.novel.ui.view.NestedListView
+                    android:id="@+id/alipay_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:divider="@color/grayline"
+                    android:dividerHeight="0.3dp" />
+
+                <View
+                    android:background="@color/graybg"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+                <TextView
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/MineNewFragment_chongzhishuoming"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:paddingBottom="30dp"
+                    android:id="@+id/shuoming_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/BaoyueActivity_Tips"
+                android:textColor="@color/gray_b0"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/activity_acquire_avatar_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_gravity="bottom"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/pay_confirm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@mipmap/member_confirm"
+        android:textColor="@color/recharge_brown"
+        android:textSize="18dp" />
+</FrameLayout>

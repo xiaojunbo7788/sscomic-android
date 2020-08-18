@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="first_bg">#33000000</color>
+    <color name="shelf_bg">#7FFFFFFF</color>
+    <!-- 白色 -->
+    <color name="app_splash_color">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white1">#80FFFFFF</color>
+    <color name="white_text">#f6f6f6</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+    <color name="alpha_white">#E6FFFFFF</color>
+    <color name="white_f8">#f8f8f8</color>
+    <color name="white_f7">#f7f7f7</color>
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+    <color name="black_3">#333333</color>
+    <color name="black_7">#2E2E30</color>
+    <color name="black_4d">#4D4D4B</color>
+    <color name="black_6">#666666</color>
+    <color name="black_3f">#80666666</color>
+    <color name="black_alpha_2">#05000000</color>
+    <color name="black_alpha_5">#0D000000</color>
+    <color name="black_alpha_10">#1A000000</color>
+    <color name="black_alpha_20">#33000000</color>
+    <color name="black_alpha_30">#4D000000</color>
+    <color name="black_alpha_50">#80000000</color>
+    <!-- 灰色 -->
+    <color name="gray_cc">#cccccc</color>
+    <color name="gray_3">#40333333</color>
+    <color name="gray_9">#999999</color>
+    <color name="gray_f9">#f9f9f9</color>
+    <color name="gray_b0">#B0B0B0</color>
+    <color name="gray_6e">#6e6e6f</color>
+    <color name="gray_title">#464646</color>
+    <color name="graybg">#FAFAFA</color>
+    <color name="graybg_80">#B3FAFAFA</color>
+    <color name="grayline">#F0EEF5</color>
+
+    <color name="maincolor">#ff9966</color>
+    <color name="maincolor_75">#BFFF9966</color>
+    <color name="red">#E7554F</color>
+    <color name="maincolor2">#4dff9966</color>
+    <color name="edit_background">#F7F8FA</color>
+    <color name="pink">#FDCBCC</color>
+    <color name="Orgin2">#FF5351</color>
+    <color name="black1">#363636</color>
+    <color name="updateblue">#376ee5</color>
+    <color name="coral">#FF7F50</color>
+    <color name="mine_fense">#FFFBF6</color>
+    <color name="whitetransparent">#33FFFFFF</color>
+
+    <color name="comic_info_tag_text">#FF96D1CF</color>
+    <color name="comic_info_tag_bg">#FFF0FAFC</color>
+    <!--透明色 -->
+    <color name="transparent">#00000000</color>
+    <!--热粉红色 -->
+    <color name="add_shelf_bg">#FD9A63</color>
+    <!--西红柿色 -->
+    <!--红橙色 -->
+    <color name="audio_player">#FF6F2C</color>
+    <color name="history_delete">#ff3b30</color>
+    <!--深粉红色 -->
+    <!--紫红色 -->
+    <!--红色 -->
+    <color name="orange_red">#EF6C00</color>
+    <color name="Bookshelf_sign2">#BDDEFD</color>
+    <!--浅黄色-->
+    <color name="shallow_yellow">#FAF3DD</color>
+    <!--紫色-->
+    <color name="purple">#940BE7</color>
+    <!--橘红色-->
+    <color name="orange">#EB6055</color>
+    <!--老花色 -->
+    <!--亮金黄色 -->
+    <!--亚麻色 -->
+    <!--古董白 -->
+    <!--鲜肉色 -->
+    <!--幽灵白 -->
+    <!--薄荷色 -->
+    <!--烟白色 -->
+    <!--米色 -->
+    <!--浅黄色 -->
+    <!--沙褐色 -->
+    <color name="brown_784">#784F12</color>
+    <!--天蓝色 -->
+    <color name="skyblue">#49A4F0</color>
+    <color name="Bookshelf_sign">#FF408CED</color>
+    <color name="audio_mark_bg">#56a0ef</color>
+    <!--蜜色 -->
+    <!--艾利斯兰 -->
+    <!--黄褐色 -->
+    <!--亮珊瑚色 -->
+    <color name="lightcoral">#F08080</color>
+    <color name="lightcoral2">#FA9396</color>
+    <!--苍麒麟色 -->
+    <!--紫罗兰色 -->
+    <!--暗肉色 -->
+    <!--淡紫色 -->
+    <!--亮青色 -->
+    <!--实木色 -->
+    <color name="burlywood">#DEB887</color>
+    <color name="recharge_brown">#AA6A1F</color>
+    <color name="lightgray">#D3D3D3</color>
+    <!--亮灰色 -->s
+    <color name="lightgray1">#e4e4e4</color>
+    <!--亮灰色3 -->
+    <color name="lightgray3">#F1F2F1</color>
+    <color name="lightgray4">#F8F8FF</color>
+    <color name="lightgray5">#FAF7F9</color>
+    <color name="lightgraybg">#FAFAFA</color>
+    <color name="fenzong">#F9E2C0</color>
+    <!--灰色 -->
+    <color name="gray">#A9A9A9</color>
+    <color name="gray1">#e9e9e9</color>
+    <!--灰色2 -->
+    <color name="gray2">#F5F5F5</color>
+    <!--灰色3 -->
+    <color name="gray3">#b2b2b3</color>
+    <color name="gray4">#6B6B6B</color>
+    <color name="gray5">#504E4E</color>
+    <!-- 绿色 -->
+    <color name="limegreen2">#00000000</color>
+    <color name="limegreen">#28ac28</color>
+    <color name="green">#69DA96</color>
+    <color name="light_green_local">#801CDC8E</color>
+    <color name="light_green">#1CDC8E</color>
+    <color name="read_dialog_bg">#2C2C2C</color>
+
+    <!-- Reader Color -->
+    <color name="read_textColor">#3B3A38</color>
+    <color name="read_dialog_button_select">#F87D7A</color>
+    <color name="read_bg_default">#EFDEB7</color>
+    <color name="read_bg_1">#C7E0C5</color>
+    <color name="read_bg_2">#C0D7ED</color>
+    <color name="read_bg_3">#EAC2CC</color>
+    <color name="read_bg_4">#FAFAFA</color>
+    <color name="read_bg_7">#37373B</color>
+    <color name="read_bg_8">#121216</color>
+    <color name="read_bg_9">#EFF8FD</color>
+    <color name="text_color_02">#FF6C6C6C</color>
+    <color name="split_line_color">#ffc9d1d9</color>
+    <color name="sort_catagory">#FFE0E0E0</color>
+
+    <color name="read_font_default">#5C422D</color>
+    <color name="read_font_1">#455148</color>
+    <color name="read_font_2">#323F4A</color>
+    <color name="read_font_3">#90263D</color>
+    <color name="read_font_4">#000000</color>
+    <color name="read_font_7">#9FA1A3</color>
+    <color name="read_font_8">#7F7F7F</color>
+
+    <color name="navigation_bg">#f9f9f9</color>
+    <color name="navigation_bg_border_up">#f6f6f6</color>
+    <color name="navigation_bg_border_down">#f1f1f1</color>
+    <color name="top_title_border">#e9eaeb</color>
+    <color name="login_input_tip">#c7c7cd</color>
+    <color name="login_button">#e5e6e7</color>
+    <color name="search_bg">#edeeee</color>
+    <color name="brown">#D5B66E</color>
+    <color name="dialog_directions">#E6AB56</color>
+    <color name="recharge_text">#E8A548</color>
+    <color name="recharge_text2">#EABA73</color>
+    <color name="recharge_good">#5B3301</color>
+    <color name="colorPrimaryLight">#90CAF9</color>
+    <color name="nightColorPrimary">#555555</color>
+    <color name="nightColorPrimaryDark">#424242</color>
+    <color name="nightColorPrimaryLight">#757575</color>
+    <color name="whitest">#FFFFFF</color>
+    <color name="dayModeBackgroundColor">#FCECDF</color>
+    <color name="dayModeTextColor">#424242</color>
+    <color name="nightModeBackgroundColor">#424242</color>
+    <color name="nightModeTextColor">#E0E0E0</color>
+    <!--day theme-->
+    <!--night theme-->
+    <color name="fileSearcherPrimaryColor">#3F51B5</color>
+    <color name="fileSearcherPrimaryDarkColor">#303F9F</color>
+    <color name="fileSearcherAccentColor">#3f51b5</color>
+    <color name="fileSearcherTransparent">#00000000</color>
+    <color name="fileSearcherBlack">#333333</color>
+    <color name="fileSearcherWhite">#ffffff</color>
+    <color name="fileSearcherCheckedBackground">#E8EAF6</color>
+    <color name="comic_bg">#B3000000</color>
+    <color name="mine_tab_bar_bg">#F8EDFF</color>
+    <color name="localbook_bg">#EDF1FC</color>
+    <color name="main_search_bg">#F7F7F7</color>
+    <!-- 充值界面 -->
+    <color name="recharge_bg">#FFF7EB</color>
+    <color name="recharge_movieticket_article">#583000</color>
+    <color name="recharge_movieticket_date">#826A50</color>
+    <color name="recharge_line">#DFAE67</color>
+    <color name="recharge_no_choose_line">#F3E7D5</color>
+    <color name="videoinfo_trysee_text_text">#d3ab59</color>
+    <color name="recharge_lable">#FF6F3B</color>
+
+    <!--read-->
+    <color name="nb.read.bg_1">#CEC29C</color>
+    <color name="nb.read.bg_2">#CCEBCC</color>
+    <color name="nb.read.bg_3">#AAAAAA</color>
+    <color name="nb.read.bg_4">#D1CEC5</color>
+    <color name="nb.read.bg_5">#001C27</color>
+    <color name="nb.read.bg_6">#DDCEC29C</color>
+
+
+    <color name="nb.read.font_1">#2C2C2C</color>
+    <color name="nb.read.font_2">#2F332D</color>
+    <color name="nb.read.font_3">#92918C</color>
+    <color name="nb.read.font_4">#383429</color>
+    <color name="nb.read.font_5">#627176</color>
+
+    <color name="nb.read.bg.night">#000000</color>
+    <color name="nb.read.font_night">#7F7F7F</color>
+
+    <color name="nb.read.menu.bg">#191919</color>
+    <color name="nb.read.menu.text">#CBCBCB</color>
+    <color name="nb.read.bar.translucent">#88000000</color>
+</resources>

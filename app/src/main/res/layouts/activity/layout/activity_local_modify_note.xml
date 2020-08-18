@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_sns_topbar"/>
+
+        <include layout="@layout/view_10"/>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/edit_note_touxiang_layout"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:text="笔记封面"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/gray"
+                    android:textSize="15dp"
+                    android:text="点击设置"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@mipmap/xiangce"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/view_10"/>
+
+        <RelativeLayout
+            android:id="@+id/edit_note_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:textSize="16dp"
+                android:text="笔记名称"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/local_note_title"
+                    android:textColor="@color/gray"
+                    android:textSize="15dp"
+                    android:text="编辑"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@mipmap/pen"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/view_10"/>
+
+        <RelativeLayout
+            android:id="@+id/edit_note_author_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:textSize="16dp"
+                android:text="笔记作者"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/local_note_author"
+                    android:textColor="@color/gray"
+                    android:textSize="15dp"
+                    android:text="编辑"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@mipmap/pen"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/view_10"/>
+
+        <LinearLayout
+            android:id="@+id/edit_note_context_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:textSize="16dp"
+                    android:text="笔记内容"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/local_note_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/gray"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/edit_success"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="保存">
+    </TextView>
+</FrameLayout>

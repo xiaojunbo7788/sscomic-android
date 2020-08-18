@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/audio_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/audio_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true"
+                android:rotation="270"
+                android:src="@mipmap/back_black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/audio_toolbar_add_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_b0"
+                android:textSize="15dp"
+                android:text="@string/BookInfoActivity_jiarushujia"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView
+            android:id="@+id/public_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grayline"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/audio_bottom_comment_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/audio_bottom_input"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:background="@null"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:hint="@string/audio_input_tips"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/audio_bottom_comment"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="21dp"
+                    android:layout_height="21dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/audio_bottom_comment"
+                        android:tint="@color/black_3"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|top"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/audio_bottom_comment_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="1dp"
+                            android:textColor="#fd9a63"
+                            android:textSize="8dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/gray_9"
+                    android:textSize="11dp"
+                    android:text="@string/CommentListActivity_title"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_bottom_download"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="21dp"
+                    android:layout_height="21dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_down_black"
+                        android:tint="@color/black_3"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/gray_9"
+                    android:textSize="11dp"
+                    android:text="@string/BookInfoActivity_downn"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_bottom_share"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="21dp"
+                    android:layout_height="21dp">
+
+                    <ImageView
+                        android:id="@+id/audio_bottom_collection"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/share_black"
+                        android:tint="@color/black_3"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/audio_bottom_add_book_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/gray_9"
+                    android:textSize="11dp"
+                    android:text="@string/audio_share"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

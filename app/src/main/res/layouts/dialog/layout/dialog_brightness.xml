@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:id="@+id/auto_setting_layout"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_height"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dialog_bright_low"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@mipmap/brightness_lower" />
+
+        <com.ssreader.novel.ui.view.seekBar.DragSeekBar
+            android:id="@+id/dialog_bright_seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/dialog_bright_hight"
+            android:layout_toRightOf="@id/dialog_bright_low"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:max_progress="255"
+            app:btn_height="20dp"
+            app:btn_bg_color="@color/black_3f"
+            app:btn_color="@color/white"
+            app:cache_height="1dp"
+            app:cache_color="@color/maincolor"
+            app:progress_height="1dp"
+            app:progress_color="@color/black_6"/>
+
+        <ImageView
+            android:id="@+id/dialog_bright_hight"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@mipmap/icon_book_brightness_higher" />
+    </RelativeLayout>
+</LinearLayout>

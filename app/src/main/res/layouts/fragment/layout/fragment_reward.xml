@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/fragment_reward_bottom_layout"
+            layout="@layout/dialog_month_ticket_foot"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/fragment_reward_mqlayout"
+            android:layout_above="@+id/fragment_reward_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp">
+
+            <com.ssreader.novel.ui.view.MarqueeTextView
+                android:id="@+id/fragment_reward_mqTV"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_reward_Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="17dp"
+            android:layout_above="@+id/fragment_reward_mqlayout"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/fragment_reward_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_above="@+id/fragment_reward_Indicator" />
+    </RelativeLayout>
+</FrameLayout>

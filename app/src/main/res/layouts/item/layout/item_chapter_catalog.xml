@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_chapter_catalog_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+       >
+
+        <TextView
+            android:id="@+id/item_chapter_catalog_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/item_chapter_catalog_vip"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/icon_book_directory_lock"/>
+    </LinearLayout>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="4dp"
+        layout="@layout/public_list_line" />
+</LinearLayout>

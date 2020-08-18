@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_vitualkey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightgray3"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_titlebar_add_comment" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/activity_feedback_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="@string/FeedBackActivity_des"
+                    android:inputType="textMultiLine"
+                    android:maxLength="200"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/public_10_dp" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/activity_feedback_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:text="200/200" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

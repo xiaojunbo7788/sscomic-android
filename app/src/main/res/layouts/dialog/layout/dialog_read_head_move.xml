@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/dialog_read_head_layout">
+
+    <LinearLayout
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dialog_read_head_bookinfo"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@mipmap/img_bookinfo"
+                android:layout_width="62dp"
+                android:layout_height="62dp"/>
+
+            <TextView
+                android:text="@string/BookInfoActivity_title"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"
+                android:textColor="@color/black_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_read_head_bookmark"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/dialog_read_head_bookmark_img"
+                android:src="@mipmap/img_bookmark_add"
+                android:layout_width="62dp"
+                android:layout_height="62dp"/>
+
+            <TextView
+                android:id="@+id/dialog_read_head_bookmark_title"
+                android:text="@string/ReadActivity_addBookMark"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"
+                android:textColor="@color/black_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_read_head_bookshelf"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/dialog_read_head_bookshelf_img"
+                android:src="@mipmap/img_add_bookshel"
+                android:layout_width="62dp"
+                android:layout_height="62dp"/>
+
+            <TextView
+                android:id="@+id/dialog_read_head_bookshelf_title"
+                android:text="@string/BookInfoActivity_jiarushujia"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"
+                android:textColor="@color/black_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_read_head_bookshare"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@mipmap/img_bookshare"
+                android:layout_width="62dp"
+                android:layout_height="62dp"/>
+
+            <TextView
+                android:text="@string/audio_share"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"
+                android:textColor="@color/black_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/view_03"/>
+
+    <LinearLayout
+        android:id="@+id/dialog_read_head_close"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:textColor="@color/black_3"
+            android:textSize="18dp"
+            android:text="@string/audio_close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

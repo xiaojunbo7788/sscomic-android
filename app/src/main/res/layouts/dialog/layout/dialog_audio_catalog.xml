@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_audio_catalog_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/audio_setting_speed"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grayline" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/dialog_audio_catalog_chapter_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/gray_b0"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:id="@+id/dialog_audio_catalog_order_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:includeFontPadding="false"
+                android:id="@+id/dialog_audio_catalog_order_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/fragment_comic_info_zhengxu"
+                android:textColor="@color/gray_b0"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/dialog_audio_catalog_order_image"
+                android:layout_width="9dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/positive_order" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/dialog_audio_catalog_smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlEnableNestedScrolling="false"
+        app:srlFooterMaxDragRate="1"
+        app:srlFooterTriggerRate="0.1"
+        app:srlHeaderMaxDragRate="1"
+        app:srlHeaderTriggerRate="0.1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dialog_audio_catalog_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_audio_catalog_result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/dialog_audio_no_result"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/no_data" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_audio_no_result"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/app_no_catalog_bean"
+            android:textColor="@color/gray_b0"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_audio_close_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/lightgray1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/audio_close_dialog"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/activity_home_Book_layout"
+        layout="@layout/activity_home_viewpager_book" />
+
+    <include
+        android:id="@+id/activity_home_sex_layout"
+        layout="@layout/activity_home_viewpager_sex" />
+
+    <RelativeLayout
+        android:id="@+id/activity_home_viewpager_next"
+        android:layout_width="40dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/splashactivity_skip"
+            android:textColor="@color/gray_b0"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/activity_first_viewpager_ok"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/app_confirm"
+        android:textColor="@color/gray_b0" />
+</FrameLayout>

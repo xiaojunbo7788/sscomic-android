@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_store_label_male_vertical_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:orientation="vertical">
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/shelfitem_img_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="3dp">
+
+            <FrameLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/item_store_label_male_vertical_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_vertical" />
+
+                <ImageView
+                    android:id="@+id/itme_store_label_male_horizontal_palyer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:src="@mipmap/audio_mark"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/item_store_label_comic_flag_layout"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/comic_botton_line" />
+
+                <TextView
+                    android:id="@+id/item_store_label_comic_flag_text"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:textColor="@color/white"
+                    android:textSize="13dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/item_store_lable_play_img_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|bottom"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/item_store_lable_play_img"
+                    android:src="@mipmap/audio_mark"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="left|bottom"/>
+            </FrameLayout>
+        </com.lihang.ShadowLayout>
+
+        <TextView
+            android:id="@+id/item_store_label_male_vertical_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/item_store_label_male_vertical_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/gray_b0"
+            android:textSize="13dp" />
+    </LinearLayout>
+</LinearLayout>

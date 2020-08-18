@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_main_tab_top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentTop="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <TextView
+            android:text="编辑"
+            android:id="@+id/tv_value"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="#ff000000"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@+id/bt_dropdown"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:paddingLeft="10dp">
+        </TextView>
+
+        <ImageView
+            android:rotation="270"
+            android:src="@mipmap/back_black"
+            android:id="@+id/bt_dropdown"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

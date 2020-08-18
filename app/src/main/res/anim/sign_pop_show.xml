@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--   <translate
+           android:fromXDelta="50%"
+           android:toXDelta="50%"
+           android:fromYDelta="100%"
+           android:toYDelta="50%"
+           android:duration="1000" />
+
+
+       &lt;!&ndash; 画面转移旋转动画效果 &ndash;&gt;
+       &lt;!&ndash;
+       fromDegrees开始角度
+       toDegrees结束角度
+       pivotX设置旋转时的X轴坐标
+       &ndash;&gt;
+       <rotate
+           android:fromDegrees="0"
+           android:toDegrees="+1080"
+           android:pivotX="50%"
+           android:pivotY="50%"
+           android:duration="1000"
+           />
+       &lt;!&ndash; 渐变尺寸伸缩动画效果 &ndash;&gt;
+       &lt;!&ndash;
+       fromXScale 起始x轴坐标
+       toXScale 止x轴坐标
+       fromYScale 起始y轴坐标
+       toYScale 止y轴坐标
+       pivotX 设置旋转时的X轴坐标
+       pivotY 设置旋转时的Y轴坐标
+       duration 持续时间
+       &ndash;&gt;
+       <scale
+           android:fromXScale="0.5"
+           android:toXScale="0.5"
+           android:fromYScale="1.0"
+           android:toYScale="0.5"
+           android:pivotX="50%"
+           android:pivotY="50%"
+           android:duration="1000"
+           />
+
+       &lt;!&ndash; 渐变透明的动画效果 &ndash;&gt;
+       &lt;!&ndash;fromAlpha 动画起始透明的 1.0完全不透明
+       toAlpha 动画结束时透明的 0.0完全透明
+       startOffset 设置启动时间
+       duration 属性动画持续时间
+       &ndash;&gt;
+          -->
+       <alpha
+           android:fromAlpha="0.0"
+           android:toAlpha="1.0"
+           android:startOffset="0"
+           android:duration="300"
+           />
+
+
+</set>

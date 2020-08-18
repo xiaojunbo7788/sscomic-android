@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/activity_read_line_left"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/activity_read_support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:text="@string/ReadActivity_zhichizhnegban"
+            android:textSize="@dimen/public_8_dp" />
+
+        <View
+            android:id="@+id/activity_read_line_right"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <com.ssreader.novel.ui.view.BorderTextView
+        android:id="@+id/activity_read_purchase_one"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:text="@string/ReadActivity_buy"
+        android:textSize="@dimen/public_12_dp" />
+
+    <com.ssreader.novel.ui.view.BorderTextView
+        android:id="@+id/activity_read_purchase_some"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:text="@string/ReadActivity_buys"
+        android:textSize="@dimen/public_12_dp" />
+</LinearLayout>

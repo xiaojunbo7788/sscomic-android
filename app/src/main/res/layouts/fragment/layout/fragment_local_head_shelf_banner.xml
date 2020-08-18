@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/local_shelf_banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/fragment_head_addbook_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+        <TextView
+            android:textColor="@color/black_3"
+            android:text="书架空空，请添加本地书籍"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black_3"
+            android:id="@+id/fragment_head_addbook"
+            android:textSize="18dp"
+            android:text="添加书籍"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

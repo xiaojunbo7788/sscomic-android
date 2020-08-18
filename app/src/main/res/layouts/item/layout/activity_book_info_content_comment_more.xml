@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/activity_Book_info_content_comment_more_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看全部评论（33条）"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="13dp"
+        android:gravity="center"
+        />
+</LinearLayout>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_dialog_month_ticket_layout"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:textColor="@color/black_3"
+            android:id="@+id/mine_shubi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/item_month_ticket_tv"
+            android:text="@string/dialog_Monthly_pass"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black_3"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

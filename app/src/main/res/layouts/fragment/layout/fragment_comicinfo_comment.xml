@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:layout_marginTop="7dp"
+                            android:text="@string/BookInfoActivity_zuozhe"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <com.zhy.view.flowlayout.TagFlowLayout
+                            android:id="@+id/comic_info_text_layout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:layout_marginTop="7dp"
+                            android:text="@string/BookInfoActivity_biaoqian"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <com.zhy.view.flowlayout.TagFlowLayout
+                            android:id="@+id/comic_info_text_layout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:layout_marginTop="7dp"
+                            android:text="@string/storeFragment_fenlei"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <com.zhy.view.flowlayout.TagFlowLayout
+                            android:id="@+id/comic_info_text_layout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/BookInfoActivity_yuanzhu"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/comic_info_text4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:textSize="13dp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/BookInfoActivity_hanhuazu"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/comic_info_text5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:textSize="13dp"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/BookInfoActivity_date"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/comic_info_text6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="13dp"
+                            android:textColor="@color/gray_b0"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/comic_info_layout7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/BookInfoActivity_final_modify"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/comic_info_text7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="13dp"
+                            android:textColor="@color/gray_b0"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/fragment_comic_info_des"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.ssreader.novel.ui.view.AutoTextView
+                android:id="@+id/activity_book_info_content_comment_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_b0"
+                android:textSize="13dp" />
+
+            <include
+                layout="@layout/list_ad_view"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="49.7dp">
+
+                    <ImageView
+                        android:id="@+id/itemBook_stoare_lable_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/comic_mall_title_hold" />
+
+                    <TextView
+                        android:layout_toRightOf="@+id/itemBook_stoare_lable_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="3dp"
+                        android:text="@string/BookInfoActivity_newshuping"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/activity_book_info_content_add_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/CommentListActivity_xieshuping"
+                        android:textColor="@color/maincolor"
+                        android:textSize="13dp" />
+                </RelativeLayout>
+
+                <include layout="@layout/view_03"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_book_info_content_comment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/activity_Book_info_content_comment_more_text"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/maincolor"
+                android:textSize="13dp"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/activity_book_info_content_label_line"
+                layout="@layout/view_10"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_book_info_content_label_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
+

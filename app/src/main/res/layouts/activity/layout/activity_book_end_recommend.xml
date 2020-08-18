@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gw.swipeback.SwipeBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:directionMode="left"
+    app:isSwipeFromEdge="true"
+    app:maskAlpha="125"
+    app:swipeBackFactor="0.6">
+
+    <!--- only one child-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/book_end_recommend_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:id="@+id/book_end_recommend_toolbar_back_layout"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/back_black"
+                        android:tint="@color/black" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/book_end_recommend_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="300dp"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:textSize="18dp"
+                    android:textColor="@color/black_3"/>
+
+                <RelativeLayout
+                    android:id="@+id/book_end_recommend_toolbar_store"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18.5dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_back_store"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/book_end_recommend_toolbar_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="24dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/book_end_recommend_toolbar_dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black_6"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/book_end_recommend_goto_comment_layout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="34dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_goto_comment" />
+
+                    <TextView
+                        android:id="@+id/book_end_recommend_goto_comment_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        android:textSize="8dp"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/CommentListActivity_title"
+                    android:textSize="12dp"
+                    android:textColor="@color/gray_9"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/book_end_recommend_goto_reward_line"
+                android:layout_width="0.5dp"
+                android:layout_height="30dp"
+                android:background="@color/gray_cc"/>
+
+            <LinearLayout
+                android:id="@+id/book_end_recommend_goto_reward_layout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="34dp">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/icon_goto_reward" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/book_end_recommend_goto_reward_text"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/dialog_Reward"
+                    android:textSize="12dp"
+                    android:textColor="@color/gray_9"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/book_end_recommend_goto_share_line"
+                android:layout_width="0.5dp"
+                android:layout_height="30dp"
+                android:background="@color/gray_cc"/>
+
+            <LinearLayout
+                android:id="@+id/book_end_recommend_goto_share_layout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="34dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/share_black"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/audio_share"
+                    android:textSize="12dp"
+                    android:textColor="@color/gray_9"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView
+            android:id="@+id/book_end_recommend_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</com.gw.swipeback.SwipeBackLayout>

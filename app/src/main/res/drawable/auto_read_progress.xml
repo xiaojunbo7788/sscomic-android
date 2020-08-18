@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+
+            <solid android:color="#00ffffff"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <scale
+            android:drawable="@drawable/auto_read_round_red"
+            android:scaleWidth="100%"/>
+    </item>
+</layer-list>

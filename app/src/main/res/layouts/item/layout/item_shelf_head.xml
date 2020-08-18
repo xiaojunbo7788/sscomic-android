@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_Bookshelf_head"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fragment_shelf_banner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:padding="2dp"
+        android:orientation="vertical">
+
+        <com.ssreader.novel.ui.view.banner.ConvenientBanner
+            android:id="@+id/fragment_shelf_banner_male"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:canLoop="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_Bookshelf_marquee_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@mipmap/shelf_laba" />
+
+        <com.ssreader.novel.ui.view.MarqueeTextView
+            android:id="@+id/fragment_Bookshelf_marquee"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/fragment_Bookshelf_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shelf_sign" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="@string/SigninActivity_title"
+                android:textColor="@color/maincolor"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

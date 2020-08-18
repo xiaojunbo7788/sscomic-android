@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_recharge_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/pay_item_date"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:id="@+id/pay_item_title"
+            android:textColor="@color/recharge_text"
+            android:textSize="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:id="@+id/pay_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/gray_b0"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_pay_head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:id="@+id/item_pay_head_tv"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</FrameLayout>

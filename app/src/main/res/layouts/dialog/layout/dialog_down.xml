@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_book_down_bg_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/dialog_book_down_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_book_down_title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="@string/BookInfoActivity_down_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/public_13_dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/dialog_book_down_title"
+            android:background="@color/grayline" />
+
+        <ListView
+            android:id="@+id/dialog_book_down_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_book_down_title"
+            android:divider="@color/grayline"
+            android:dividerHeight="0.3dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/dialog_book_down_list"
+            android:background="@color/graybg" />
+
+        <TextView
+            android:id="@+id/dialog_book_down_manger"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/BookInfoActivity_down_manger"
+            android:textColor="@color/black"
+            android:textSize="@dimen/public_13_dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_videoinfo_buydialog"
+    android:layout_width="match_parent"
+    android:layout_height="64.5dp"
+    android:orientation="horizontal"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="#fff9f8fd"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/dialog_month_foot_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.ssreader.novel.ui.view.SizeAnmotionTextview
+                android:id="@+id/dialog_total_month_ticket"
+                android:textColor="@color/black_3"
+                android:textSize="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/dialog_directions_img"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/img_directions"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <com.ssreader.novel.ui.view.SizeAnmotionTextview
+            android:textSize="11dp"
+            android:textColor="@color/gray_9"
+            android:id="@+id/dialog_month_ticket_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/dialog_month_yue_money_layout"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/gray_b0"
+                android:text="@string/MineNewFragment_money_balance" />
+
+            <TextView
+                android:id="@+id/dialog_month_yue_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/dialog_month_ticket_btn"
+        android:textColor="@color/white"
+        android:background="@mipmap/img_foot_btn_yesclick"
+        android:layout_gravity="center_vertical"
+        android:text="@string/dialog_vote"
+        android:gravity="center"
+        android:layout_width="90dp"
+        android:layout_height="32dp"/>
+</LinearLayout>

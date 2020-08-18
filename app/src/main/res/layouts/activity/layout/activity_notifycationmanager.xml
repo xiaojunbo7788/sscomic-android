@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graybg"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_sns_topbar" />
+
+    <LinearLayout
+        android:id="@+id/activity_settings_switch_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/SettingsActivity_notify_switch"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/activity_notify_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/SettingsActivity_notify_set_close"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/SettingsActivity_notify_set"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/SettingsActivity_notify_set"
+        android:textColor="@color/gray_b0"
+        android:textSize="12dp" />
+
+    <include layout="@layout/view_10"/>
+
+    <ListView
+        android:id="@+id/SettingsActivity_notify_list"
+        android:divider="@color/grayline"
+        android:dividerHeight="0.3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

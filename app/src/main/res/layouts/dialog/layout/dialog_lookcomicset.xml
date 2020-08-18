@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="135dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ComicLookActivity_turn_pages"
+                android:textColor="@color/black"
+                android:textSize="@dimen/public_14_dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="@string/ComicLookActivity_open_turn_pages"
+                android:textColor="@color/gray_b0"
+                android:textSize="@dimen/public_12_dp" />
+        </LinearLayout>
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/dialog_lookcomicset_fanye_ToggleButton"
+            android:layout_width="45dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            app:sb_checked_color="@color/maincolor"
+            app:sb_border_width="0.5dp"
+            app:sb_shadow_color="@color/gray_b0"
+            app:sb_shadow_effect="true"
+            app:sb_show_indicator="false"/>
+    </RelativeLayout>
+
+    <include
+        layout="@layout/view_03"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_night_model"
+                android:textColor="@color/black"
+                android:textSize="@dimen/public_14_dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/ComicLookActivity_open_turn_pages"
+                android:textColor="@color/gray_b0"
+                android:textSize="@dimen/public_12_dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/dialog_lookcomicset_yejian_ToggleButton"
+            android:layout_width="45dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            app:sb_checked_color="@color/maincolor"
+            app:sb_border_width="0.5dp"
+            app:sb_shadow_color="@color/gray_b0"
+            app:sb_shadow_effect="true"
+            app:sb_show_indicator="false"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+</LinearLayout>

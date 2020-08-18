@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/public_dialog_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black_3"
+            android:text="@string/app_tips"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/ReadActivity_isaddBookself"
+            android:textColor="@color/gray_9"
+            android:textSize="15dp" />
+
+        <include layout="@layout/view_03"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/app_cancle"
+                android:textSize="15dp"
+                android:textColor="@color/black_6" />
+
+            <View
+                android:background="@color/grayline"
+                android:layout_width="0.3dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:text="@string/app_confirm"
+                android:textColor="@color/maincolor" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_add_shelf_finish"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:layout_width="30dp"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:tint="@color/gray_9"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/activity_login_close"
+            android:layout_width="17dp"
+            android:layout_height="17dp"/>
+    </RelativeLayout>
+</FrameLayout>

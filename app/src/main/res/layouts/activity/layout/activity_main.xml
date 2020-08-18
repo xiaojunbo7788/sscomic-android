@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.ssreader.novel.ui.view.CustomScrollViewPager
+            android:id="@+id/activity_main_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <RadioGroup
+            android:id="@+id/activity_main_RadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingTop="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/graybg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/activity_main_Bookshelf"
+                style="@style/home_menu_style"
+                android:checked="true"
+                android:drawableTop="@drawable/selector_home_1"
+                android:text="@string/activity_main1"
+                android:textColor="@color/home_color_selector"/>
+
+            <RadioButton
+                android:id="@+id/activity_main_Bookstore"
+                style="@style/home_menu_style"
+                android:drawableTop="@drawable/selector_home_2"
+                android:text="@string/activity_main2"
+                android:textColor="@color/home_color_selector" />
+
+            <RadioButton
+                android:id="@+id/activity_main_fan_group"
+                style="@style/home_menu_style"
+                android:drawableTop="@drawable/selector_home_5"
+                android:text="@string/activity_main5"
+                android:textColor="@color/home_color_selector" />
+
+            <RadioButton
+                android:id="@+id/activity_main_discovery"
+                style="@style/home_menu_style"
+                android:drawableTop="@drawable/selector_home_3"
+                android:text="@string/activity_main3"
+                android:textColor="@color/home_color_selector"/>
+
+            <RadioButton
+                android:id="@+id/activity_main_mine"
+                style="@style/home_menu_style"
+                android:drawableTop="@drawable/selector_home_4"
+                android:text="@string/activity_main4"
+                android:textColor="@color/home_color_selector"/>
+        </RadioGroup>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

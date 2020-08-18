@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/fragment_dialog_month_ticket_head"
+        android:layout_above="@+id/fragment_month_ticket_grv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <GridView
+        android:listSelector="@android:color/transparent"
+        android:layout_above="@+id/dialog_fragment_ticket_foot"
+        android:id="@+id/fragment_month_ticket_grv"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/dialog_fragment_ticket_foot"
+        layout="@layout/dialog_month_ticket_foot"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

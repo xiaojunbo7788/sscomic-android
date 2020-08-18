@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:background="@color/graybg"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_sns_topbar" />
+
+        <include layout="@layout/view_03" />
+
+        <RelativeLayout
+            android:background="@color/white1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/audio_catalog_down_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:id="@+id/audio_catalog_down_anthology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/icon_menu"
+                    android:tint="@color/gray_b0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/audio_info_anthology"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/view_03" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/audio_catalog_down_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/audio_catalog_down_yetsize"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/graybg"
+            android:gravity="center"
+            android:textColor="@color/gray_b0"
+            android:textSize="12dp" />
+
+
+        <TextView
+            android:id="@+id/audio_catalog_down_yetall_down"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/ComicDownActivity_downprocess_all"
+            android:background="@color/white"
+            android:textColor="@color/gray_b0"
+            android:textSize="13dp" />
+
+        <RelativeLayout
+            android:id="@+id/audio_catalog_down_noall_down"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/audio_catalog_down_checkBox_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <CheckBox
+                    android:id="@+id/audio_catalog_down_checkBox"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/shlefselect"
+                    android:button="@null"
+                    android:clickable="false" />
+
+                <TextView
+                    android:id="@+id/audio_catalog_down_allChoose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="false"
+                    android:text="@string/app_allchoose"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/audio_catalog_down_text"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@color/gray_b0"
+                android:gravity="center"
+                android:text="@string/audio_down"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

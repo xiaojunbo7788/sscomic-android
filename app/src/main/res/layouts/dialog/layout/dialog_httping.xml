@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/dialog_httping_layout"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="8dp"
+            android:orientation="vertical">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/dialog_httping_AVLoadingIndicatorView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                app:indicatorColor="@color/maincolor"
+                app:indicatorName="LineSpinFadeLoaderIndicator" />
+
+            <TextView
+                android:id="@+id/id_tv_loadingmsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_waiting"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

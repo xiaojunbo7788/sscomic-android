@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_store_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/shelfitem_img_container"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lightgray3">
+
+            <ImageView
+                android:id="@+id/item_store_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_store_player"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="left|bottom"
+                android:src="@mipmap/audio_mark"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="right"
+                android:background="@mipmap/img_rank_one"
+                android:id="@+id/item_store_rank_layout"
+                android:layout_width="24dp"
+                android:layout_height="23dp">
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:id="@+id/item_store_rank_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </com.lihang.ShadowLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+
+            <LinearLayout
+                android:id="@+id/LinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_store_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/item_store_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="1dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="1dp"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_store_label_male_horizontal_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LinearLayout"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:lines="3"
+                android:textColor="@color/gray_6e"
+                android:textSize="13dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp">
+
+                <TextView
+                    android:id="@+id/item_store_label_male_horizontal_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/item_store_label_male_horizontal_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="110dp"
+                        android:layout_gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        layout="@layout/public_list_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="23dp"
+        android:visibility="gone"/>
+
+    <include
+        layout="@layout/list_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/item_store_label_comic_flag_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/item_store_label_comic_flag_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</LinearLayout>

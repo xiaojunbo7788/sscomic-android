@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_comic_chapter_catalog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/item_comic_chapter_catalog_cover_layout"
+            android:layout_width="126dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="@color/black_alpha_30"
+            app:hl_shadowLimit="2dp">
+
+            <ImageView
+                android:id="@+id/item_comic_chapter_catalog_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_comic_def" />
+
+            <RelativeLayout
+                android:id="@+id/item_comic_chapter_catalog_buy_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_alpha_50">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/lock_white" />
+            </RelativeLayout>
+        </com.lihang.ShadowLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp">
+
+            <TextView
+                android:id="@+id/item_comic_chapter_catalog_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/item_comic_chapter_catalog_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/item_comic_chapter_catalog_read_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/graybg_80"/>
+
+    <ImageView
+        android:id="@+id/item_comic_chapter_catalog_current_mark"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/comic_history_flag"
+        android:visibility="gone"/>
+</FrameLayout>

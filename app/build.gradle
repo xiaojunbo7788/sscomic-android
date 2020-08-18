@@ -1,0 +1,197 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'io.objectbox'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ssreader.novel"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1.5"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+        multiDexEnabled true
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/INDEX.LIST'
+        }
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    signingConfigs {
+        debug {
+            storeFile file('songshu_key.jks')
+            storePassword "songshu"
+            keyAlias "songshu"
+            keyPassword "songshu"
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            resValue "string", "tray__authority", "tray__authority_ssreader"
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "tray__authority", "tray__authority_ssreader"
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "ssreader.apk"
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            res.srcDirs = [
+                    'src/main/res/layouts/activity',
+                    'src/main/res/layouts/fragment',
+                    'src/main/res/layouts/dialog',
+                    'src/main/res/layouts/public',
+                    'src/main/res/layouts/item',
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    // 黄油刀
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    // 权限管理
+    implementation 'com.github.dfqin:grantor:2.5'
+    // okHttp3
+    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    // retrofit2
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    // AutoDispose解决RxJava内存泄漏
+    implementation 'com.uber.autodispose:autodispose:0.7.0'
+    implementation 'com.uber.autodispose:autodispose-android:0.7.0'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents:0.7.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    // 友盟
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
+    //阿里云推送c
+    implementation 'com.aliyun.ams:alicloud-android-push:3.1.6'
+    implementation 'com.aliyun.ams:alicloud-android-third-push:3.0.9@aar'
+    implementation 'com.aliyun.ams:huawei-push:2.6.3.305'
+    implementation 'com.aliyun.ams:huawei-push-base:2.6.3.305'
+    // 微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.5.3'
+    // 阿里支付
+    implementation 'com.pingxx:pingpp-android-alipay:2.2.0'
+    //状态栏
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    implementation("com.github.bumptech.glide:okhttp3-integration:4.7.0" ) {
+        exclude group: "com.android.support"
+    }
+    //取色器
+    implementation "androidx.palette:palette:1.0.0"
+    //各种lording效果
+    implementation 'com.wang.avi:library:2.1.3'
+    //查看大图
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    //MyToash
+    implementation 'com.irozon.sneaker:sneaker:2.0.0'
+    //switch开关
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    //鲁班压缩
+    implementation 'top.zibin:Luban:1.1.8'
+    implementation 'org.jetbrains:annotations:15.0'
+    // 加载GIF
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.18'
+    // toggleButton(开关按钮)
+    implementation 'com.zcw:togglebutton-library:1.0.0'
+    // smartTabLayout
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    // swipeBack
+    implementation 'com.gongwen:swipeback:1.0.2'
+    // Banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    // 日历
+    implementation 'com.haibin:calendarview:3.6.9'
+    // 刷新布局
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    // 加阴影
+    implementation 'com.github.lihangleo2:ShadowLayout:2.0.1'
+    implementation 'com.github.Liberuman:ShadowDrawable:0.1'
+    // 音频播放框架
+    implementation 'com.lzx:StarrySkyJava:2.3.3'
+    // 漫画弹幕
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    // 简繁转换
+    implementation "com.zqc.opencc.android.lib:lib-opencc-android:0.8.0@aar"
+    // 讯飞语音
+    implementation files('libs/Msc.jar')
+    //穿山甲
+    implementation(name: 'open_ad_sdk', ext: 'aar')
+    //自动阅读节点控制进度条
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+    // 流式布局
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'androidx.fragment') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '1.1.0-alpha08'
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}

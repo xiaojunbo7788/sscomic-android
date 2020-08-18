@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ssreader.novel.ui.view.MyRadioButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="wrap_content"
+     android:layout_height="14dp"
+     android:textColor="@color/selector_search_box_text_item"
+     android:button="@null"
+     android:gravity="center_vertical"
+     android:textSize="12dp"
+     android:layout_marginRight="15dp">
+</com.ssreader.novel.ui.view.MyRadioButton>

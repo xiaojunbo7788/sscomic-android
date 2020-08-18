@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:id="@+id/dialog_privte_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/dialog_privte_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:id="@+id/dialog_privte_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <include layout="@layout/view_03"/>
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:id="@+id/dialog_movieTicket_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="14dp"
+                android:textColor="@color/maincolor"
+                android:text="@string/local_dialog_know"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/public_sns_topbar" />
+
+        <LinearLayout
+            android:id="@+id/add_book_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/localbook_bg"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/book_cover" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/local_choose_like_book"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:src="@mipmap/right_black" />
+        </LinearLayout>
+
+        <include layout="@layout/view_10" />
+
+        <EditText
+            android:id="@+id/edit_note_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:gravity="left|top"
+            android:hint="@string/local_write_moment_note_title"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:textSize="15dp" />
+
+        <include layout="@layout/view_10" />
+
+        <EditText
+            android:id="@+id/edit_idea"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:gravity="left|top"
+            android:hint="@string/local_write_moment"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:textSize="15dp" />
+
+        <include layout="@layout/view_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp">
+
+            <EditText
+                android:id="@+id/activity_feedback_content"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@null"
+                android:gravity="left|top"
+                android:hint="@string/local_edit_book_content"
+                android:inputType="textMultiLine"
+                android:maxLength="200"
+                android:textColorHint="@color/gray"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/activity_feedback_percentage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:text="200/200"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/view_10" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/local_tiezi_label"
+            android:textColor="@color/gray" />
+
+        <com.ssreader.novel.ui.localshell.localapp.view.LineBreakLayout
+            android:id="@+id/tiezi_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            app:leftAndRightSpace="10dp"
+            app:rowSpace="10dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

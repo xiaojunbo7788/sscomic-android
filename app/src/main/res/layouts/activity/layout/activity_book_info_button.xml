@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/graybg"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/activity_Book_info_audio"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/noverfragment_audio"
+        android:textColor="@color/maincolor"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/activity_Book_info_start_read"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/maincolor"
+        android:gravity="center"
+        android:text="@string/BookInfoActivity_startyuedu"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/activity_Book_info_add_shelf"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/maincolor2"
+        android:textSize="14dp" />
+</LinearLayout>

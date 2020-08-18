@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XTabLayout">
+        <attr name="x_tabIndicatorRoundRect" format="boolean" />
+        <attr name="x_tabIndicatorAnimation" format="boolean" />
+        <attr name="x_tabIndicatorColor" format="color" />
+        <attr name="x_tabIndicatorHeight" format="dimension" />
+        <attr name="x_tabIndicatorWidth" format="dimension" />
+        <attr name="x_tabContentStart" format="dimension" />
+        <attr name="x_tabBackground" format="reference" />
+        <attr name="x_numclos" format="dimension" />
+        <attr name="x_tabMode">
+            <enum name="scrollable" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <attr name="x_tabGravity">
+            <enum name="fill" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+        <attr name="x_tabMinWidth" format="dimension" />
+        <attr name="x_tabMaxWidth" format="dimension" />
+        <attr name="x_tabTextAppearance" format="reference" />
+        <attr name="x_tabTextColor" format="color" />
+        <attr name="x_tabSelectedTextColor" format="color" />
+        <attr name="x_tabPaddingStart" format="dimension" />
+        <attr name="x_tabTextSize" format="dimension" />
+        <attr name="x_tabPaddingTop" format="dimension" />
+        <attr name="x_tabPaddingEnd" format="dimension" />
+        <attr name="x_tabPaddingBottom" format="dimension" />
+        <attr name="x_tabPadding" format="dimension" />
+        <attr name="x_indicatorMarginTop" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="XTabItem">
+        <attr name="android:text" />
+        <attr name="android:icon" />
+        <attr name="android:layout" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <!--标签之间左右距离-->
+        <attr name="leftAndRightSpace" format="dimension" />
+        <attr name="firstleftAndRightSpace" format="dimension" />
+        <!--标签行距-->
+        <attr name="rowSpace" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="Snscomplete">
+        <!--标签之间左右距离-->
+        <attr name="Snscomplete_text" format="string" />
+        <attr name="Snscomplete_TextColor" format="color" />
+        <attr name="Snscomplete_TextSize" format="dimension" />
+        <attr name="Snscomplete_UiType" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ConvenientBanner">
+        <attr name="canLoop" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="RatingBarView">
+        <attr name="starImageSize" format="dimension"/>
+        <attr name="starCount" format="integer"/>
+        <attr name="starEmpty" format="reference"/>
+        <attr name="starFill" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+        <attr name="civ_border_overlay" format="boolean"/>
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color"/>
+        <attr name="civ_circle_background_color" format="color"/>
+    </declare-styleable>
+
+    <!--阅读器-->
+    <declare-styleable name="CircleImageViewReader">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+    <!--波浪view-->
+    <declare-styleable name="WaveView">
+        <attr name="wave_color" format="color"/>
+        <attr name="wave_length_multiple" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+        <attr name="progress_unreached_color" format="color"/>
+        <attr name="progress_reached_color" format="color"/>
+        <attr name="progress_reached_bar_height" format="dimension"/>
+        <attr name="progress_unreached_bar_height" format="dimension"/>
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="progress_text_offset" format="dimension"/>
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomLayout">
+        <attr name="backgroundColor" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SComicRecyclerView">
+        <attr format="float" name="min_scale"/>
+        <attr format="float" name="max_scale"/>
+        <attr format="float" name="default_scale"/>
+        <attr format="integer" name="zoom_duration"/>
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <!-- Style of the circle indicator. -->
+        <attr name="vpiCirclePageIndicatorStyle" format="reference"/>
+        <!-- Style of the icon indicator's views. -->
+        <attr name="vpiIconPageIndicatorStyle" format="reference"/>
+        <!-- Style of the line indicator. -->
+        <attr name="vpiLinePageIndicatorStyle" format="reference"/>
+        <!-- Style of the title indicator. -->
+        <attr name="vpiTitlePageIndicatorStyle" format="reference"/>
+        <!-- Style of the tab indicator's tabs. -->
+        <attr name="vpiTabPageIndicatorStyle" format="reference"/>
+        <!-- Style of the underline indicator. -->
+        <attr name="vpiUnderlinePageIndicatorStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <!-- 圆角的半径 -->
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="DragSeekBar">
+        <attr name="max_progress" format="integer" />
+        <!-- 按钮宽度 -->
+        <attr name="btn_height" format="dimension"/>
+        <!-- 按钮颜色 -->
+        <attr name="btn_color" format="color"/>
+        <!-- 按钮阴影颜色 -->
+        <attr name="btn_bg_color" format="color"/>
+        <!-- 缓存条高度 -->
+        <attr name="cache_height" format="dimension"/>
+        <!-- 缓存条颜色 -->
+        <attr name="cache_color" format="color"/>
+        <!-- 进度高度 -->
+        <attr name="progress_height" format="dimension"/>
+        <!-- 进度颜色 -->
+        <attr name="progress_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="AudioLoadingView">
+        <!-- 图片的类型 -->
+        <attr name="type" format="integer" />
+    </declare-styleable>
+
+    <bool name="default_underline_indicator_fades">true</bool>
+    <integer name="default_underline_indicator_fade_delay">300</integer>
+    <integer name="default_underline_indicator_fade_length">400</integer>
+    <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
+</resources>

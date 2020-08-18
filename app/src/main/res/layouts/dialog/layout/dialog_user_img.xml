@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/dialog_paizhao"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:id="@+id/checkimg_camera"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_user_info_avatar_select"
+                android:gravity="center"
+                android:text="拍照"
+                android:textSize="15dp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_b0"
+                />
+
+            <TextView
+                android:id="@+id/checkimg_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_user_info_avatar_select"
+                android:gravity="center"
+                android:text="相册"
+                android:textSize="15dp"
+                />
+
+            <View
+                android:id="@+id/checkimg_3_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="@color/gray_b0"
+                />
+
+            <TextView
+                android:id="@+id/checkimg_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:background="@drawable/selector_user_info_avatar_select"
+                android:gravity="center"
+                android:text="相册"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_cencle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:id="@+id/checkimg_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_user_info_avatar_select"
+                android:gravity="center"
+                android:text="取消"
+                android:textSize="15dp"
+                />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

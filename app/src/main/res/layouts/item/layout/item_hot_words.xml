@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/item_hot_word_container"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/item_hot_word_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="9dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_hot_word_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+</LinearLayout>

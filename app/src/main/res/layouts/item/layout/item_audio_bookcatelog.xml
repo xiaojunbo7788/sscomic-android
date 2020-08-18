@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_chapter_catalog_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/item_audio_pkay_img"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/audio_play"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_chapter_catalog_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/black_3"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/item_chapter_catalog_vip"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/icon_book_directory_lock"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/lightgray1"/>
+</LinearLayout>

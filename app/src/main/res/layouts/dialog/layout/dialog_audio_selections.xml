@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_audio_selections_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/dialog_head_audio_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/audio_info_anthology"
+            android:textColor="@color/gray_title"
+            android:textSize="15dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/grayline"
+            android:layout_alignParentBottom="true"
+            android:layout_height="0.3dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_audio_selections_recyclerView_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dialog_audio_selections_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/grayline"
+        android:layout_height="0.3dp"/>
+
+    <RelativeLayout
+        android:id="@+id/dialog_audio_selections_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="@string/audio_close_dialog" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+    <RelativeLayout
+        android:id="@+id/tv_listitem_VIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:id="@+id/iv_listitem_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+          />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom"
+            android:background="#60000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_listitem_ad_desc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:id="@+id/iv_listitem_icon_"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="1dp"
+                android:background="@mipmap/chuanshanjia" />
+
+            <TextView
+                android:id="@+id/tv_listitem_ad_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:ellipsize="end"
+                android:visibility="gone"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="广告"
+                android:textColor="@color/black"
+                android:textSize="6dp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_listitem_ad_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="联信"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_listitem_creative"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/icon_jinritoutiao_bg"
+            android:padding="2dp"
+            android:text="点击下载"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_listitem_icon"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@id/iv_listitem_image"
+        android:layout_marginStart="3dp"
+
+        android:layout_marginLeft="3dp"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+
+</LinearLayout>

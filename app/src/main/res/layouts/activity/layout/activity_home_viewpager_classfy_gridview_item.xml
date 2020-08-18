@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/activity_home_viewpager_classfy_GridView_laiout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.lihang.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="1dp">
+
+            <ImageView
+                android:id="@+id/activity_home_viewpager_classfy_GridView_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:id="@+id/activity_home_viewpager_classfy_GridView_img_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/shelf_bg"
+                android:visibility="gone"/>
+
+            <CheckBox
+                android:id="@+id/activity_home_viewpager_classfy_GridView_box"
+                android:button="@null"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:background="@drawable/shlefselect" />
+
+            <TextView
+                android:id="@+id/activity_home_flag"
+                android:layout_width="35dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/white" />
+        </com.lihang.ShadowLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/activity_home_viewpager_classfy_GridView_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="13dp"
+        android:textColor="@color/black"/>
+</LinearLayout>

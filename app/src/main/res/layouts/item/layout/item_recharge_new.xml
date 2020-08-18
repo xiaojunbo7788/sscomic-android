@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_recharge_bg_layout">
+
+    <RelativeLayout
+        android:id="@+id/item_recharge_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+
+            <LinearLayout
+                android:id="@+id/item_recharge_price_layout"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/item_recharge_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:textSize="10dp"
+                    android:id="@+id/item_acquire_pay_title_flag"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_below="@+id/item_recharge_price_layout"
+                android:id="@+id/item_recharge_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/gray_b0"
+                android:textSize="12dp" />
+
+            <TextView
+                android:text="6"
+                android:textColor="@color/black"
+                android:gravity="bottom"
+                android:textSize="18dp"
+                android:id="@+id/item_recharge_money"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/item_recharge_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/maincolor"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <com.ssreader.novel.ui.view.RotateTextView
+            android:id="@+id/item_recharge_flag"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0.5dp"
+            android:layout_marginRight="0.5dp"
+            android:background="@mipmap/corner"
+            android:gravity="center"
+            android:text="asdf"
+            android:textColor="@color/red"
+            android:textSize="7dp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+    </RelativeLayout>
+</RelativeLayout>

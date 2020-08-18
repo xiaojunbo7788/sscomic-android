@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/store_banner_male_FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <com.ssreader.novel.ui.view.banner.ConvenientBanner
+            android:id="@+id/store_banner_male"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:canLoop="true" />
+
+        <ImageView
+            android:id="@+id/store_banner_line"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/banner_bottom_line" />
+
+        <View
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+    </FrameLayout>
+
+    <com.ssreader.novel.ui.view.AdaptionGridViewNoMargin
+        android:id="@+id/store_entrance_grid_male"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:numColumns="5" />
+</LinearLayout>

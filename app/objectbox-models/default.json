@@ -1,0 +1,1014 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6129133975365953156",
+      "lastPropertyId": "4:2785466139532743129",
+      "name": "LocalBook",
+      "properties": [
+        {
+          "id": "1:1808769182563541736",
+          "name": "book_id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7548944013782110411",
+          "name": "Local_path",
+          "indexId": "1:1834352869624609828",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "3:4309291285069737363",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:2785466139532743129",
+          "name": "isLike",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:3257750307508107634",
+      "lastPropertyId": "6:8123123492798222429",
+      "name": "LocalNotesBean",
+      "properties": [
+        {
+          "id": "1:1555874549958473004",
+          "name": "book_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:6301608511740162018",
+          "name": "frombookTitle",
+          "type": 9
+        },
+        {
+          "id": "3:1345353790030255879",
+          "name": "notesTime",
+          "type": 9
+        },
+        {
+          "id": "4:2031947645003838565",
+          "name": "notesContent",
+          "type": 9
+        },
+        {
+          "id": "5:5708313926725356129",
+          "name": "notesTitle",
+          "type": 9
+        },
+        {
+          "id": "6:8123123492798222429",
+          "name": "day_id",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:2565864657771770955",
+      "lastPropertyId": "19:7496144271209239215",
+      "name": "ComicChapter",
+      "properties": [
+        {
+          "id": "1:1069538408529332598",
+          "name": "chapter_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:7680717593712756913",
+          "name": "comic_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "3:8297955074688965527",
+          "name": "chapter_title",
+          "type": 9
+        },
+        {
+          "id": "4:6371691926332692855",
+          "name": "subtitle",
+          "type": 9
+        },
+        {
+          "id": "5:3654079784400986203",
+          "name": "small_cover",
+          "type": 9
+        },
+        {
+          "id": "6:5154455844449822923",
+          "name": "display_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "7:4260715806993038765",
+          "name": "is_vip",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "8:8809823717242499482",
+          "name": "is_preview",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "9:184268786977961807",
+          "name": "updated_at",
+          "type": 9
+        },
+        {
+          "id": "10:772435777375521981",
+          "name": "last_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "11:1044144068948432017",
+          "name": "next_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "12:3381907427928906520",
+          "name": "display_label",
+          "type": 9
+        },
+        {
+          "id": "13:5941701574614446660",
+          "name": "ComicChapterPath",
+          "type": 9
+        },
+        {
+          "id": "14:8290660017127262921",
+          "name": "IsRead",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "15:9030590888708407136",
+          "name": "ImagesText",
+          "type": 9
+        },
+        {
+          "id": "16:2107507679257138399",
+          "name": "current_read_img_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "17:4787627191453168001",
+          "name": "current_read_img_image_id",
+          "type": 9
+        },
+        {
+          "id": "18:8529733265867873464",
+          "name": "downStatus",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "19:7496144271209239215",
+          "name": "can_read",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:7721056370271548995",
+      "lastPropertyId": "28:7441503238439861507",
+      "name": "Audio",
+      "properties": [
+        {
+          "id": "1:4700473678258647837",
+          "name": "audio_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:954052288146026665",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:2531236910997036792",
+          "name": "is_vip",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "4:5669392233401821792",
+          "name": "is_baoyue",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:1383804281153211763",
+          "name": "is_collect",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "6:4842740936138836451",
+          "name": "cover",
+          "type": 9
+        },
+        {
+          "id": "7:127801752552910349",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "8:4896708040050790038",
+          "name": "new_chapter",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "9:5169676415338884251",
+          "name": "allPercent",
+          "type": 9
+        },
+        {
+          "id": "10:4613202775906237982",
+          "name": "total_chapter",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "11:582750912476646631",
+          "name": "current_chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "12:7589490872318305707",
+          "name": "current_listen_chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "13:9122427200764902075",
+          "name": "current_chapter_text",
+          "type": 9
+        },
+        {
+          "id": "14:1961795712200001795",
+          "name": "is_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:1036239079647444599",
+          "name": "current_chapter_displayOrder",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:6710617211497995931",
+          "name": "current_chapter_listen_displayOrder",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "17:5221452567272214632",
+          "name": "Chapter_text",
+          "type": 9
+        },
+        {
+          "id": "18:5440135112405418090",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "19:1171099434462752262",
+          "name": "BookselfPosition",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "20:5754848328432004063",
+          "name": "language",
+          "type": 9
+        },
+        {
+          "id": "21:2596562510707131240",
+          "name": "display_label",
+          "type": 9
+        },
+        {
+          "id": "22:5876101568152826973",
+          "name": "total_favors",
+          "type": 9
+        },
+        {
+          "id": "23:8640669674012814587",
+          "name": "play_num",
+          "type": 9
+        },
+        {
+          "id": "24:4989584861299461243",
+          "name": "finished",
+          "type": 9
+        },
+        {
+          "id": "25:2701394761779906435",
+          "name": "down_chapters",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "26:3421537560847641709",
+          "name": "speed",
+          "type": 9
+        },
+        {
+          "id": "27:7871932375301835610",
+          "name": "isRecommend",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "28:7441503238439861507",
+          "name": "hot_num",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:9044759538092834842",
+      "lastPropertyId": "21:938686479074184713",
+      "name": "AudioChapter",
+      "properties": [
+        {
+          "id": "1:3560431866216290240",
+          "name": "chapter_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:3929130656230526721",
+          "name": "is_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "3:87254608444302656",
+          "name": "read_progress",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "4:6180630227838210961",
+          "name": "audio_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "5:5792068328751333162",
+          "name": "chapter_title",
+          "type": 9
+        },
+        {
+          "id": "6:2448320430903134883",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "7:2977563130871890911",
+          "name": "duration_time",
+          "type": 9
+        },
+        {
+          "id": "8:6997449192942677464",
+          "name": "play_num",
+          "type": 9
+        },
+        {
+          "id": "9:7783231221305416974",
+          "name": "update_time",
+          "type": 9
+        },
+        {
+          "id": "10:72515317286101977",
+          "name": "duration_second",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "11:109137161354272818",
+          "name": "display_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "12:1249313340142544132",
+          "name": "is_vip",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "13:5498998106152383078",
+          "name": "can_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "14:3205147832178230817",
+          "name": "is_preview",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:8428881048256391753",
+          "name": "size",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:9198087525052153948",
+          "name": "last_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "17:282451929018606788",
+          "name": "next_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "20:8385164342112898255",
+          "name": "path",
+          "type": 9
+        },
+        {
+          "id": "21:938686479074184713",
+          "name": "status",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:932394511134310747",
+      "lastPropertyId": "12:2528562257719166879",
+      "name": "BookMarkBean",
+      "properties": [
+        {
+          "id": "1:1591124893655476142",
+          "name": "mark_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:548768086326453533",
+          "name": "book_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "3:6093951450281021348",
+          "name": "chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "4:6434077657082253486",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "5:5891080702387575615",
+          "name": "addTime",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "6:6264086522480147194",
+          "name": "position",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "7:5695557290778917772",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "12:2528562257719166879",
+          "name": "coordinate",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:7746626779019639076",
+      "lastPropertyId": "26:3409118412524346097",
+      "name": "Book",
+      "properties": [
+        {
+          "id": "1:3269201682041421303",
+          "name": "book_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:5117077660157792914",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:7997033236732113768",
+          "name": "is_collect",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "4:8879532158139531843",
+          "name": "cover",
+          "type": 9
+        },
+        {
+          "id": "5:4766639507372317444",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "6:52921722479519057",
+          "name": "new_chapter",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "7:1019760490886819461",
+          "name": "allPercent",
+          "type": 9
+        },
+        {
+          "id": "8:9010387521014324150",
+          "name": "total_chapter",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "9:8844046668674157346",
+          "name": "current_chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "10:2839893125638024348",
+          "name": "current_chapter_text",
+          "type": 9
+        },
+        {
+          "id": "11:4165566095444087269",
+          "name": "current_listen_chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "12:7020239010727994716",
+          "name": "is_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "13:6533145748477328088",
+          "name": "current_chapter_displayOrder",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "14:2332937202940204718",
+          "name": "current_chapter_listen_displayOrder",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:8767992242920270953",
+          "name": "Chapter_text",
+          "type": 9
+        },
+        {
+          "id": "16:2813015798364283113",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "17:3781912071829962241",
+          "name": "BookselfPosition",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "18:953260019006081284",
+          "name": "language",
+          "type": 9
+        },
+        {
+          "id": "19:7544724433438207738",
+          "name": "speed",
+          "type": 9
+        },
+        {
+          "id": "20:3118037252102538985",
+          "name": "isRecommend",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "21:1809613161953209994",
+          "name": "author_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "22:941405758097215351",
+          "name": "author_name",
+          "type": 9
+        },
+        {
+          "id": "23:1321316491158865948",
+          "name": "author_avatar",
+          "type": 9
+        },
+        {
+          "id": "24:7986795012348939946",
+          "name": "author_note",
+          "type": 9
+        },
+        {
+          "id": "25:8697815584766631187",
+          "name": "isLocal",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "26:3409118412524346097",
+          "name": "current_chapter_id_hasData",
+          "type": 6,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:8943853458142250050",
+      "lastPropertyId": "17:2911516258082310127",
+      "name": "Comic",
+      "properties": [
+        {
+          "id": "1:6709253278695851868",
+          "name": "comic_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:8225470148046389422",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:8391281477805909550",
+          "name": "vertical_cover",
+          "type": 9
+        },
+        {
+          "id": "4:7660813811835573441",
+          "name": "total_chapters",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:2520663309794242929",
+          "name": "new_chapter",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "6:2725017595287814756",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "7:5824027689698384999",
+          "name": "is_collect",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "8:3434099690994115878",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "9:2982061840831875773",
+          "name": "current_chapter_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "10:8078982199564139817",
+          "name": "is_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "11:1151412175231343502",
+          "name": "current_display_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "12:6150911827497422227",
+          "name": "current_chapter_name",
+          "type": 9
+        },
+        {
+          "id": "13:3061380716240244589",
+          "name": "Chapter_text",
+          "type": 9
+        },
+        {
+          "id": "14:430975467566210731",
+          "name": "last_chapter_time",
+          "type": 9
+        },
+        {
+          "id": "15:982999027470325672",
+          "name": "down_chapters",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:8613453673810214826",
+          "name": "BookselfPosition",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "17:2911516258082310127",
+          "name": "isRecommend",
+          "type": 1,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "9:1443022780619310435",
+      "lastPropertyId": "20:5667225951352178840",
+      "name": "BookChapter",
+      "properties": [
+        {
+          "id": "1:220010917265775351",
+          "name": "chapter_id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:9011056782119056019",
+          "name": "chapter_title",
+          "type": 9
+        },
+        {
+          "id": "3:7236810795507100421",
+          "name": "is_vip",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "4:297481514998524390",
+          "name": "display_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:428849533604152027",
+          "name": "is_preview",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "6:5469168153507022303",
+          "name": "is_read",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "7:6057898247392063978",
+          "name": "update_time",
+          "type": 9
+        },
+        {
+          "id": "8:3981896262150979360",
+          "name": "next_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "9:6299482737327619333",
+          "name": "last_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "10:1140342057293929916",
+          "name": "book_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "11:347373413026032166",
+          "name": "chapteritem_begin",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "14:2489439855088734351",
+          "name": "PagePos",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:1698696689634357075",
+          "name": "chapter_path",
+          "type": 9
+        },
+        {
+          "id": "16:2295055240682000840",
+          "name": "author_note",
+          "type": 9
+        },
+        {
+          "id": "17:4562561391607380291",
+          "name": "comment_num",
+          "type": 9
+        },
+        {
+          "id": "18:5051674121859703814",
+          "name": "ticket_num",
+          "type": 9
+        },
+        {
+          "id": "19:7085342084000388106",
+          "name": "reward_num",
+          "type": 9
+        },
+        {
+          "id": "20:5667225951352178840",
+          "name": "chapter_text",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "10:7774553975248797742",
+      "lastPropertyId": "17:6143265739689130685",
+      "name": "Downoption",
+      "properties": [
+        {
+          "id": "1:7205395372768494273",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8598675423692935743",
+          "name": "label",
+          "type": 9
+        },
+        {
+          "id": "3:6437503957645757045",
+          "name": "s_chapter",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "4:4052324855464767197",
+          "name": "down_num",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:2347062795326308112",
+          "name": "down_cunrrent_num",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "6:6361257325713306583",
+          "name": "file_name",
+          "indexId": "2:6198480674002937377",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "7:6482875335851481231",
+          "name": "isdown",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "8:2003224897250709695",
+          "name": "book_id",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "9:3289313619671759887",
+          "name": "cover",
+          "type": 9
+        },
+        {
+          "id": "10:239596754595621581",
+          "name": "bookname",
+          "type": 9
+        },
+        {
+          "id": "11:5089567730093236685",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "12:7584351067939884587",
+          "name": "downoption_size",
+          "type": 9
+        },
+        {
+          "id": "13:4671583336865726742",
+          "name": "downoption_date",
+          "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "14:4568615953554415811",
+          "name": "start_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:1245836949062076658",
+          "name": "end_order",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:3105866396013058329",
+          "name": "showHead",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "17:6143265739689130685",
+          "name": "downTime",
+          "type": 6,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "10:7774553975248797742",
+  "lastIndexId": "2:6198480674002937377",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    699519464624233917,
+    4626964997123786236,
+    3617935845863042171,
+    3808381501513217502,
+    6442729750273827010,
+    8585779473696359818,
+    1352898304835730258,
+    57939138040551787
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

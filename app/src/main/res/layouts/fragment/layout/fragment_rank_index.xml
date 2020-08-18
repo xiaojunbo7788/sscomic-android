@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/fragment_rankindex_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:dividerHeight="0dp"
+        android:divider="@color/grayline"
+        android:listSelector="@drawable/selector_listview_item" />
+
+    <include layout="@layout/public_listview_noresult" />
+</FrameLayout>
+
+
+

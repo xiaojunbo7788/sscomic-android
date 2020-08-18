@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mine_text_12dp">12dp</dimen>
+    <dimen name="mine_text_14dp">14dp</dimen>
+    <dimen name="mine_text_16dp">16dp</dimen>
+    <dimen name="mine_text_28dp">28dp</dimen>
+
+    <dimen name="x_design_tab_max_width">264dp</dimen>
+    <dimen name="x_design_tab_text_size">14dp</dimen>
+    <dimen name="x_design_tab_text_size_2line">12sp</dimen>
+    <dimen name="x_design_tab_scrollable_min_width">60dp</dimen>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 状态栏电池厚度 -->
+    <dimen name="reading_board_battery_border_width">1dp</dimen>
+    <!-- 书本宽边距 -->
+    <dimen name="readingMarginWidth">15dp</dimen>
+    <!-- 书本高边距 -->
+    <dimen name="readingMarginHeight">40dp</dimen>
+    <dimen name="readingMarginHeightNotchScreen">30dp</dimen>
+    <!-- 状态栏离底部距离 -->
+    <dimen name="reading_status_margin_bottom">10dp</dimen>
+    <dimen name="reading_status_margin_bottom1">30dp</dimen>
+    <dimen name="reading_status_margin_bottom_hasNotchScreen">15dp</dimen>
+    <dimen name="reading_status_margin_bottom_hasNotchScreen1">35dp</dimen>
+    <!-- 行间距 -->
+    <dimen name="reading_line_spacing_big">10dp</dimen>
+    <dimen name="reading_line_spacing_medium">20dp</dimen>
+    <dimen name="reading_line_spacing_small">30dp</dimen>
+    <!-- 段间距 -->
+    <dimen name="reading_paragraph_spacing">30dp</dimen>
+    <!-- 书本字体默认大小 -->
+    <dimen name="reading_default_text_size">20dp</dimen>
+    <!-- 书本字体最小大小 -->
+    <dimen name="reading_min_text_size">10dp</dimen>
+    <!-- 书本字体最大大小 -->
+    <dimen name="reading_max_text_size">30dp</dimen>
+    <!-- 设置行高 -->
+    <dimen name="setting_height">50dp</dimen>
+
+    <dimen name="status_height">24dp</dimen>
+
+    <dimen name="comic_catalog_img">120dp</dimen>
+    <dimen name="public_8_dp">9dp</dimen>
+    <dimen name="public_9_dp">10dp</dimen>
+    <dimen name="public_10_dp">11dp</dimen>
+    <dimen name="public_11_dp">12dp</dimen>
+    <dimen name="public_12_dp">13dp</dimen>
+    <dimen name="public_13_dp">14dp</dimen>
+    <dimen name="public_14_dp">15dp</dimen>
+    <dimen name="public_15_dp">16dp</dimen>
+    <dimen name="public_17_dp">17dp</dimen>
+    <dimen name="public_25_dp">25dp</dimen>
+
+    <dimen name="public_read_buttom_ad_hegth">45dp</dimen>
+    <dimen name="public_read_buttom_ad_hegth2">60dp</dimen>
+</resources>

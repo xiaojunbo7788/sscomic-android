@@ -1,0 +1,497 @@
+<resources>
+    <string name="app_name">松鼠仓库</string>
+    <string name="app_login_now">立即登录</string>
+    <string name="app_cancle">取消</string>
+    <string name="app_confirm">确定</string>
+    <string name="app_waiting">请稍后...</string>
+    <string name="app_allchoose">全选</string>
+    <string name="app_cancel_select_all">取消全选</string>
+    <string name="app_delete">删除</string>
+    <string name="app_delete_plural">删除（%d）</string>
+    <string name="app_tips">提示</string>
+    <string name="app_try">重试</string>
+    <string name="app_edit">编辑</string>
+    <string name="app_clean_all">清空</string>
+    <string name="app_night_model">夜间模式</string>
+    <string name="app_daytime_model">日间模式</string>
+
+    <!-- 消息 -->
+    <string name="app_set">设置</string>
+    <string name="app_notification_set">设置消息通知</string>
+    <string name="app_notification_allow">允许「 %s 」消息通知更多精彩不再错过</string>
+    <string name="app_opnen_permission">开启权限</string>
+    <string name="app_opnen_permission_need">「 %s 」需要开启储存卡等权限才能正常使用</string>
+
+    <!-- 更新 -->
+    <string name="app_upgrade">升级</string>
+    <string name="app_hold_on">再等等</string>
+    <string name="app_now_update">去更新</string>
+    <string name="app_version">当前版本:</string>
+    <string name="app_check_up">检查更新</string>
+    <string name="app_upapp_new">已是最新版本</string>
+    <string name="app_upapp_old">检查到新版本，请更新</string>
+    <string name="app_is_update">新版本安装包已准备就绪，是否更新? </string>
+    <string name="app_network_error">网络异常, 升级失败</string>
+    <string name="app_upapp_hoytai">后台升级下载中...</string>
+    <string name="UpAppPopWindow_downing">已下载%s</string>
+    <string name="UpAppPopWindow_downed">下载完成，点击安装</string>
+    <string name="UpAppPopWindow_downed_progress">已下载100%</string>
+
+    <!-- 提示 -->
+    <string name="app_free_no_result">暂无免费书籍</string>
+    <string name="app_finish_no_result">暂无完结书籍</string>
+    <string name="app_noresult">暂无数据</string>
+    <string name="app_no_catalog_bean">暂无目录列表</string>
+    <string name="app_history_no_login">登录后可同步历史记录</string>
+    <string name="app_history_no_result">暂无历史记录</string>
+    <string name="app_comment_no_login">登录后可查看评论内容</string>
+    <string name="app_liushuijilu_no_login">登录后可查看流水记录</string>
+    <string name="app_liushuijilu_no_result">暂无流水记录</string>
+    <string name="app_mark_no_result">暂无书签记录</string>
+    <string name="app_down_noBooks">还没有下载记录</string>
+    <string name="app_no_pinglun">暂无评论内容</string>
+    <string name="app_no_comment_replay">暂无评论回复</string>
+    <string name="app_reward_no_history">暂无打赏记录</string>
+    <string name="app_reward_no_login_history">登录后查看打赏记录</string>
+    <string name="app_monthly_pass_history">月票记录</string>
+    <string name="app_monthly_pass_history_no_data">暂无月票记录</string>
+    <string name="app_monthly_web_need_login">登录后查看月票记录</string>
+    <string name="chapterupdateing">章节正在更新中</string>
+
+    <!-- 刷新 -->
+    <string name="app_pull_to_refresh">下拉刷新</string>
+    <string name="app_freed_to_refresh">释放立即刷新</string>
+    <string name="app_refreshing">正在刷新...</string>
+    <string name="app_load_more">上拉加载更多</string>
+    <string name="app_load_more_now">释放立即加载</string>
+    <string name="app_refresh_done">刷新完成</string>
+    <string name="app_refresh_last_time">上次更新时间：</string>
+    <string name="app_no_more">没有更多了</string>
+
+    <!--启动页-->
+    <string name="splashactivity_skip"> 跳过 </string>
+    <string name="splashactivity_nonet">当前无网络连接</string>
+    <string name="edit_Invitation_getcode">验证码已发送</string>
+    <string name="is_setting_network">当前无网络连接，是否前去设置网络? </string>
+
+    <!--首次启动引导页-->
+    <string name="firstStartactivity_welcome">你终于来了</string>
+    <string name="firstStartactivity_choosesex">现在快选择你的性别吧</string>
+    <string name="firstStartactivity_zongyounixihuan">总有你喜欢</string>
+    <string name="firstStartactivity_chooseclassfy">请选择你喜欢的书库</string>
+    <string name="firstStartactivity_dutedeni">独特的你</string>
+    <string name="firstStartactivity_chooseBooks">请选择你感兴趣的书籍</string>
+
+    <!--主界面-->
+    <string name="activity_main1">书架</string>
+    <string name="activity_main2">书城</string>
+    <string name="activity_main5">娱乐</string>
+    <string name="activity_main3">发现</string>
+    <string name="activity_main4">我的</string>
+
+    <!--书架-->
+    <string name="noverfragment_xiaoshuo">小说</string>
+    <string name="noverfragment_manhua">漫画</string>
+    <string name="noverfragment_audio">听书</string>
+    <string name="noverfragment_yuedulishi">历史记录</string>
+
+    <!--书城-->
+    <string name="storeFragment_more">更多</string>
+    <string name="storeFragment_huanyihuan">换一换</string>
+    <string name="storeFragment_boy">男生</string>
+    <string name="storeFragment_gril">女生</string>
+    <string name="storeFragment_fenlei">分类</string>
+    <string name="storeFragment_lookmore">查看更多</string>
+    <string name="StoreFragment_toman">已切换至男频</string>
+    <string name="StoreFragment_towoman">已切换至女频</string>
+    <string name="StoreFragment_xianshimianfei">限时免费</string>
+
+    <!--个人中心-->
+    <string name="MineNewFragment_money_balance">余额：</string>
+    <string name="MineNewFragment_user_login">登录 / 注册</string>
+    <string name="MineNewFragment_chongzhi">充值</string>
+    <string name="MineNewFragment_chongzhishuoming">充值说明</string>
+    <string name="MineNewFragment_huiyuanshuoming">会员说明</string>
+    <string name="MineNewFragment_chongzhitaocan">充值套餐</string>
+    <string name="MineNewFragment_huiyuantaocan">会员套餐</string>
+    <string name="MineNewFragment_fuli">福利中心</string>
+    <string name="MineNewFragment_shuping">我的评论</string>
+    <string name="MineNewFragment_fankui">意见反馈</string>
+    <string name="MineNewFragment_lianxikefu">联系客服</string>
+    <string name="MineNewFragment_liushuijilu_title">流水记录</string>
+    <string name="MineUserInfo_PaiZhao">拍照</string>
+    <string name="MineUserInfoXiangCe">从相册中选择</string>
+    <string name="MineNewFragment_nologin">未登录</string>
+    <string name="Mine_no_install_qq">您的手机未安装QQ或TIM</string>
+    <string name="Mine_no_install_wechat">您的手机未安装微信</string>
+    <string name="Mine_no_install_alipay">您的手机未安装支付宝</string>
+
+    <!-- 阅读历史 -->
+    <string name="ReadHistoryFragment_goon_read">继续阅读</string>
+    <string name="ReadHistoryFragment_gone_audio">继续收听</string>
+    <string name="ReadHistoryFragment_total_chapter">更新至第%s章</string>
+    <string name="ReadHistoryFragment_is_clean">是否清除历史记录</string>
+    <string name="BookInfoActivity_down_delete_success">清除成功</string>
+    <string name="BookHistroy_last_read">上次阅读至 :</string>
+    <string name="BookHistroy_last_listener">上次收听至 :</string>
+
+    <!--设置中心-->
+    <string name="SettingsActivity_nomark">在手机上没有找到应用市场哦！</string>
+    <string name="SettingsActivity_clear">清除缓存</string>
+    <string name="SettingsActivity_cleanhuancun">是否清除缓存信息</string>
+    <string name="SettingsActivity_clearSeccess">清除缓存成功</string>
+    <string name="SettingsActivity_market">好评支持</string>
+    <string name="SettingsActivity_friend">推荐给朋友</string>
+    <string name="SettingsActivity_adout">关于</string>
+    <string name="SettingsActivity_antobuy">自动购买下一章</string>
+    <string name="SettingsActivity_notify">通知管理</string>
+    <string name="SettingsActivity_notify_switch">设置新消息通知</string>
+    <string name="SettingsActivity_notify_shelf">书架作品更新提醒</string>
+    <string name="SettingsActivity_notify_set">请在 %s 手机的"设置"-"通知管理"里设置开启/关闭</string>
+    <string name="SettingsActivity_notify_set_open">已开启</string>
+    <string name="SettingsActivity_notify_set_close">已关闭</string>
+    <string name="SettingsActivity_exit">退出登录</string>
+
+    <!-- 语言切换 -->
+    <string name="SettingsActivity_language">语言切换</string>
+    <string name="SettingsActivity_zhcn">简体中文</string>
+    <string name="SettingsActivity_zhhk">繁体中文</string>
+    <string name="SettingsActivity_EN">English</string>
+
+    <!-- 联系客服-->
+    <string name="AboutActivity_title">软件许可及服务协议</string>
+    <string name="AboutActivity_PRIVACY">隐私政策</string>
+    <string name="AboutActivity_user_private_tips">用户隐私保护提示</string>
+    <string name="AboutActivity_user_private_content">%s为了更好的保护您的隐私和信息安全，根据国家相关法律规定和国家标准制定并执行《%s隐私政策》及《软件许可及服务协议》，请您在使用前务必仔细阅读并透彻理解，如果您继续使用本产品即代表您同意本平台的协议条款，我们会全力保护您的个人信息安全。</string>
+    <string name="AboutActivity_user_private_agree">我已经阅读并同意</string>
+    <string name="AboutActivity_user_private_refuse">拒绝并退出</string>
+    <string name="AboutActivity_VIPFUWUXIEYI">会员服务协议</string>
+    <string name="AboutActivity_yetcopy">已复制到粘贴板</string>
+    <string name="AboutActivity_xieyi">用户协议</string>
+    <string name="AboutActivity_xieyi2">《用户协议》</string>
+
+    <!--用户中心-->
+    <string name="UserInfoActivity_title">个人资料</string>
+    <string name="UserInfoActivity_boy">男</string>
+    <string name="UserInfoActivity_gril">女</string>
+    <string name="UserInfoActivity_update_name">修改昵称</string>
+    <string name="UserInfoActivity_namenonull">昵称不能为空</string>
+    <string name="UserInfoActivity_name_again">昵称没有变化哦</string>
+    <string name="UserInfoActivity_bind_phone">绑定手机号</string>
+    <string name="UserInfoActivity_bangdingyes">绑定成功</string>
+    <string name="UserInfoActivity_edit_name">请输入修改昵称</string>
+    <string name="UserInfoActivity_touxiang">头像</string>
+    <string name="UserInfoActivity_nicheng">昵称</string>
+    <string name="UserInfoActivity_outuser">注销账号</string>
+    <string name="UserInfoActivity_outuser_tixing">重要提醒：个人账号可以申请注销。为了避免被盗号或非本人操作所带来的损失，注销前需要确认账号所属，以及可能涉及的虚拟财产结算。</string>
+    <string name="UserInfoActivity_outuser_tixing2">申请注销前，您的账号需要注意以下条款:</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_lable11">账号安全</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_content1">最好使用常用设备提交申请，注销申请审核一般需要1-3个工作日。</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_lable12">账号状态</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_content2">申请注销的账号应为正常使用中的状态，应处于未封禁或未被审查的状态。</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_lable13">账号财产已结清</string>
+    <string name="UserInfoActivity_outuser_tiaokuan_content3">申请注销的账号无有效状态的会员，没有余额等；且没有任何未结清、未完成的交易。</string>
+    <string name="UserInfoActivity_outuser_agree">我已阅读并接受</string>
+    <string name="UserInfoActivity_outuser_zhuxiaoxieyi">《用户注销协议》</string>
+    <string name="UserInfoActivity_outuser_zhuxiaoxieyi2">用户注销协议</string>
+    <string name="UserInfoActivity_outuser_apply">申请注销</string>
+    <string name="UserInfoActivity_outuser_applyyet">注销成功</string>
+    <string name="UserInfoActivity_phone">手机号</string>
+
+    <!--意见回馈-->
+    <string name="FeedBackActivity_title">帮助反馈</string>
+    <string name="FeedBackActivity_tijiao">提交</string>
+    <string name="FeedBackActivity_some">写点什么吧</string>
+    <string name="FeedBackActivity_des">请详细描述您遇到的问题并告知具体操作步骤，我们会尽快答复您的问题哦</string>
+    <string name="FeedBackActivity_fankui_success">反馈成功</string>
+    <string name="activityMyFeedBack">我的反馈</string>
+    <string name="activityFeedBack">反馈意见</string>
+    <string name="activityProblem">问题反馈</string>
+    <string name="activityProblemOptional">提供问题截图（选填）</string>
+    <string name="activityProblemPhoto">联系方式（至少填写一项）</string>
+    <string name="activityEditPhoto">QQ号/微信号/手机号</string>
+    <string name="activityproblem">问题:</string>
+    <string name="activityReply">回复:</string>
+    <string name="activityNumberContent1">请填写联系方式</string>
+    <string name="activityNumberContent2">请完善问题描述</string>
+    <string name="activityNoFeedBack">您还没有任何反馈</string>
+    <string name="activitymaxThree">最多添加三张图片</string>
+    <string name="activityAwayFeedBack">您有修改尚未提交，是否放弃修改? </string>
+    <string name="GivpXiugai">放弃修改</string>
+    <string name="updateSuccess">修改成功</string>
+
+    <!--搜索-->
+    <string name="SearchActivity_hotsearch">热门搜索</string>
+    <string name="SearchActivity_hotrank">热搜榜</string>
+    <string name="SearchActivity_nodata">未搜索到相关内容</string>
+
+    <!--会员中心-->
+    <string name="BaoyueActivity_center">会员中心</string>
+    <string name="BaoyueActivity_title">开通会员</string>
+    <string name="BaoyueActivity_kaitong">立即开通</string>
+    <string name="BaoyueActivity_open_vip">开通</string>
+    <string name="BaoyueActivity_yikaitong">续费</string>
+    <string name="BaoyueActivity_baoyueshuku">会员书库</string>
+    <string name="BaoyueActivity_Tips">温馨提示</string>
+    <string name="BaoyueActivity_zongji">总计：</string>
+    <string name="BaoyueActivity_vip_tequan">会员特权</string>
+    <string name="BaoyueActivity_chongzhijilu">充值记录</string>
+    <string name="BaoyueActivity_now_pay">立即充值</string>
+
+    <!--支付-->
+    <string name="PayActivity_title">选择支付</string>
+    <string name="PayActivity_zhifuok">支付成功</string>
+    <string name="PayActivity_zhifucuowu">支付发生错误</string>
+    <string name="PayActivity_zhifucancle">支付已取消</string>
+    <string name="PayActivity_zhifutheway">支付方式</string>
+    <string name="PayActivity_no_pay_channel">暂仅支持微信、支付宝支付</string>
+
+    <!--签到-->
+    <string name="SigninActivity_title">签到</string>
+    <string name="SigninActivity_no">不用了</string>
+    <string name="SigninActivity_yes">全部加入书架</string>
+    <string name="SigninActivity_rule">签到规则</string>
+
+    <!--任务中心-->
+    <string name="TaskCenterActivity_yetcomplete">已完成</string>
+    <string name="TaskCenterActivity_gocomplete">去完成</string>
+    <string name="TaskCenterActivity_lianxuday">您已连续签到</string>
+    <string name="TaskCenterActivity_lianxuday_day">天</string>
+    <string name="TaskCenterActivity_lianxuday_lianxureward">提示：连续签到最高可获得</string>
+
+    <!--书籍详情-->
+    <string name="BookInfoActivity_title">书籍详情</string>
+    <string name="BookInfoActivity_jiarushujia">加入书架</string>
+    <string name="BookInfoActivity_jiarushujias">已加入书架</string>
+    <string name="audio_collection">收藏</string>
+    <string name="fragment_comic_info_shoucang">+收藏</string>
+    <string name="BookInfoActivity_collection">已收藏</string>
+    <string name="BookInfoActivity_startyuedu">开始阅读</string>
+    <string name="BookInfoActivity_now">刚刚</string>
+    <string name="BookInfoActivity_minute_ago">%s分钟前</string>
+    <string name="BookInfoActivity_today">今天</string>
+    <string name="BookInfoActivity_newshuping">最新书评</string>
+    <string name="BookInfoActivity_zuozhe">作者</string>
+    <string name="BookInfoActivity_biaoqian">标签</string>
+    <string name="BookInfoActivity_yuanzhu">原著</string>
+    <string name="BookInfoActivity_hanhuazu">汉化组</string>
+    <string name="BookInfoActivity_date">创建日期</string>
+    <string name="BookInfoActivity_final_modify">最后修改</string>
+
+    <!-- 目录、书签 -->
+    <string name="BookInfoActivity_mulu">目录</string>
+    <string name="BookInfoActivity_mark">书签</string>
+    <string name="ReadActivity_addBookMark">添加书签</string>
+    <string name="ReadActivity_delBookMark">取消书签</string>
+    <string name="BookInfoActivity_mark_no1">封面不支持添加书签</string>
+    <string name="BookInfoActivity_mark_no2">广告页不支持添加书签</string>
+    <string name="BookInfoActivity_mark_no3">当前页不支持添加书签</string>
+
+    <!-- 下载 -->
+    <string name="BookInfoActivity_downn">下载</string>
+    <string name="BookInfoActivity_down">下载书籍</string>
+    <string name="BookInfoActivity_down_title">选择需要下载的章节</string>
+    <string name="BookInfoActivity_down_title_chapter">章</string>
+    <string name="BookInfoActivity_down_manger">下载缓存</string>
+    <string name="BookInfoActivity_down_yixiazai">已下载</string>
+    <string name="BookInfoActivity_down_open">打开</string>
+    <string name="BookInfoActivity_down_adddown">已加入下载列表</string>
+    <string name="BookInfoActivity_down_downcomplete">下载完成</string>
+    <string name="ComicDownActivity_down_error">失败</string>
+    <string name="ComicDownActivity_title">选择章节</string>
+    <string name="ComicDownActivity_choosecount">已选%s话</string>
+    <string name="ComicDownActivity_downing">下载中</string>
+    <string name="ComicDownActivity_downfail">下载失败</string>#
+    <string name="ComicDownActivity_local">本地</string>
+    <string name="ComicDownActivity_yixiazai">已下载%s话</string>
+    <string name="ComicDownActivity_downprocess">%s话/%s话</string>
+    <string name="ComicDownActivity_downprocess_all">已全部下载</string>
+    <string name="ComicDownActivity_downprocess_audio">%s章/%s章</string>
+    <string name="audio_down_title">批量下载</string>
+    <string name="audio_change_down_yetsize">已选择%s条声音，占用%sM/可用空间%sG</string>
+    <string name="audio_change_downed">已选择%s条声音，占用%sM</string>
+    <string name="audio_change_enable_down">可用空间%sG</string>
+    <string name="audio_down">立即下载</string>
+    <string name="not_enough_storage">内存不足</string>
+
+    <!--评论-->
+    <string name="CommentListActivity_lookpinglun">查看全部评论（%s条）</string>
+    <string name="CommentListActivity_no_pinglun">暂无评论, 点击抢沙发</string>
+    <string name="CommentListActivity_xieshuping">写评论</string>
+    <string name="CommentListActivity_title">评论</string>
+    <string name="CommentListActivity_some">说点什么吧</string>
+    <string name="CommentListActivity_success">评论成功</string>
+    <string name="CommentListActivity_huifu">回复 @</string>
+    <string name="commentListActivityBookPing">书评（%s）</string>
+    <string name="audio_comment">本章评论（%s）</string>
+
+    <!--登录-->
+    <string name="LoginActivity_title">手机号快捷登录</string>
+    <string name="LoginActivity_denglu">登录</string>
+    <string name="LoginActivity_error">登录失败</string>
+    <string name="LoginActivity_success">登录成功</string>
+    <string name="LoginActivity_third">第三方账号登录</string>
+    <string name="LoginActivity_tourist">游客登录</string>
+    <string name="LoginActivity_weixin">微信登录</string>
+    <string name="LoginActivity_qq">QQ登录</string>
+    <string name="LoginActivity_nowechat">未检测到微信客户端</string>
+    <string name="LoginActivity_agree">点击登录即表示已同意「松鼠仓库」</string>
+    <string name="LoginActivity_code">验证码</string>
+    <string name="LoginActivity_getcode">获取验证码</string>
+    <string name="LoginActivity_phoneerrpr">手机号码格式不正确</string>
+    <string name="LoginActivity_codenull">验证码为空</string>
+    <string name="LoginActivity_againsend">秒后可重新发送</string>
+    <string name="LoginActivity_againgetcode">重新发送</string>
+
+    <!--阅读器-->
+    <string name="ReadActivity_zhichizhnegban">支持正版</string>
+    <string name="ReadActivity_liangdu">亮度</string>
+    <string name="ReadActivity_closead">去广告</string>
+    <string name="ReadActivity_startpage">已经是第一页</string>
+    <string name="ReadActivity_chapterfail">没有更多内容了</string>
+    <string name="ReadActivity_buysuccessyidown">购买成功已添加下载</string>
+    <string name="ReadActivity_isaddBookself">是否加入书架</string>
+    <string name="ReadActivity_isaddBookselfno">再看看</string>
+    <string name="ReadActivity_closeautoread">关闭自动阅读</string>
+    <string name="ReadActivity_zihao">字号</string>
+    <string name="ReadActivity_jianju">间距</string>
+    <string name="ReadActivity_fanye">翻页</string>
+    <string name="ReadActivity_fangzhen">仿真</string>
+    <string name="ReadActivity_huadong">滑动</string>
+    <string name="ReadActivity_fugai">覆盖</string>
+    <string name="ReadActivity_shangxia">上下</string>
+    <string name="ReadActivity_wu">无</string>
+    <string name="ReadActivity_bg">背景</string>
+    <string name="ReadActivity_autoread">开启自动阅读</string>
+    <string name="ReadActivity_works">/作品</string>
+    <string name="ReadActivity_author_words">作家的话</string>
+    <string name="ReadActivity_auto_read_close">自动阅读已关闭</string>
+    <string name="ReadActivity_read_empty">内容加载失败</string>
+
+    <!-- 购买 -->
+    <string name="ComicDownActivity_cancle_buy">您已取消购买</string>
+    <string name="ReadActivity_buysuccess">购买成功</string>
+    <string name="ReadActivity_buy">确认购买</string>
+    <string name="ReadActivity_buys">批量购买更优惠</string>
+    <string name="ReadActivity_yue">账户余额</string>
+    <string name="ReadActivity_price">实付：</string>
+    <string name="ReadActivity_oprice">原价：</string>
+    <string name="ReadActivity_login_buy">登录后购买</string>
+    <string name="ReadActivity_benzhangbuy">从本章开始购买</string>
+    <string name="ReadActivity_chongzhibuy">充值并购买</string>
+
+    <!--漫画详情-->
+    <string name="fragment_comic_info_xiangqing">详情</string>
+    <string name="fragment_comic_info_wanjie">已完结</string>
+    <string name="fragment_comic_info_zhengxu">正序</string>
+    <string name="fragment_comic_info_daoxu">倒序</string>
+    <string name="fragment_comic_info_dangqian">当前</string>
+    <string name="fragment_comic_info_daoding">到顶</string>
+    <string name="fragment_comic_info_daodi">到底</string>
+    <string name="fragment_comic_info_des">作品简介</string>
+
+    <!-- 漫画阅读器 -->
+    <string name="ComicLookActivity_quanji">全集</string>
+    <string name="ComicLookActivity_danmu">弹幕</string>
+    <string name="ComicLookActivity_fashe">发射</string>
+    <string name="ComicLookActivity_fadanmu">发一条弹幕吧</string>
+    <string name="ComicLookActivity_fapinglun">发一条评论吧</string>
+    <string name="ComicLookActivity_fasong">发送</string>
+    <string name="ComicLookActivity_dangqianhua">当前话</string>
+    <string name="ComicLookActivity_shangyipian">上一篇</string>
+    <string name="ComicLookActivity_xiayipian">下一篇</string>
+    <string name="ComicLookActivity_end">已经是最后一话了</string>
+    <string name="ComicLookActivity_start">不能再往前翻了</string>
+    <string name="ComicLookActivity_send_success">发射成功</string>
+    <string name="ComicLookActivity_no_bean">内容获取失败</string>
+    <string name="ComicLookActivity_turn_pages">点击翻页</string>
+    <string name="ComicLookActivity_open_turn_pages">打开后可点击屏幕上下方翻页</string>
+
+    <!-- local -->
+    <string name="local_calendar">日历</string>
+    <string name="local_delete_all">删除全部</string>
+    <string name="local_delete_Success">删除成功</string>
+    <string name="local_feedback">意见回馈</string>
+    <string name="local_add">添加</string>
+    <string name="local_file_searcher_no_result_found">未发现符合条件的档.</string>
+    <string name="local_file_searcher_searching">"正在搜索目录: "</string>
+    <string name="local_file_searcher_searching_completed">搜索完成</string>
+    <string name="local_choose_like_book">请选择书籍</string>
+    <string name="local_edit_book_content">请输入书籍内容</string>
+    <string name="local_write_moment">请输入作者</string>
+    <string name="local_write_moment_note_title">请输入笔记名称</string>
+    <string name="local_edit_notes">编辑笔记</string>
+    <string name="local_tiezi_label">选择1-3个标签</string>
+    <string name="local_choose_tiezi_lable_max_three">最多选择3个标签</string>
+    <string name="local_description">描述</string>
+    <string name="local_update_description">修改描述</string>
+    <string name="local_editDescription">请输入要修改的内容</string>
+    <string name="local_modify_note">修改笔记</string>
+    <string name="local_dialog_know">知道了</string>
+
+    <!-- 听书界面 -->
+    <string name="audio_share">分享</string>
+    <string name="audio_timing">定时</string>
+    <string name="audio_speed">语速</string>
+    <string name="audio_voice">声音</string>
+    <string name="audio_look_book">原文</string>
+    <string name="audio_setting_speed">章节目录</string>
+    <string name="audio_close_dialog">关闭</string>
+    <string name="audio_double_speed">%s倍</string>
+    <string name="audio_double_time">%s分钟</string>
+    <string name="audio_not_open">不开启</string>
+    <string name="listen_current_chapter">听完本章节</string>
+    <string name="audio_like_recommend">猜你喜欢</string>
+    <string name="audio_input_tips">我来说两句...</string>
+    <string name="lookBook_error">查看原文失败</string>
+    <string name="audio_switch_ai">切换到AI语音阅读</string>
+    <string name="audio_switch_sound">切换到真人有声阅读</string>
+    <string name="audio_switch_sound_nonet">当前为离线状态，只可查看缓存内容哦</string>
+    <string name="audio_play_error">播放出错</string>
+    <string name="audio_switch_error">切换失败</string>
+    <string name="audio_standard_male_voice">标准男声</string>
+    <string name="audio_standard_female_voice">标准女声</string>
+    <string name="audio_emotional_girl">情感女声</string>
+    <string name="audio_vip_chapter">听到付费章节啦</string>
+    <string name="audio_no_support_online_player">听书功能仅支持在线使用</string>
+
+    <!-- 有声界面 -->
+    <string name="sound_open_text">展开简介</string>
+    <string name="sound_close_text">收起简介</string>
+    <string name="audio_info_introduction">简介</string>
+    <string name="audio_info_recommend">推荐</string>
+    <string name="audio_info_close_layout">点击收起</string>
+    <string name="audio_info_sort">排序</string>
+    <string name="audio_info_anthology">选章</string>
+    <string name="audio_info_chapter_num">共 %s 章</string>
+    <string name="audio_goto_player">续播</string>
+
+    <!-- 我的评论详情 -->
+    <string name="CommentInfoActivity_title">评论详情</string>
+    <string name="CommentInfoActivity_replayNum">%s条回复</string>
+    <string name="CommentInfoActivity_replay_sum_num">全部回复（%s）</string>
+    <string name="CommentInfoActivity_full">已显示全部</string>
+
+    <!--月票 打赏-->
+    <string name="dialog_Monthly_pass">月票</string>
+    <string name="dialog_Reward">打赏</string>
+    <string name="dialog_vote">投票</string>
+    <string name="dialog_have_monthly_pass">拥有%s月票</string>
+    <string name="dialog_vote_success">投票成功</string>
+    <string name="dialog_reward_success">打赏成功</string>
+    <string name="Activity_reward_history">打赏记录</string>
+    <string name="Activity_Monthly_Web_title">月票说明</string>
+
+    <!-- 分享 -->
+    <string name="share_title">分享至</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_fail">分享失败</string>
+    <string name="share_fail_no_app">分享失败，无法使用微信、QQ</string>
+    <string name="share_cancel">分享取消</string>
+    <string name="share_noUrl">分享链接不正确</string>
+    <string name="web_ad_url_error">链接错误，请联系客服</string>
+    <string name="share_wecate_friend">朋友圈</string>
+    <string name="share_wecate">微信好友</string>
+    <string name="share_qq">QQ好友</string>
+    <string name="share_qq_friend">QQ空间</string>
+</resources>

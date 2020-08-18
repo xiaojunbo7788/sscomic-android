@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/audio_book_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.lihang.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="2dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="1dp">
+
+            <ImageView
+                android:id="@+id/audio_book_cover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center" />
+        </com.lihang.ShadowLayout>
+
+        <FrameLayout
+            android:id="@+id/audio_time_seekBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/audio_book_chapter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/audio_book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:singleLine="true"
+                android:textColor="@color/gray_b0"
+                android:textSize="12dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/audio_time_seekBar_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/item_head_audio_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+
+                        <ImageView
+                            android:id="@+id/item_head_audio_rewind"
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/audio_rewind" />
+                    </RelativeLayout>
+
+                    <com.ssreader.novel.ui.audio.view.TimeSeekBar
+                        android:id="@+id/audio_time_seekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1" />
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+
+                        <ImageView
+                            android:id="@+id/item_head_audio_forward"
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/audio_forward" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/audio_last_chapter"
+                    android:layout_width="21dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/audio_last" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/audio_chapter_player_layout"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/audio_oval">
+
+                    <ImageView
+                        android:id="@+id/audio_chapter_player"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_player"
+                        android:visibility="visible" />
+
+                    <com.ssreader.novel.ui.audio.view.AudioLoadingView
+                        android:id="@+id/audio_chapter_Loading"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        app:type="1" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/audio_next_chapter"
+                    android:layout_width="21dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/audio_next" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/audio_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_time" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/audio_time_layout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/audio_timing"
+                    android:textColor="@color/black_6"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_speed_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:id="@+id/audio_speech_speed_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_speech_speed_2" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/audio_speed_layout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/audio_speed"
+                    android:textColor="@color/black_6"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_sound_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_speech_tone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/audio_sound_layout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/audio_standard_male_voice"
+                    android:textColor="@color/black_6"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_chapter_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_chapter_img" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/BookInfoActivity_mulu"
+                    android:textColor="@color/black_6"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/audio_look_book"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/audio_speech_original" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/audio_look_book"
+                    android:textColor="@color/black_6"
+                    android:textSize="11dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audio_switch_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="12dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/audio_switch_type_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_ai" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/audio_switch_type_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_title"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/audio_switch_type_chapter_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:rotation="180"
+                android:src="@mipmap/back_black"
+                android:tint="@color/gray_title" />
+        </LinearLayout>
+
+        <include
+            layout="@layout/list_ad_view"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/audio_v1"
+            layout="@layout/view_10" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/audio_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:background="@color/white" />
+
+        <include
+            android:id="@+id/audio_like_line"
+            layout="@layout/view_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/audio_comment_label_image"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:src="@mipmap/store_labe"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/audio_comment_label_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

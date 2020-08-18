@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item_recharge_layout"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="140dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_pay_gold_detail_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/recharge_movieticket_article"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/item_pay_gold_detail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_pay_gold_detail_article"
+                android:layout_marginTop="3dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/recharge_movieticket_date"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_pay_gold_detail_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/recharge_text"
+            android:textSize="26dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/item_pay_gold_head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            android:id="@+id/item_pay_gold_tv"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</FrameLayout>

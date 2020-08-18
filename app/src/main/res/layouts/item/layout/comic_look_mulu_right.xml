@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_comicinfo_mulu_layout"
+    android:layout_width="40dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical">
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/fragment_comicinfo_mulu_xu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/fragment_comic_info_zhengxu"
+        android:textColor="@color/gray_b0"
+        android:textSize="@dimen/public_11_dp" />
+
+    <ImageView
+        android:id="@+id/fragment_comicinfo_mulu_xu_img"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="2dp"
+        android:src="@mipmap/positive_order" />
+
+</RelativeLayout>

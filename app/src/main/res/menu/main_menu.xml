@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/local_add"
+        android:id="@+id/main_menu_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="管理书籍"
+        android:id="@+id/main_menu_management"
+       android:visible="false"
+        app:showAsAction="never"/>
+    <item
+        android:title="@string/local_delete_all"
+        android:id="@+id/main_menu_delete_all"
+        app:showAsAction="never"/>
+    <item
+        android:title="@string/local_feedback"
+        android:id="@+id/main_menu_feedback"
+        app:showAsAction="never"/>
+</menu>

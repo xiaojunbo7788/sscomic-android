@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/activity_settings_clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/SettingsActivity_notify_shelf"
+            android:textColor="@color/black"
+            android:id="@+id/item_pushnotication_title"
+            android:textSize="15dp" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/SettingsActivity_notify_shelf"
+            android:layout_width="45dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:sb_checked_color="@color/maincolor"
+            app:sb_border_width="0.5dp"
+            app:sb_shadow_color="@color/gray_b0"
+            app:sb_shadow_effect="true"
+            app:sb_show_indicator="false"/>
+    </RelativeLayout>
+</LinearLayout>

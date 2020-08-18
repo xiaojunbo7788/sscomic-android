@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/item_comicdownoption_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="13dp" />
+
+        <ImageView
+            android:id="@+id/item_comicdownoption_vip"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_gravity="top|left"
+            android:src="@mipmap/lock_orange" />
+
+        <TextView
+            android:id="@+id/item_comicdownoption_downstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="8dp"
+            android:paddingRight="3dp"
+            android:includeFontPadding="false"
+            android:paddingLeft="3dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="1dp"
+           android:layout_gravity="bottom|right"
+            android:textColor="@color/white"
+            android:text="@string/ComicDownActivity_local"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textSize="6dp" />
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@color/black_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/activity_recharge_head_layout"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp">
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/activity_user_img"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginBottom="17dp"/>
+
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/activity_user_name"
+                            android:textColor="@color/black1"
+                            android:textSize="14dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/acitivity_vip_img"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="35dp"
+                            android:layout_height="12dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/activity_vip_time"
+                        android:textColor="@color/recharge_text"
+                        android:textSize="11dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/MineNewFragment_huiyuantaocan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_head_bar_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <include layout="@layout/view_10"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/PayActivity_title"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/MineNewFragment_app_install_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/PayActivity_no_pay_channel"
+                android:textColor="@color/gray_b0"
+                android:textSize="14dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <include layout="@layout/view_03"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_pay_channel_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <include layout="@layout/view_10"/>
+
+        <TextView
+            android:text="@string/BaoyueActivity_vip_tequan"
+            android:layout_marginTop="15dp"
+            android:textSize="16dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/framgent_tequan_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <include layout="@layout/view_10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:text="@string/MineNewFragment_huiyuanshuoming"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_marginRight="12dp"
+            android:paddingBottom="30dp"
+            android:id="@+id/activity_recharge_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:orientation="vertical"/>
+
+        <View
+            android:background="@color/main_search_bg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

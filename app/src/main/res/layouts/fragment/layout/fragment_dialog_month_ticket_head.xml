@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/fragment_dialog_base_head_cover"
+        android:layout_width="55dp"
+        android:layout_height="90dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="13dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/fragment_dialog_base_head_title"
+            android:textColor="@color/black_3"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="35dp">
+
+            <com.ssreader.novel.ui.view.SizeAnmotionTextview
+                android:id="@+id/fragment_dialog_base_head_month_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:textColor="@color/gray_9"
+                android:textSize="12dp"
+                android:letterSpacing="0.12" />
+
+            <com.ssreader.novel.ui.view.SizeAnmotionTextview
+                android:id="@+id/fragment_dialog_base_head_rank_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/fragment_dialog_base_head_month_tv"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24.5dp"
+                android:letterSpacing="0.18"
+                android:textColor="@color/gray_9"
+                android:textSize="12dp" />
+
+            <com.ssreader.novel.ui.view.SizeAnmotionTextview
+                android:id="@+id/fragment_dialog_base_head_ranking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/fragment_dialog_base_head_month_tv"
+                android:textColor="@color/gray_9"
+                android:textSize="12dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/public_sns_topbar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:id="@+id/public_sns_topbar_right_other"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/public_sns_topbar_right_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="@string/app_edit"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/public_sns_topbar_right_img"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/public_sns_topbar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <include
+                layout="@layout/comic_look_mulu_right"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/public_sns_topbar_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/public_sns_topbar_back_img"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/back_black"
+                android:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/public_sns_topbar_back_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/public_sns_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="270dp"
+            android:layout_centerInParent="true"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:id="@+id/recyclerview_item_readhistory_HorizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="114dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/recyclerview_item_readhistory_book"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <FrameLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/recyclerview_item_readhistory_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/item_history_player_img"
+                        android:layout_width="13.5dp"
+                        android:layout_height="13.5dp"
+                        android:layout_gravity="left|bottom"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@mipmap/audio_mark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/recyclerview_item_readhistory_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/recyclerview_item_readhistory_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textColor="@color/gray_b0"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/recyclerview_item_readhistory_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/recyclerview_item_readhistory_des"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textColor="@color/gray_b0"
+                            android:textSize="12dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/recyclerview_item_readhistory_goon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/ReadHistoryFragment_goon_read"
+                    android:textColor="@color/white"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recyclerview_item_readhistory_del"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@color/history_delete"
+                android:gravity="center"
+                android:text="@string/app_delete"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <include
+        layout="@layout/list_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <include
+        android:layout_marginLeft="12dp"
+        android:visibility="gone"
+        layout="@layout/public_list_line"
+        android:layout_height="0.3dp"
+        android:layout_width="match_parent" />
+
+</LinearLayout>

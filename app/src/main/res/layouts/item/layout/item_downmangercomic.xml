@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_dowmmanger_LinearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:paddingLeft="10dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/item_bianji_checkBox"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shlefselect"
+            android:button="@null"
+            android:clickable="false"
+            android:visibility="gone" />
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/shelfitem_img_container"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="3dp">
+
+            <ImageView
+                android:id="@+id/item_dowmmanger_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/item_player_img"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="left|bottom"
+                android:layout_marginLeft="6dp"
+                android:layout_marginBottom="6dp"
+                android:src="@mipmap/audio_mark"
+                android:visibility="gone" />
+        </com.lihang.ShadowLayout>
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_dowmmanger_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_dowmmanger_xiazaiprocess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/gray_b0"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/item_dowmmanger_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:text="@string/ReadHistoryFragment_goon_read"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+</LinearLayout>

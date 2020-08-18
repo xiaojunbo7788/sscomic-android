@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:id="@+id/item_store_rank_male_img_3"
+                android:layout_width="40dp"
+                android:layout_height="53dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="60dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_store_rank_male_img_2"
+                android:layout_width="50dp"
+                android:layout_height="67dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_store_rank_male_img_1"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_store_rank_male_audio_mark"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/audio_mark"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_store_rank_male_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text_14dp" />
+
+            <TextView
+                android:id="@+id/item_store_rank_male_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/gray_b0"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/public_list_line" />
+</LinearLayout>

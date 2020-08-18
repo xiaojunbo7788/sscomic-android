@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/listview_taskcenter_tasktype_layout"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/graybg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/shuxian"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/listview_taskcenter_tasktype"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/grayline" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/listview_taskcenter_task_labe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/listview_taskcenter_award"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/maincolor"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/listview_taskcenter_task_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/gray_b0"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/listview_taskcenter_status"
+                android:layout_width="wrap_content"
+                android:paddingTop="2dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="11dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/listview_task_center_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:visibility="gone"/>
+</LinearLayout>

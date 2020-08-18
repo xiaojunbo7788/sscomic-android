@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/public_sns_topbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/black_7">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true">
+
+                <RelativeLayout
+                    android:id="@+id/public_sns_topbar_right_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="12dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/public_sns_topbar_right_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="27dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical" />
+
+                    <ImageView
+                        android:id="@+id/public_sns_topbar_right_img"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="35dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/public_sns_topbar_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <include
+                        layout="@layout/comic_look_mulu_right"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/public_sns_topbar_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
+
+                    <ImageView
+                        android:id="@+id/public_sns_topbar_back_img"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/back_black"
+                        android:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/public_sns_topbar_back_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/public_sns_topbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <com.lihang.ShadowLayout
+        android:id="@+id/shelfitem_img_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:hl_cornerRadius="0dp"
+        app:hl_leftShow="false"
+        app:hl_bottomShow="false"
+        app:hl_rightShow="false"
+        app:hl_shadowColor="#2a000000"
+        app:hl_shadowLimit="3dp">
+
+        <LinearLayout
+            android:id="@+id/pay_recharge_tv_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/BaoyueActivity_zongji"
+                android:textColor="@color/black1"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/pay_recharge_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:textColor="@color/recharge_text"
+                android:textSize="21dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pay_discount_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/activity_pay_tv"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@mipmap/img_pay_tv_bg"
+                android:gravity="center"
+                android:textColor="@color/recharge_good"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.lihang.ShadowLayout>
+</FrameLayout>

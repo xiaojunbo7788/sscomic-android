@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/main_book_item_title_lay"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <com.lihang.ShadowLayout
+            android:id="@+id/shelfitem_img_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="90dp"
+            android:minHeight="120dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lightgray3"
+            app:hl_cornerRadius="0dp"
+            app:hl_leftShow="true"
+            app:hl_shadowColor="#2a000000"
+            app:hl_shadowLimit="1dp">
+
+            <CheckBox
+                android:background="@drawable/shlefselect"
+                android:button="@null"
+                android:clickable="false"
+                android:id="@+id/main_book_item_title_like"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:visibility="gone"
+                android:src="@mipmap/local_like"/>
+
+            <ImageView
+                android:id="@+id/main_book_item_img"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/local_book_bg" />
+
+            <RelativeLayout
+                android:id="@+id/listview_item_nover_add_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/listview_item_nover_add_image"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/icon_addbook" />
+            </RelativeLayout>
+        </com.lihang.ShadowLayout>
+
+        <TextView
+            android:id="@+id/main_book_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</RelativeLayout>

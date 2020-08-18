@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.lihang.ShadowLayout
+        android:id="@+id/shelfitem_img_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/lightgray3"
+        app:hl_cornerRadius="0dp"
+        app:hl_leftShow="true"
+        app:hl_shadowColor="#2a000000"
+        app:hl_shadowLimit="1dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/shelfitem_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:minWidth="90dp"
+                android:minHeight="120dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_store_lable_play_img"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="left|bottom"
+                android:src="@mipmap/audio_mark"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/item_shelf_recommend_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="2dp"
+                android:paddingTop="1dp"
+                android:text="@string/audio_info_recommend"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/shelfitem_top_newchapter"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/shelfitem_check_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#7FFFFFFF"
+            android:visibility="gone">
+
+            <CheckBox
+                android:background="@drawable/shlefselect"
+                android:button="@null"
+                android:id="@+id/shelfitem_check"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/listview_item_nover_add_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#F9F9F9"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/listview_item_nover_add_image"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_addbook" />
+        </RelativeLayout>
+    </com.lihang.ShadowLayout>
+
+    <TextView
+        android:id="@+id/shelfitem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+</LinearLayout>
