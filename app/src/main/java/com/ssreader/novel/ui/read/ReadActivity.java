@@ -341,7 +341,9 @@ public class ReadActivity extends BaseReadActivity {
                 if (!isHasNext && !isShowBookEnd) {
                     if (baseBook.book_id < LOCAL_BOOKID) {
                         isShowBookEnd = true;
-                        mPageLoader.saveRecord();
+                        if (mPageLoader != null) {
+                            mPageLoader.saveRecord();
+                        }
                         // 打开末尾推荐页
                         Intent intent = new Intent();
                         intent.setClass(activity, BookEndRecommendActivity.class);
@@ -405,7 +407,9 @@ public class ReadActivity extends BaseReadActivity {
             @Override
             public void onReward(BookChapter bookChapter) {
                 if (baseBook != null && Constant.getRewardSwitch(activity) == 1) {
-                    mPageLoader.saveRecord();
+                    if (mPageLoader != null) {
+                        mPageLoader.saveRecord();
+                    }
                     openBookReadDialog(true);
                 }
             }
@@ -413,7 +417,9 @@ public class ReadActivity extends BaseReadActivity {
             @Override
             public void onTicket(BookChapter bookChapter) {
                 if (baseBook != null && Constant.getMonthlyTicket(activity) == 1) {
-                    mPageLoader.saveRecord();
+                    if (mPageLoader != null) {
+                        mPageLoader.saveRecord();
+                    }
                     openBookReadDialog(false);
                 }
             }
@@ -487,7 +493,9 @@ public class ReadActivity extends BaseReadActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void refresh(AdStatusRefresh adStatusRefresh) {
         if (!adStatusRefresh.StartAutoBuy) {
-            mPageLoader.saveRecord();
+            if (mPageLoader != null) {
+                mPageLoader.saveRecord();
+            }
             adInit(false);
         } else {
             mPageLoader.lordNextData(true,false);
@@ -653,12 +661,14 @@ public class ReadActivity extends BaseReadActivity {
 
     private void BankActivity() {
         if (baseBook.book_id < LOCAL_BOOKID) {
-            mPageLoader.saveRecord();
+            if (mPageLoader != null) {
+                mPageLoader.saveRecord();
+            }
             EventBus.getDefault().post(new RefreshBookInfo(baseBook, true));
             if (baseBook.is_collect == 1) {
                 finish();
             } else {
-                // 是否加入书架
+                // 是否收藏
                 isNeedToShelf(activity, baseBook);
             }
         } else {
@@ -765,7 +775,9 @@ public class ReadActivity extends BaseReadActivity {
                 case R.id.toolbar_into_reward:
                     hideReadSetting();
                     if (Constant.getMonthlyTicket(activity) == 1 || Constant.getRewardSwitch(activity) == 1) {
-                        mPageLoader.saveRecord();
+                        if (mPageLoader != null) {
+                            mPageLoader.saveRecord();
+                        }
                         openBookReadDialog(true);
                     }
                     break;
@@ -779,7 +791,9 @@ public class ReadActivity extends BaseReadActivity {
                             baseBook.setCurrent_listen_chapter_id(
                                     ChapterManager.getInstance().getCurrentChapter().getChapter_id());
                         }
-                        mPageLoader.saveRecord();
+                        if (mPageLoader != null) {
+                            mPageLoader.saveRecord();
+                        }
                         // 打开服务
                         AudioManager.openService(activity);
                         // 打开ai界面
@@ -791,7 +805,9 @@ public class ReadActivity extends BaseReadActivity {
                     }
                     break;
                 case R.id.toolbar_into_down:
-                    mPageLoader.saveRecord();
+                    if (mPageLoader != null) {
+                        mPageLoader.saveRecord();
+                    }
                     BookDownDialogFragment.getDownBookChapters(ReadActivity.this, baseBook, mPageLoader.bookChapter, new BookDownDialogFragment.OnGetDownOptions() {
                         @Override
                         public void onOptions(List<Downoption> downOptions) {
@@ -816,7 +832,10 @@ public class ReadActivity extends BaseReadActivity {
                     break;
                 case R.id.book_read_bottom_directory:
                     // 打开目录界面
-                    mPageLoader.saveRecord();
+                    if (mPageLoader != null) {
+                        mPageLoader.saveRecord();
+                    }
+
                     hideReadSetting();
                     Intent intent = new Intent(this, BookCatalogMarkActivity.class);
                     intent.putExtra("book", baseBook);

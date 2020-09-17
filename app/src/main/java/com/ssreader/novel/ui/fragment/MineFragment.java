@@ -141,13 +141,67 @@ public class MineFragment extends BaseFragment {
             }
             // 条目数据
             mineModels.clear();
-            if (userInfoItem.getPanel_list() != null && !userInfoItem.getPanel_list().isEmpty()) {
-                for (List<MineModel> models : userInfoItem.getPanel_list()) {
-                    int size_j = models.size();
-                    for (int i = 0; i < size_j; i++) {
-                        MineModel mineModel = models.get(i);
-                        mineModel.setBottomLine(i + 1 == size_j);
-                        mineModels.add(mineModel);
+
+            if (userInfoItem.getPanel_list() != null && UserUtils.isLogin(activity)) {
+                List<List<MineModel>>newList = userInfoItem.getPanel_list();
+                List<MineModel>list = new ArrayList<>();
+
+                MineModel model1 = new MineModel(true,
+                        IMAGE_URL+"icon/user/13.png",
+                        "喜欢的作者",
+                        "",
+                        "#39383C",
+                        "#39383C",
+                        "author",
+                        "",
+                        1);
+                model1.type = 1;
+
+                MineModel model2 = new MineModel(true,
+                        IMAGE_URL+"icon/user/14.png",
+                        "喜欢的原著",
+                        "",
+                        "#39383C",
+                        "#39383C",
+                        "orginal",
+                        "",
+                        1);
+                model2.type = 2;
+
+                MineModel model3 = new MineModel(true,
+                        IMAGE_URL+"icon/user/12.png",
+                        "喜欢的汉化组",
+                        "",
+                        "#39383C",
+                        "#39383C",
+                        "hanhua",
+                        "",
+                        1);
+                model3.type = 3;
+
+                list.add(model1);
+                list.add(model2);
+                list.add(model3);
+                newList.add(1,list);
+                if (newList != null && !newList.isEmpty()) {
+                    for (List<MineModel> models : newList) {
+                        int size_j = models.size();
+                        for (int i = 0; i < size_j; i++) {
+                            MineModel mineModel = models.get(i);
+                            mineModel.setBottomLine(i + 1 == size_j);
+                            mineModels.add(mineModel);
+                        }
+                    }
+                }
+            } else  {
+                if (userInfoItem.getPanel_list() != null && !userInfoItem.getPanel_list().isEmpty()) {
+                    for (List<MineModel> models : userInfoItem.getPanel_list()) {
+                        int size_j = models.size();
+                        for (int i = 0; i < size_j; i++) {
+                            MineModel mineModel = models.get(i);
+                            mineModel.setBottomLine(i + 1 == size_j);
+                            mineModels.add(mineModel);
+                        }
                     }
                 }
             }

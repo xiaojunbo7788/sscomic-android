@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,12 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseFragment;
+import com.ssreader.novel.constant.Api;
 import com.ssreader.novel.constant.Constant;
 import com.ssreader.novel.model.BaseAd;
 import com.ssreader.novel.model.BaseBookComic;
 import com.ssreader.novel.model.BaseLabelBean;
 import com.ssreader.novel.model.BaseTag;
 import com.ssreader.novel.model.Comment;
+import com.ssreader.novel.net.HttpUtils;
+import com.ssreader.novel.net.ReaderParams;
+import com.ssreader.novel.ui.activity.BaseOptionActivity;
 import com.ssreader.novel.ui.activity.CommentActivity;
 import com.ssreader.novel.ui.adapter.CommentAdapter;
 import com.ssreader.novel.ui.adapter.PublicMainAdapter;
@@ -41,15 +46,19 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.OnClick;
 
+import static com.ssreader.novel.constant.Constant.TAG_LIST;
+import static com.ssreader.novel.ui.utils.LoginUtils.goToLogin;
+
 public class ComicinfoCommentFragment extends BaseFragment {
 
     @BindViews({R.id.comic_info_layout1, R.id.comic_info_layout2, R.id.comic_info_layout3,
             R.id.comic_info_layout4, R.id.comic_info_layout5, R.id.comic_info_layout6,
             R.id.comic_info_layout7})
     List<LinearLayout> infoLayout;
-    @BindViews({R.id.comic_info_text_layout1, R.id.comic_info_text_layout2, R.id.comic_info_text_layout3})
+
+    @BindViews({R.id.comic_info_text_layout1, R.id.comic_info_text_layout2, R.id.comic_info_text_layout3,R.id.comic_info_text_layout4,R.id.comic_info_text_layout5})
     List<TagFlowLayout> layouts;
-    @BindViews({R.id.comic_info_text4, R.id.comic_info_text5, R.id.comic_info_text6, R.id.comic_info_text7})
+    @BindViews({R.id.comic_info_text6, R.id.comic_info_text7})
     List<TextView> textViews;
 
     @BindView(R.id.activity_book_info_content_comment_container)
@@ -105,21 +114,21 @@ public class ComicinfoCommentFragment extends BaseFragment {
 
     public void setComicInfo(BaseBookComic comicInfo) {
         if (comicInfo != null) {
-            if (!TextUtils.isEmpty(comicInfo.author)) {
+            //TODO:作者
+            if (comicInfo.author2 != null && comicInfo.author2.size() > 0) {
                 layouts.get(0).removeAllViews();
                 infoLayout.get(0).setVisibility(View.VISIBLE);
-                String[] temp = comicInfo.author.split(",");
-                List<String> labels = new ArrayList<>();
-                for (String s : temp) {
-                    if (!TextUtils.isEmpty(s)) {
-                        labels.add(s);
-                    }
+                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                for (BaseBookComic.ComicTag author:comicInfo.author2) {
+                    author.setType(1);
+                    labels.add(author);
                 }
-                setTag(layouts.get(0), labels);
+                setTag2(layouts.get(0), labels,0);
             } else {
                 infoLayout.get(0).setVisibility(View.GONE);
             }
 
+            //TODO:标签
             if (comicInfo.tag != null && !comicInfo.tag.isEmpty()) {
                 layouts.get(1).removeAllViews();
                 infoLayout.get(1).setVisibility(View.VISIBLE);
@@ -129,11 +138,12 @@ public class ComicinfoCommentFragment extends BaseFragment {
                         labels.add(baseTag.getTab());
                     }
                 }
-                setTag(layouts.get(1), labels);
+                setTag(layouts.get(1), labels,1);
             } else {
                 infoLayout.get(1).setVisibility(View.GONE);
             }
 
+            //TODO:分类
             if (comicInfo.tags != null && !comicInfo.tags.isEmpty()) {
                 layouts.get(2).removeAllViews();
                 infoLayout.get(2).setVisibility(View.VISIBLE);
@@ -143,39 +153,52 @@ public class ComicinfoCommentFragment extends BaseFragment {
                         labels.add(text);
                     }
                 }
-                setTag(layouts.get(2), labels);
+                setTag(layouts.get(2), labels,2);
             } else {
                 infoLayout.get(2).setVisibility(View.GONE);
             }
 
-            if (!TextUtils.isEmpty(comicInfo.original)) {
+            //TODO:原著
+            if (comicInfo.original2 != null && comicInfo.original2.size() > 0) {
+                layouts.get(3).removeAllViews();
                 infoLayout.get(3).setVisibility(View.VISIBLE);
-                textViews.get(0).setText(comicInfo.original);
-                textViews.get(0).setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
-                        ContextCompat.getColor(activity, R.color.graybg)));
+                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                for (BaseBookComic.ComicTag original:comicInfo.original2) {
+                    original.setType(2);
+                    labels.add(original);
+                }
+                setTag2(layouts.get(3), labels,4);
             } else {
                 infoLayout.get(3).setVisibility(View.GONE);
             }
 
-            if (!TextUtils.isEmpty(comicInfo.sinici)) {
+            //TODO:汉化组
+            if (comicInfo.sinici2 != null && comicInfo.sinici2.size() > 0) {
+                layouts.get(4).removeAllViews();
                 infoLayout.get(4).setVisibility(View.VISIBLE);
-                textViews.get(1).setText(comicInfo.sinici);
-                textViews.get(1).setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
-                        ContextCompat.getColor(activity, R.color.graybg)));
+                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                for (BaseBookComic.ComicTag sinici:comicInfo.sinici2) {
+                    sinici.setType(3);
+                    labels.add(sinici);
+                }
+                setTag2(layouts.get(4), labels,3);
+//                setTag(layouts.get(4), labels);
             } else {
                 infoLayout.get(4).setVisibility(View.GONE);
             }
 
+
+
             if (!TextUtils.isEmpty(comicInfo.created_at)) {
                 infoLayout.get(5).setVisibility(View.VISIBLE);
-                textViews.get(2).setText(comicInfo.created_at);
+                textViews.get(0).setText(comicInfo.created_at);
             } else {
                 infoLayout.get(5).setVisibility(View.GONE);
             }
 
             if (!TextUtils.isEmpty(comicInfo.last_chapter_time)) {
                 infoLayout.get(6).setVisibility(View.VISIBLE);
-                textViews.get(3).setText(comicInfo.last_chapter_time);
+                textViews.get(1).setText(comicInfo.last_chapter_time);
             } else {
                 infoLayout.get(6).setVisibility(View.GONE);
             }
@@ -187,18 +210,98 @@ public class ComicinfoCommentFragment extends BaseFragment {
      * @param tagFlowLayout
      * @param labels
      */
-    private void setTag(TagFlowLayout tagFlowLayout, List<String> labels) {
+    private void setTag2(TagFlowLayout tagFlowLayout, List<BaseBookComic.ComicTag> labels,int classType) {
+        tagFlowLayout.setAdapter(new TagAdapter<BaseBookComic.ComicTag>(labels) {
+            @Override
+            public View getView(FlowLayout parent, int position, BaseBookComic.ComicTag s) {
+                LinearLayout view = (LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.item_comic_tag, parent,false);
+                view.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
+                        ContextCompat.getColor(activity, R.color.graybg)));
+                TextView textView = view.findViewById(R.id.comic_tag_text);
+                switch (s.getType()) {
+                    case 1:
+                        textView.setText(s.getAuthor());
+                        break;
+                    case 2:
+                        textView.setText(s.getOriginal());
+                        break;
+                    case 3:
+                        textView.setText(s.getSinici());
+                        break;
+                }
+                final ImageView imageView = view.findViewById(R.id.comic_tag_btn);
+                if (s.getIs_collect() == 1) {
+                    imageView.setImageResource(R.mipmap.s_like);
+                } else {
+                    imageView.setImageResource(R.mipmap.us_like);
+                }
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        doCollect(s,imageView);
+                    }
+                });
+
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        switch (s.getType()) {
+                            case 1:
+                                pushTagList(s.getAuthor(),classType);
+                                break;
+                            case 2:
+                                pushTagList(s.getOriginal(),classType);
+                                break;
+                            case 3:
+                                pushTagList(s.getSinici(),classType);
+                                break;
+                        }
+                    }
+                });
+
+//                TextView textView = (TextView) LayoutInflater.from(activity)
+//                        .inflate(R.layout.item_info_tv, tagFlowLayout, false);
+//                textView.setText(s);
+//                textView.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
+//                        ContextCompat.getColor(activity, R.color.graybg)));
+                return view;
+            }
+        });
+    }
+
+    /**
+     * 设置流式布局
+     * @param tagFlowLayout
+     * @param labels
+     */
+    private void setTag(TagFlowLayout tagFlowLayout, List<String> labels,int classType) {
         tagFlowLayout.setAdapter(new TagAdapter<String>(labels) {
             @Override
             public View getView(FlowLayout parent, int position, String s) {
-                TextView textView = (TextView) LayoutInflater.from(activity)
-                        .inflate(R.layout.item_info_tv, tagFlowLayout, false);
+//
+                LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(activity)
+                        .inflate(R.layout.item_comic_info_tv, parent, false);
+                TextView textView = linearLayout.findViewById(R.id.comic_info_text);
                 textView.setText(s);
                 textView.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
                         ContextCompat.getColor(activity, R.color.graybg)));
-                return textView;
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        pushTagList(s,classType);
+                    }
+                });
+                return linearLayout;
             }
         });
+    }
+
+    private void pushTagList(String title,int classType) {
+        activity.startActivity(new Intent(activity, BaseOptionActivity.class)
+                .putExtra("title", title)
+                .putExtra("tab", title)
+                .putExtra("classType",classType)
+                .putExtra("OPTION", TAG_LIST));
     }
 
     /**
@@ -278,5 +381,60 @@ public class ComicinfoCommentFragment extends BaseFragment {
         intent.putExtra("current_id", baseComic.comic_id);
         intent.putExtra("productType", Constant.COMIC_CONSTANT);
         startActivity(intent);
+    }
+
+    private void doCollect(BaseBookComic.ComicTag tag,ImageView imageView) {
+        if(goToLogin(activity)){
+            readerParams = new ReaderParams(activity);
+            String likeUrl = "";
+            switch (tag.getType()) {
+                case 1:
+                    if (tag.getIs_collect() == 1) {
+                        likeUrl = Api.Comic_Del_Auctor_colloc;
+                    } else {
+                        likeUrl = Api.Comic_Auctor_colloc;
+                    }
+                    readerParams.putExtraParams("author", tag.getAuthor());
+                    break;
+                case 2:
+                    if (tag.getIs_collect() == 1) {
+                        likeUrl = Api.Comic_Del_Original_colloc;
+                    } else {
+                        likeUrl = Api.Comic_Original_colloc;
+                    }
+                    readerParams.putExtraParams("original", tag.getOriginal());
+                    break;
+                case 3:
+                    if (tag.getIs_collect() == 1) {
+                        likeUrl = Api.Comic_Del_sinici_colloc;
+                    } else {
+                        likeUrl = Api.Comic_sinici_colloc;
+                    }
+                    readerParams.putExtraParams("sinici", tag.getSinici());
+                    break;
+            }
+            imageView.setEnabled(false);
+            httpUtils.sendRequestRequestParams(activity, likeUrl, readerParams.generateParamsJson(), new HttpUtils.ResponseListener() {
+                @Override
+                public void onResponse(String response) {
+                    imageView.setEnabled(true);
+                    if (tag.getIs_collect() == 1) {
+                        tag.setIs_collect(0);
+                        imageView.setImageResource(R.mipmap.us_like);
+                    } else {
+                        tag.setIs_collect(1);
+                        imageView.setImageResource(R.mipmap.s_like);
+                    }
+
+                }
+
+                @Override
+                public void onErrorResponse(String ex) {
+                    imageView.setEnabled(true);
+                    responseListener.onErrorResponse("操作失败");
+                }
+            });
+        }
+
     }
 }

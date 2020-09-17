@@ -30,17 +30,21 @@ import com.ssreader.novel.utils.ScreenSizeUtils;
 import static com.ssreader.novel.constant.Constant.DOWN;
 import static com.ssreader.novel.constant.Constant.MYCOMMENT;
 import static com.ssreader.novel.constant.Constant.READHISTORY;
+import static com.ssreader.novel.constant.Constant.COLLECTION;
 import static com.ssreader.novel.constant.Constant.REWARDHISTORY;
 import static com.ssreader.novel.constant.Constant.getCurrencyUnit;
 
-public class MineModel {
+public class MineModel implements Cloneable {
 
     private int iconResources;
     private int is_click;
     public String icon, title, desc, action, content;
     private String title_color, desc_color;
+    public int type;
     private boolean isBottomLine;
     private Intent intent;
+
+
 
     public MineModel(boolean isBottomLine, String title, String desc, String title_color, String desc_color, String action, int is_click) {
         this.isBottomLine = isBottomLine;
@@ -187,6 +191,14 @@ public class MineModel {
                         .putExtra("title", LanguageUtil.getString(activity, R.string.noverfragment_yuedulishi))
                         .putExtra("OPTION", READHISTORY));
                 break;
+            case "author":
+            case "orginal":
+            case "hanhua":
+                activity.startActivity(new Intent(activity, BaseOptionActivity.class)
+                        .putExtra("title", title)
+                        .putExtra("type", type)
+                        .putExtra("OPTION", COLLECTION));
+                break;
             case "download":
                 activity.startActivity(new Intent(activity, BaseOptionActivity.class)
                         .putExtra("title", LanguageUtil.getString(activity, R.string.BookInfoActivity_down_manger))
@@ -279,5 +291,19 @@ public class MineModel {
                 }
                 break;
         }
+    }
+
+    public Object clone()
+    {
+        MineModel o=null;
+        try
+        {
+            o=(MineModel)super.clone();
+        }
+        catch(CloneNotSupportedException e)
+        {
+            System.out.println(e.toString());
+        }
+        return o;
     }
 }

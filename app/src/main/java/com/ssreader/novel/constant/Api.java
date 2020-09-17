@@ -367,4 +367,49 @@ public class Api {
     public static final String SHELF_RECOMMEND = "/novel/shelf-recommend";
     //作品分享接口
     public static final String NOVEL_SHARE = "/novel/share-novel";
+
+    //新接口1
+
+    //漫画作者收藏
+    public static final String Comic_Auctor_colloc  = "/fav/collect-author";
+
+    //漫画取消作者收藏
+    public static final String Comic_Del_Auctor_colloc = "/fav/dell-author";
+
+    //漫画原著收藏
+    public static final String Comic_Original_colloc = "/fav/collect-original";
+
+    //漫画取消原著收藏
+    public static final String Comic_Del_Original_colloc = "/fav/dell-original";
+
+    //漫画汉化组收藏
+    public static final String Comic_sinici_colloc = "/fav/collect-sinici";
+
+    //漫画取消汉化组收藏
+    public static final String Comic_Del_sinici_colloc = "/fav/dell-sinici";
+
+    //我喜欢的作者
+    public static final String MyLikeAuthor = "/fav/my-author";
+
+    //我喜欢的原著
+    public static final String MyLikeOriginal = "/fav/my-original";
+
+    //我喜欢的汉化组
+    public static final String MyLikeSinici  = "/fav/my-sinici";
+
+    //我喜欢的作者
+    public static final String MyLikeAuthorList  = "/comic/list-by-author";
+
+    //我喜欢的原著
+    public static final String MyLikeOriginalList = "/comic/list-by-original";
+
+    //我喜欢的汉化组
+    public static final String MyLikeSiniciList  = "/comic/list-by-sinici";
+
+    //标签列表
+    public static final String MyTagList = "/category/category-list";
+    //标签对应的漫画列表
+    public static final String TagBookList = "/comic/list-by-sort";
+
+    public static final String ClassBookList = "/comic/list-by-tags";
 }

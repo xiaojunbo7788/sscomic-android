@@ -20,6 +20,7 @@ public class BaseBookComic extends BaseAd implements Serializable {
     public String name;
     public String cover;
     public String author;
+    public List<ComicTag> author2;
     public String description;
     public String is_finished;
     public List<BaseTag> tag;
@@ -42,14 +43,88 @@ public class BaseBookComic extends BaseAd implements Serializable {
     public int display_no;
 
     public String last_chapter_time;
+    public List<ComicTag> sinici2;
     public String sinici;
     public String original;
+    public List<ComicTag> original2;
     public String created_at;
     public List<String> tags;
+
+    public static class ComicTag {
+        private int type;
+        private String author;
+        private String original;
+        private String sinici;
+        private int is_collect;
+
+        public int getType() {
+            return type;
+        }
+
+        public void setType(int type) {
+            this.type = type;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public void setAuthor(String author) {
+            this.author = author;
+        }
+
+        public String getOriginal() {
+            return original;
+        }
+
+        public void setOriginal(String original) {
+            this.original = original;
+        }
+
+        public String getSinici() {
+            return sinici;
+        }
+
+        public void setSinici(String sinici) {
+            this.sinici = sinici;
+        }
+
+        public int getIs_collect() {
+            return is_collect;
+        }
+
+        public void setIs_collect(int is_collect) {
+            this.is_collect = is_collect;
+        }
+    }
 
     public BaseBookComic(long id, boolean ISMaxCount) {
         this.id = id;
         this.ISMaxCount = true;
+    }
+
+    public List<ComicTag> getAuthor2() {
+        return author2;
+    }
+
+    public void setAuthor2(List<ComicTag> author2) {
+        this.author2 = author2;
+    }
+
+    public List<ComicTag> getSinici2() {
+        return sinici2;
+    }
+
+    public void setSinici2(List<ComicTag> sinici2) {
+        this.sinici2 = sinici2;
+    }
+
+    public List<ComicTag> getOriginal2() {
+        return original2;
+    }
+
+    public void setOriginal2(List<ComicTag> original2) {
+        this.original2 = original2;
     }
 
     public String getName() {

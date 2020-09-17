@@ -302,7 +302,7 @@ public class AudioManager {
                             EventBus.getDefault().post(new RefreshShelfCurrent(Constant.AUDIO_CONSTANT, currentPlayAudio));
                         }
                         ObjectBoxUtils.addData(currentPlayAudio, Audio.class);
-                        // 如果已加入书架，会刷新书架中的数据
+                        // 如果已收藏，会刷新书架中的数据
                         EventBus.getDefault().post(new RefreshShelfCurrent(Constant.AUDIO_CONSTANT, currentPlayAudio));
                         if (audioCurrentChapter.is_read == 0) {
                             audioCurrentChapter.is_read = 1;
@@ -347,7 +347,7 @@ public class AudioManager {
             EventBus.getDefault().post(new RefreshShelfCurrent(Constant.AUDIO_CONSTANT, currentPlayAudio));
         }
         ObjectBoxUtils.addData(currentPlayAudio, Audio.class);
-        // 如果已加入书架，会刷新书架中的数据
+        // 如果已收藏，会刷新书架中的数据
         EventBus.getDefault().post(new RefreshShelfCurrent(Constant.AUDIO_CONSTANT, currentPlayAudio));
         if (onCurrentChapterListen != null) {
             onCurrentChapterListen.onCurrentAudioChapter(mAudioId, audioCurrentChapter);

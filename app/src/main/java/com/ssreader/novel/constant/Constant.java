@@ -14,12 +14,26 @@ import java.util.List;
  */
 public class Constant {
 
+    //TODO:线上
     // appKey
     public static final String mAppkey = "wCDMZq0BYWMyd6qD";
     // appSecret
     public static final String mAppSecretKey = "lAB9XrdwCSWTvxjzTlfT7Nx6FSWGLamG";
     // IP域名
-    public static final String BASE_URL = "https://api.songshucangku.com";
+    public static final String BASE_URL = "https://app.sscomic.life";
+    //图片路径
+    public static final String IMAGE_URL = "https://www.syslly.com/";
+
+    //TODO:测试
+    // appKey
+//    public static final String mAppkey = "0557723a55501453";
+//    // appSecret
+//    public static final String mAppSecretKey = "caee1f9922be06cfc2016107fd303182";
+//    // IP域名
+//    public static final String BASE_URL =  "http://api.sscomic.life";
+//     图片路径
+//    public static final String IMAGE_URL = "http://backend.songshucangku.com/";
+
 
     // 是否打开Log日志开关
     public final static boolean SUE_LOG = true;
@@ -131,6 +145,10 @@ public class Constant {
     public static final int MYCOMMENT = 11;//我的评论
     public static final int MONTHTICKETHISTORY = 12;
     public static final int REWARDHISTORY = 13;
+    //收藏
+    public static final int COLLECTION = 14;
+    public static final int COLLECTION_CONTENT_LIST = 15;
+    public static final int TAG_LIST = 16;
 
     // 书城向下滑动距离
     public static final int REFRESH_HEIGHT = 100;

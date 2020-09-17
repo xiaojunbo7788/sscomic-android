@@ -16,15 +16,20 @@ import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseActivity;
 import com.ssreader.novel.constant.Constant;
 import com.ssreader.novel.eventbus.RefreshMine;
+import com.ssreader.novel.model.MyLikeItemBean;
 import com.ssreader.novel.ui.adapter.MyFragmentPagerAdapter;
 import com.ssreader.novel.ui.fragment.BaseListFragment;
 import com.ssreader.novel.ui.fragment.DownMangerBookFragment;
 import com.ssreader.novel.ui.fragment.DownMangerComicFragment;
 import com.ssreader.novel.ui.fragment.GoldRecordFragment;
 import com.ssreader.novel.ui.fragment.MyCommentFragment;
+import com.ssreader.novel.ui.fragment.MyLikeComicListFragment;
 import com.ssreader.novel.ui.fragment.RankIndexFragment;
 import com.ssreader.novel.ui.fragment.ReadHistoryFragment;
 import com.ssreader.novel.ui.fragment.RewardHistoryFragment;
+import com.ssreader.novel.ui.fragment.MyLikeListFragment;
+import com.ssreader.novel.ui.fragment.TagListFragment;
+import com.ssreader.novel.ui.read.util.ScreenUtils;
 import com.ssreader.novel.ui.utils.MainFragmentTabUtils;
 import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.utils.LanguageUtil;
@@ -40,7 +45,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.ssreader.novel.constant.Constant.*;
-
+//分类
 /**
  * fragment分发界面
  */
@@ -103,6 +108,9 @@ public class BaseOptionActivity extends BaseActivity {
                             startActivity(intent);
                         }
                     }
+                } else if (OPTION == SHUKU) {
+                    Intent intent = new Intent(activity, TagListActivity.class);
+                    startActivity(intent);
                 }
                 break;
         }
@@ -154,11 +162,35 @@ public class BaseOptionActivity extends BaseActivity {
         tabList = new ArrayList<>();
         OPTION = IntentFrom.getIntExtra("OPTION", 0);
         productType = IntentFrom.getIntExtra("productType", 0);
-        if (OPTION != LOOKMORE) {
+        if (OPTION != LOOKMORE && OPTION !=TAG_LIST) {
             String title = IntentFrom.getStringExtra("title");
             public_sns_topbar_title.setText(title);
         }
         switch (OPTION) {
+            case TAG_LIST:
+                String tab = IntentFrom.getStringExtra("tab");
+                int classType = IntentFrom.getIntExtra("classType",0);
+                //0 作者、1、标签、2、分类、3、汉化组、4、原著
+                switch (classType) {
+                    case 0:
+                        public_sns_topbar_title.setText("作者");
+                        break;
+                    case 1:
+                        public_sns_topbar_title.setText("标签");
+                        break;
+                    case 2:
+                        public_sns_topbar_title.setText("分类");
+                        break;
+                    case 3:
+                        public_sns_topbar_title.setText("汉化组");
+                        break;
+                    case 4:
+                        public_sns_topbar_title.setText("原著");
+                        break;
+                }
+                TagListFragment listFragment = new TagListFragment(tab,classType);
+                fragmentList.add(listFragment);
+                break;
             case MIANFEI:
                 // 免费
             case WANBEN:
@@ -190,8 +222,30 @@ public class BaseOptionActivity extends BaseActivity {
             case BAOYUE_SEARCH:
             case SHUKU:
             case BAOYUE:
+                if (OPTION == SHUKU) {
+                    RelativeLayout.LayoutParams layoutParams =(RelativeLayout.LayoutParams)public_sns_topbar_right_other.getLayoutParams();
+                    layoutParams.width = ScreenUtils.dpToPx(70);
+                    public_sns_topbar_right_other.setLayoutParams(layoutParams);
+                    public_sns_topbar_right_other.setVisibility(View.VISIBLE);
+                    public_sns_topbar_right_tv.setVisibility(View.VISIBLE);
+                    public_sns_topbar_right_tv.setText("标签列表");
+                    public_sns_topbar_right_tv.setTextColor(ContextCompat.getColor(activity, R.color.maincolor));
+                }
                 baseButterKnifeFragment1 = new BaseListFragment(productType, OPTION, 1);
                 fragmentList.add(baseButterKnifeFragment1);
+                break;
+            case COLLECTION:
+                int type =  IntentFrom.getIntExtra("type", 0);
+                public_selection_XTabLayout.setVisibility(View.GONE);
+                baseButterKnifeFragment1 = new MyLikeListFragment(type);
+                fragmentList.add(baseButterKnifeFragment1);
+                break;
+            case COLLECTION_CONTENT_LIST: {
+                MyLikeItemBean itemBean =  (MyLikeItemBean) IntentFrom.getSerializableExtra("item");
+                int cType = IntentFrom.getIntExtra("type", 0);
+                baseButterKnifeFragment1 = new MyLikeComicListFragment(itemBean,cType,String.valueOf(itemBean.getFrom_channel()));
+                fragmentList.add(baseButterKnifeFragment1);
+            }
                 break;
             case DOWN:
                 public_sns_topbar_right_img.setVisibility(View.GONE);

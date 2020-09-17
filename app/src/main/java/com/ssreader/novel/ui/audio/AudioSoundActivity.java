@@ -331,7 +331,7 @@ public class AudioSoundActivity extends BaseActivity {
                     this.finish();
                     break;
                 case R.id.audio_toolbar_add_book:
-                    // 加入书架
+                    // 收藏
                     addAudioToLocalShelf(audio.is_collect);
                     break;
                 case R.id.audio_bottom_comment:
@@ -915,7 +915,7 @@ public class AudioSoundActivity extends BaseActivity {
     }
 
     /**
-     * 有声加入书架
+     * 有声收藏
      *
      * @param isCollect
      */
@@ -931,7 +931,7 @@ public class AudioSoundActivity extends BaseActivity {
     }
 
     /**
-     * 用于刷新加入书架的回调
+     * 用于刷新收藏的回调
      *
      * @param refreshBookInfo
      */

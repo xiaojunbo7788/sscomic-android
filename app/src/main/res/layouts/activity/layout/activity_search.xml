@@ -123,6 +123,23 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="5dp"
                         android:background="@color/white"
+                        android:text="热门标签"
+                        android:textColor="@color/gray_b0"
+                        android:textSize="13dp" />
+
+                    <com.zhy.view.flowlayout.TagFlowLayout
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/tag_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/white"
                         android:text="@string/SearchActivity_hotsearch"
                         android:textColor="@color/gray_b0"
                         android:textSize="13dp" />

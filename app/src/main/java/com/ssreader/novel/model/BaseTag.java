@@ -11,6 +11,33 @@ public class BaseTag implements Serializable {
 
     private String tab;
     private String color;
+    private String title;
+    private String id;
+    private boolean isMore;
+
+    public boolean isMore() {
+        return isMore;
+    }
+
+    public void setMore(boolean more) {
+        isMore = more;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {

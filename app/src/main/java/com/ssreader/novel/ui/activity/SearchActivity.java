@@ -1,11 +1,13 @@
 package com.ssreader.novel.ui.activity;
 
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -23,17 +25,25 @@ import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseActivity;
 import com.ssreader.novel.constant.Api;
 import com.ssreader.novel.model.BaseBookComic;
+import com.ssreader.novel.model.BaseTag;
 import com.ssreader.novel.model.OptionItem;
 import com.ssreader.novel.model.SerachItem;
+import com.ssreader.novel.model.TagListBean;
 import com.ssreader.novel.net.HttpUtils;
 import com.ssreader.novel.net.ReaderParams;
 import com.ssreader.novel.ui.adapter.HotWordsAdapter;
 import com.ssreader.novel.ui.adapter.PublicStoreListAdapter;
+import com.ssreader.novel.ui.read.util.ScreenUtils;
+import com.ssreader.novel.ui.utils.ImageUtil;
 import com.ssreader.novel.ui.utils.MyShape;
 import com.ssreader.novel.ui.view.AdaptionGridViewNoMargin;
 import com.ssreader.novel.ui.view.Input;
 import com.ssreader.novel.ui.view.screcyclerview.SCOnItemClickListener;
 import com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView;
+import com.ssreader.novel.utils.ScreenSizeUtils;
+import com.zhy.view.flowlayout.FlowLayout;
+import com.zhy.view.flowlayout.TagAdapter;
+import com.zhy.view.flowlayout.TagFlowLayout;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -48,6 +58,7 @@ import butterknife.OnClick;
 import static com.ssreader.novel.constant.Constant.BOOK_CONSTANT;
 import static com.ssreader.novel.constant.Constant.COMIC_CONSTANT;
 import static com.ssreader.novel.constant.Constant.AUDIO_CONSTANT;
+import static com.ssreader.novel.constant.Constant.TAG_LIST;
 
 /**
  * 搜索首页
@@ -74,6 +85,9 @@ public class SearchActivity extends BaseActivity {
     public LinearLayout activity_search_keywords_listview_noresult;
     @BindView(R.id.activity_search_keywords_scrollview)
     public NestedScrollView activity_search_keywords_scrollview;
+
+    @BindView(R.id.tag_layout)
+    TagFlowLayout tag_layout;
 
     private LayoutInflater layoutInflater;
     private List<BaseBookComic> optionBeenList;
@@ -244,8 +258,66 @@ public class SearchActivity extends BaseActivity {
             }
             optionBeenList.addAll(serachItem.list);
             searchAdapter.notifyDataSetChanged();
+
+            http_flag =3;
+            ReaderParams readerParams2 = new ReaderParams(activity);
+            readerParams2.putExtraParams("page_size", 9 + "");
+            HttpUtils.getInstance().sendRequestRequestParams(activity, Api.MyTagList, readerParams2.generateParamsJson(), responseListener);
+
+
+        } else if (http_flag == 3) {
+
+            TagListBean tagListBean = gson.fromJson(json, TagListBean.class);
+            if (tagListBean.getList() != null) {
+                BaseTag baseTag = new BaseTag();
+                baseTag.setTitle("更多");
+                baseTag.setMore(true);
+                tagListBean.getList().add(baseTag);
+                tag_layout.removeAllViews();
+                tag_layout.setAdapter(new TagAdapter<BaseTag>(tagListBean.getList()) {
+                    @Override
+                    public View getView(FlowLayout parent, int position, BaseTag s) {
+                        LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(activity)
+                                .inflate(R.layout.item_search_info_tag, parent, false);
+                        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
+                        layoutParams.width = (ScreenSizeUtils.getInstance(SearchActivity.this).getScreenWidth() - ScreenUtils.dpToPx(9)*5- ScreenUtils.dpToPx(20))/5;
+
+                        TextView textView = linearLayout.findViewById(R.id.search_tag_text);
+                        textView.setText(s.getTitle());
+                        if (s.isMore()) {
+                            textView.setTextColor(ContextCompat.getColor(activity, R.color.maincolor));
+                        } else {
+                            textView.setTextColor(ContextCompat.getColor(activity, R.color.black));
+                        }
+                        textView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                selectTag(s);
+                            }
+                        });
+                        linearLayout.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 15),
+                                ContextCompat.getColor(activity, R.color.graybg)));
+                        return linearLayout;
+                    }
+                });
+            }
+
+
         } else {
             initNextInfo(json);
+        }
+    }
+
+    private void selectTag(BaseTag baseTag) {
+        if (baseTag.isMore()) {
+            Intent intent = new Intent(activity, TagListActivity.class);
+            startActivity(intent);
+        } else {
+            activity.startActivity(new Intent(activity, BaseOptionActivity.class)
+                    .putExtra("title", baseTag.getTitle())
+                    .putExtra("tab", baseTag.getTitle())
+                    .putExtra("classType",1)
+                    .putExtra("OPTION", TAG_LIST));
         }
     }
 

@@ -43,7 +43,9 @@
     <string name="app_noresult">暂无数据</string>
     <string name="app_no_catalog_bean">暂无目录列表</string>
     <string name="app_history_no_login">登录后可同步历史记录</string>
+    <string name="app_like_no_login">登录后可同步历史记录</string>
     <string name="app_history_no_result">暂无历史记录</string>
+    <string name="app_like_no_result">暂无喜欢</string>
     <string name="app_comment_no_login">登录后可查看评论内容</string>
     <string name="app_liushuijilu_no_login">登录后可查看流水记录</string>
     <string name="app_liushuijilu_no_result">暂无流水记录</string>
@@ -249,7 +251,7 @@
     <!--签到-->
     <string name="SigninActivity_title">签到</string>
     <string name="SigninActivity_no">不用了</string>
-    <string name="SigninActivity_yes">全部加入书架</string>
+    <string name="SigninActivity_yes">全部收藏</string>
     <string name="SigninActivity_rule">签到规则</string>
 
     <!--任务中心-->
@@ -261,8 +263,8 @@
 
     <!--书籍详情-->
     <string name="BookInfoActivity_title">书籍详情</string>
-    <string name="BookInfoActivity_jiarushujia">加入书架</string>
-    <string name="BookInfoActivity_jiarushujias">已加入书架</string>
+    <string name="BookInfoActivity_jiarushujia">收藏</string>
+    <string name="BookInfoActivity_jiarushujias">已收藏</string>
     <string name="audio_collection">收藏</string>
     <string name="fragment_comic_info_shoucang">+收藏</string>
     <string name="BookInfoActivity_collection">已收藏</string>
@@ -350,7 +352,7 @@
     <string name="ReadActivity_startpage">已经是第一页</string>
     <string name="ReadActivity_chapterfail">没有更多内容了</string>
     <string name="ReadActivity_buysuccessyidown">购买成功已添加下载</string>
-    <string name="ReadActivity_isaddBookself">是否加入书架</string>
+    <string name="ReadActivity_isaddBookself">是否收藏</string>
     <string name="ReadActivity_isaddBookselfno">再看看</string>
     <string name="ReadActivity_closeautoread">关闭自动阅读</string>
     <string name="ReadActivity_zihao">字号</string>

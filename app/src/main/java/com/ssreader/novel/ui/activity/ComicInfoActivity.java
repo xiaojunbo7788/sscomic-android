@@ -57,6 +57,7 @@ import com.ssreader.novel.ui.utils.MyGlide;
 import com.ssreader.novel.ui.utils.MyShape;
 import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.ui.utils.PaletteHelper;
+import com.ssreader.novel.ui.view.StarLayout;
 import com.ssreader.novel.utils.InternetUtils;
 import com.ssreader.novel.utils.LanguageUtil;
 import com.ssreader.novel.utils.MyShare;
@@ -108,8 +109,8 @@ public class ComicInfoActivity extends BaseActivity {
     public ImageView activity_book_info_content_cover;
     @BindView(R.id.activity_book_info_content_name)
     public TextView activity_book_info_content_name;
-    @BindView(R.id.activity_book_info_content_author)
-    public TextView activity_book_info_content_author;
+    @BindView(R.id.activity_book_info_content_star)
+    public StarLayout mStarLayout;
     @BindView(R.id.activity_book_info_content_total_hot)
     public TextView activity_book_info_content_total_hot;
     @BindView(R.id.activity_book_info_content_shoucang)
@@ -443,7 +444,8 @@ public class ComicInfoActivity extends BaseActivity {
                 }
             });
         }
-        activity_book_info_content_author.setText(comic.author.replaceAll(",", " "));
+//        mStarLayout
+//        activity_book_info_content_author.setText(comic.author.replaceAll(",", " "));
         baseComic.author = comic.author.replaceAll(",", " ");
         baseComic.setVertical_cover(comic.vertical_cover);
         baseComic.setName(comic.name);

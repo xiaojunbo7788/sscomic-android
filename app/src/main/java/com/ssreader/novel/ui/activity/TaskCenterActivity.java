@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.ssreader.novel.ui.utils.MyToash;
 import com.umeng.socialize.UMShareAPI;
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseActivity;
@@ -227,7 +228,11 @@ public class TaskCenterActivity extends BaseActivity {
 
                         @Override
                         public void onErrorResponse(String ex) {
-
+                            if (responseListener != null) {
+                                if (ex != null && ex.equals("304")) {
+                                    MyToash.ToashError(activity, "您今天已签到");
+                                }
+                            }
                         }
                     }
             );

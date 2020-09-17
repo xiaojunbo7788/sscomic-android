@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -98,7 +99,9 @@ public class SplashActivity extends FragmentActivity implements BaseInterface {
             case R.id.activity_splash_im:
                 if (activity != null && !activity.isFinishing() && startpage != null &&
                         startpage.skip_type != 5 && startpage.skip_type > 0 && !TextUtils.isEmpty(startpage.content)) {
-                    handler.removeMessages(0);
+                    if (handler != null) {
+                        handler.removeMessages(0);
+                    }
                     startpage.intentTo(activity);
                 }
                 break;
@@ -264,7 +267,7 @@ public class SplashActivity extends FragmentActivity implements BaseInterface {
 
                     @Override
                     public void onErrorResponse(String ex) {
-
+                        Log.e("sign_pop",ex);
                     }
                 });
             } else {

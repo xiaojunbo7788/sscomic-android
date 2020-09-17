@@ -120,20 +120,25 @@
                                     android:gravity="center_vertical"
                                     android:orientation="horizontal">
 
-                                    <TextView
-                                        android:id="@+id/activity_book_info_content_author"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_vertical"
-                                        android:text=""
-                                        android:textColor="@color/white"
-                                        android:textSize="14dp" />
+                                    <com.ssreader.novel.ui.view.StarLayout
+                                        android:visibility="gone"
+                                        android:id="@+id/activity_book_info_content_star"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+<!--                                    <TextView-->
+<!--                                        android:id="@+id/activity_book_info_content_author"-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:gravity="center_vertical"-->
+<!--                                        android:text=""-->
+<!--                                        android:textColor="@color/white"-->
+<!--                                        android:textSize="14dp" />-->
 
                                     <TextView
                                         android:id="@+id/activity_book_info_content_total_hot"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@+id/activity_book_info_content_author"
+                                        android:layout_below="@+id/activity_book_info_content_star"
                                         android:layout_marginTop="5dp"
                                         android:gravity="center_vertical"
                                         android:textColor="@color/white"

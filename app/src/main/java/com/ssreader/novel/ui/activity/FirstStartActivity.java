@@ -223,14 +223,10 @@ public class FirstStartActivity extends BaseActivity {
                                 Book mBook = new Book();
                                 mBook.setbook_id(addrecommendProducs.book_id);
                                 mBook.setName(addrecommendProducs.name);
-                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author.get(0))) {
+                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author)) {
                                     StringBuilder name = new StringBuilder();
-                                    for (int i = 0; i < addrecommendProducs.author.size(); i++) {
-                                        if (i == 0) {
-                                            name.append(addrecommendProducs.author.get(i));
-                                        } else {
-                                            name.append(" ").append(addrecommendProducs.author.get(i));
-                                        }
+                                    if (addrecommendProducs.author != null) {
+                                        name.append(addrecommendProducs.author);
                                     }
                                     mBook.setAuthor_name(name.toString());
                                 }
@@ -243,14 +239,10 @@ public class FirstStartActivity extends BaseActivity {
                                 Comic baseComic = new Comic();
                                 baseComic.setComic_id(addrecommendProducs.comic_id);
                                 baseComic.setName(addrecommendProducs.name);
-                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author.get(0))) {
+                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author)) {
                                     StringBuilder name = new StringBuilder();
-                                    for (int i = 0; i < addrecommendProducs.author.size(); i++) {
-                                        if (i == 0) {
-                                            name.append(addrecommendProducs.author.get(i));
-                                        } else {
-                                            name.append(" ").append(addrecommendProducs.author.get(i));
-                                        }
+                                    if (addrecommendProducs.author != null) {
+                                        name.append(addrecommendProducs.author);
                                     }
                                     baseComic.author = name.toString();
                                 }
@@ -263,14 +255,10 @@ public class FirstStartActivity extends BaseActivity {
                                 Audio baseAudio = new Audio();
                                 baseAudio.setAudio_id(addrecommendProducs.audio_id);
                                 baseAudio.setName(addrecommendProducs.name);
-                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author.get(0))) {
+                                if (addrecommendProducs.author != null && !addrecommendProducs.author.isEmpty() && !TextUtils.isEmpty(addrecommendProducs.author)) {
                                     StringBuilder name = new StringBuilder();
-                                    for (int i = 0; i < addrecommendProducs.author.size(); i++) {
-                                        if (i == 0) {
-                                            name.append(addrecommendProducs.author.get(i));
-                                        } else {
-                                            name.append(" ").append(addrecommendProducs.author.get(i));
-                                        }
+                                    if (addrecommendProducs.author != null) {
+                                        name.append(addrecommendProducs.author);
                                     }
                                     baseAudio.author = name.toString();
                                 }

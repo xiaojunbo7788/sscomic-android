@@ -66,7 +66,10 @@ public class PaletteHelper {
                     s = palette.getLightMutedSwatch();    //获取柔和的亮
                     MyToash.Log("palette","6");
                 }
-                paletteHelperColor.getColor(s.getRgb());
+                if (paletteHelperColor != null && s != null) {
+                    paletteHelperColor.getColor(s.getRgb());
+                }
+
             }
         });
 

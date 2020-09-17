@@ -28,11 +28,17 @@ public class ReadHistoryBookAdapter extends BaseRecAdapter<BaseReadHistory, Read
 
     private ReadHistoryFragment.GetPosition getPosition;
     private int productType;
+    //是否喜欢进入
+    private boolean isLike;
 
     public ReadHistoryBookAdapter(Activity activity, List<BaseReadHistory> list, ReadHistoryFragment.GetPosition getPosition, int productType) {
         super(list, activity);
         this.getPosition = getPosition;
         this.productType = productType;
+    }
+
+    public void setLike(boolean like) {
+        isLike = like;
     }
 
     @Override
@@ -58,7 +64,9 @@ public class ReadHistoryBookAdapter extends BaseRecAdapter<BaseReadHistory, Read
                 viewHolder.mRecyclerviewItemReadhistoryDes.setText(LanguageUtil.getString(activity, R.string.BookHistroy_last_listener) + readHistory.chapter_title);
             } else {
                 viewHolder.mRecyclerviewItemReadhistoryGoon.setText(LanguageUtil.getString(activity, R.string.ReadHistoryFragment_goon_read));
-                viewHolder.mRecyclerviewItemReadhistoryDes.setText(LanguageUtil.getString(activity, R.string.BookHistroy_last_read) + readHistory.chapter_title);
+                if (!isLike) {
+                    viewHolder.mRecyclerviewItemReadhistoryDes.setText(LanguageUtil.getString(activity, R.string.BookHistroy_last_read) + readHistory.chapter_title);
+                }
             }
             if (productType != Constant.COMIC_CONSTANT) {
                 MyGlide.GlideImageNoSize(activity, readHistory.cover, viewHolder.mRecyclerviewItemReadhistoryImg);

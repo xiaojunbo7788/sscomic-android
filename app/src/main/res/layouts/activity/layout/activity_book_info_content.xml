@@ -49,14 +49,14 @@
                         android:textSize="15dp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/activity_Book_info_content_author"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/white"
-                        android:textSize="12dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/activity_Book_info_content_author"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="6dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="12dp" />-->
 
                     <TextView
                         android:id="@+id/activity_Book_info_content_display_label"

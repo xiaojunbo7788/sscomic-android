@@ -342,7 +342,7 @@ public class BookInfoActivity extends BaseActivity {
                 mBook.setDescription(infoBook.description);
                 mBook.setTotal_chapter(infoBook.total_chapters);
                 viewHolder.activity_Book_info_content_name.setText(infoBook.name);
-                viewHolder.activity_Book_info_content_author.setText(infoBook.author.replaceAll(",", " "));
+//                viewHolder.activity_Book_info_content_author.setText(infoBook.author.replaceAll(",", " "));
                 viewHolder.activity_Book_info_content_display_label.setText(infoBook.display_label);
                 viewHolder.activity_Book_info_content_total_comment.setText(infoBook.hot_num);
                 viewHolder.activity_Book_info_content_total_shoucanshu.setText(infoBook.total_favors);
@@ -675,8 +675,9 @@ public class BookInfoActivity extends BaseActivity {
 
         @BindView(R.id.activity_Book_info_content_name)
         public TextView activity_Book_info_content_name;
-        @BindView(R.id.activity_Book_info_content_author)
-        public TextView activity_Book_info_content_author;
+        //TODO:fix 去掉
+//        @BindView(R.id.activity_Book_info_content_author)
+//        public TextView activity_Book_info_content_author;
         @BindView(R.id.activity_Book_info_content_display_label)
         public TextView activity_Book_info_content_display_label;
         @BindView(R.id.activity_Book_info_content_total_comment)

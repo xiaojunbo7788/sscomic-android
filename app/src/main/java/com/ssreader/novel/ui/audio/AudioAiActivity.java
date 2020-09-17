@@ -319,7 +319,7 @@ public class AudioAiActivity extends BaseActivity {
                 this.finish();
                 break;
             case R.id.audio_toolbar_add_book:
-                // 加入书架
+                // 收藏
                 addBookToLocalShelf(book.is_collect);
                 break;
             case R.id.audio_bottom_comment:
@@ -764,7 +764,7 @@ public class AudioAiActivity extends BaseActivity {
     }
 
     /**
-     * 小说加入书架
+     * 小说收藏
      *
      * @param isCollect
      */
@@ -783,7 +783,7 @@ public class AudioAiActivity extends BaseActivity {
     private boolean flag;
 
     /**
-     * 用于刷新加入书架的回调
+     * 用于刷新收藏的回调
      *
      * @param refreshBookInfo
      */
