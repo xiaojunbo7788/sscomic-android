@@ -362,20 +362,23 @@ public class ComicInfoActivity extends BaseActivity {
     @Override
     public void initInfo(String json) {
         ComicInfo comicInfo = gson.fromJson(json, ComicInfo.class);
-        comicFragment.setComicInfo(comicInfo.comic);
-        bookInfoComment = comicInfo.comment;
-        if (http_flag == 0) {
-            comic = comicInfo.comic;
-            if (comicInfo.label != null && !comicInfo.label.isEmpty()) {
-                stroreComicLable = comicInfo.label.get(0);
+        if (comicInfo != null && comicInfo.comic != null && comicFragment != null) {
+            comicFragment.setComicInfo(comicInfo.comic);
+            bookInfoComment = comicInfo.comment;
+            if (http_flag == 0) {
+                comic = comicInfo.comic;
+                if (comicInfo.label != null && !comicInfo.label.isEmpty()) {
+                    stroreComicLable = comicInfo.label.get(0);
+                }
+                if (comicInfo.advert != null) {
+                    baseAd = comicInfo.advert;
+                }
+                handdata(comicInfo.comic.total_comment);
+            } else {
+                comicFragment.setComment(bookInfoComment, comicInfo.comic.total_comment);
             }
-            if (comicInfo.advert != null) {
-                baseAd = comicInfo.advert;
-            }
-            handdata(comicInfo.comic.total_comment);
-        } else {
-            comicFragment.setComment(bookInfoComment, comicInfo.comic.total_comment);
         }
+
     }
 
     private void setNoNetLayout() {
@@ -446,7 +449,11 @@ public class ComicInfoActivity extends BaseActivity {
         }
 //        mStarLayout
 //        activity_book_info_content_author.setText(comic.author.replaceAll(",", " "));
-        baseComic.author = comic.author.replaceAll(",", " ");
+        if (comic.author != null && comic.author.length() > 0) {
+            baseComic.author = comic.author.replaceAll(",", " ");
+        } else {
+            baseComic.author = "";
+        }
         baseComic.setVertical_cover(comic.vertical_cover);
         baseComic.setName(comic.name);
         baseComic.setDescription(comic.description);

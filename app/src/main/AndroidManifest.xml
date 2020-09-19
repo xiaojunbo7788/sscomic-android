@@ -120,7 +120,6 @@
         <activity
             android:name=".ui.activity.BookEndRecommendActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Swipe.Back.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.activity.BookCatalogMarkActivity"

@@ -1,6 +1,7 @@
 package com.ssreader.novel.ui.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -188,7 +189,11 @@ public class BaseOptionActivity extends BaseActivity {
                         public_sns_topbar_title.setText("原著");
                         break;
                 }
-                TagListFragment listFragment = new TagListFragment(tab,classType);
+                TagListFragment listFragment = new TagListFragment();
+                Bundle args = new Bundle();
+                args.putString("tab",tab);
+                args.putInt("classType",classType);
+                listFragment.setArguments(args);
                 fragmentList.add(listFragment);
                 break;
             case MIANFEI:

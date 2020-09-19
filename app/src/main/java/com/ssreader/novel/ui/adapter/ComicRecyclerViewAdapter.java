@@ -109,15 +109,8 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             // 加载图片
             if (layoutParams.height <= MAXheigth) {
                 holder.comicImage.get(1).setVisibility(View.GONE);
-                MyGlide.GlideImage(activity, layoutParams.width, layoutParams.height, baseComicImage,
-                        holder.comicImage.get(0), new MyGlide.OnGlideLoadListener() {
-                            @Override
-                            public void loadFail() {
-                                Glide.with(activity).load(baseComicImage.image)
-                                        .error(R.mipmap.icon_comic_def_w)
-                                        .into(holder.comicImage.get(0));
-                            }
-                        });
+                MyGlide.GlideNewImage(activity, layoutParams.width, layoutParams.height, baseComicImage,
+                        holder.comicImage.get(0), baseComicImage.image);
             } else {
                 holder.comicImage.get(1).setVisibility(View.VISIBLE);
                 if (bitmapCache != null && bitmapCache.getBitmapFromCache(baseComicImage.image_id) != null) {

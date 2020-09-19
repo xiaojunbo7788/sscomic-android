@@ -24,6 +24,7 @@ import androidx.core.content.FileProvider;
 
 import com.ssreader.novel.BuildConfig;
 import com.ssreader.novel.R;
+import com.ssreader.novel.base.BWNApplication;
 import com.ssreader.novel.base.BaseDialogFragment;
 import com.ssreader.novel.model.AppUpdate;
 import com.ssreader.novel.net.DownLoadUtils.AppDownloadService;
@@ -35,6 +36,7 @@ import com.ssreader.novel.ui.utils.TextStyleUtils;
 import com.ssreader.novel.ui.view.ProgressBarView;
 import com.ssreader.novel.utils.LanguageUtil;
 import com.ssreader.novel.utils.ScreenSizeUtils;
+import com.ssreader.novel.utils.ShareUitls;
 
 import java.io.File;
 
@@ -237,6 +239,10 @@ public class UpAppDialogFragment extends BaseDialogFragment {
     };
 
     private Intent installApp(Context pContext, File pFile) {
+        //TODO:移除版本缓存记录
+        if (BWNApplication.applicationContext != null) {
+            ShareUitls.putString(BWNApplication.applicationContext,"Update","");
+        }
         if (null == pFile)
             return null;
         if (!pFile.exists())

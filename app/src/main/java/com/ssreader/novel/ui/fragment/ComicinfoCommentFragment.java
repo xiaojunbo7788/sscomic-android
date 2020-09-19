@@ -58,6 +58,7 @@ public class ComicinfoCommentFragment extends BaseFragment {
 
     @BindViews({R.id.comic_info_text_layout1, R.id.comic_info_text_layout2, R.id.comic_info_text_layout3,R.id.comic_info_text_layout4,R.id.comic_info_text_layout5})
     List<TagFlowLayout> layouts;
+
     @BindViews({R.id.comic_info_text6, R.id.comic_info_text7})
     List<TextView> textViews;
 
@@ -182,12 +183,9 @@ public class ComicinfoCommentFragment extends BaseFragment {
                     labels.add(sinici);
                 }
                 setTag2(layouts.get(4), labels,3);
-//                setTag(layouts.get(4), labels);
             } else {
                 infoLayout.get(4).setVisibility(View.GONE);
             }
-
-
 
             if (!TextUtils.isEmpty(comicInfo.created_at)) {
                 infoLayout.get(5).setVisibility(View.VISIBLE);
@@ -378,7 +376,11 @@ public class ComicinfoCommentFragment extends BaseFragment {
         if (comment != null) {
             intent.putExtra("comment", comment);
         }
-        intent.putExtra("current_id", baseComic.comic_id);
+        if (baseComic!=null) {
+            intent.putExtra("current_id", baseComic.comic_id);
+        } else {
+            intent.putExtra("current_id",0);
+        }
         intent.putExtra("productType", Constant.COMIC_CONSTANT);
         startActivity(intent);
     }

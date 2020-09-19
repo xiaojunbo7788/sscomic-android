@@ -193,6 +193,53 @@ public class MyGlide {
         }
     }
 
+
+    /**
+     * 用于加载漫画图片
+     *
+     * @param activity
+     * @param width
+     * @param height
+     * @param comicImage
+     * @param imageView
+     */
+    public static void GlideNewImage(Activity activity, int width, int height, BaseComicImage comicImage,
+                                  ImageView imageView,String fallbackUrl) {
+        File localPathFile = getLocalComicImageFile(comicImage);
+        if (localPathFile != null) {
+            if (localPathFile.exists()) {
+                RequestOptions options = new RequestOptions()
+                        .placeholder(R.mipmap.icon_comic_def_w)        //加载成功之前占位图
+                        .error(R.mipmap.icon_comic_def_w)        //加载错误之后的错误图
+                        .skipMemoryCache(false)
+                        .override(width, height)
+                        .format(DecodeFormat.PREFER_ARGB_8888)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE);
+                byte[] bytes = FileManager.readFile(localPathFile.getAbsolutePath());
+                Glide.with(activity)
+                        .load(bytes)
+                        .apply(options)
+                        .error(Glide.with(activity)
+                                .load(fallbackUrl))
+                        .into(imageView);
+            } else {
+                String url = comicImage.image;
+                if (url == null || url.length() == 0) {
+                    return;
+                } else {
+                    RequestOptions options = new RequestOptions()
+                            .placeholder(R.mipmap.icon_comic_def_w)        //加载成功之前占位图
+                            .error(R.mipmap.icon_comic_def_w)        //加载错误之后的错误图
+                            .skipMemoryCache(false)
+                            .override(width, height)
+                            .format(DecodeFormat.PREFER_ARGB_8888)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE);    //缓存所有版本的图像
+                    Glide.with(activity).load(url).apply(options).into(imageView);
+                }
+            }
+        }
+    }
+
     /**
      * 加载图片,结合RecyclerView
      *

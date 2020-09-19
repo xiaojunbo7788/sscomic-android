@@ -130,7 +130,7 @@ public class SearchActivity extends BaseActivity {
     @Override
     public void initView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
-        initSCRecyclerView(fragment_option_listview, linearLayoutManager.VERTICAL, 0);
+        initSCRecyclerView(fragment_option_listview, LinearLayoutManager.VERTICAL, 0);
         optionBeenList = new ArrayList<>();
         searchList = new ArrayList<>();
         layoutInflater = LayoutInflater.from(activity);

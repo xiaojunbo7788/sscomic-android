@@ -628,6 +628,7 @@ public class ComicLookActivity extends BaseActivity {
         danmuParams.topMargin = GETNotchHeight(activity) + ImageUtil.dp2px(activity, 60);
         danmuParams.height = ScreenSizeUtils.getScreenHeight(activity) / 3;
         comicLookDanmuView.setLayoutParams(danmuParams);
+
         activity_comic_look_danmu_layout_bg.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 50), Color.WHITE));
         activity_comiclook_danmu_layout.setBackground(MyShape.setMyshape(ImageUtil.dp2px(activity, 60), "#4d000000"));
         if (!isIsComicDanmu(activity)) {
@@ -637,6 +638,8 @@ public class ComicLookActivity extends BaseActivity {
             activity_comiclook_danmu_edit.setHint(LanguageUtil.getString(activity, R.string.ComicLookActivity_fapinglun));
             activity_comiclook_danmu_fashe.setText(LanguageUtil.getString(activity, R.string.ComicLookActivity_fasong));
         }
+
+
         mDanmakuContext = DanmakuContext.create();
         HashMap<Integer, Integer> maxLine = new HashMap<>();
         maxLine.put(BaseDanmaku.TYPE_SCROLL_RL, 6);// 滚动弹幕最大显示3行
@@ -1234,11 +1237,16 @@ public class ComicLookActivity extends BaseActivity {
                 @Override
                 public void getBaseAd(BaseAd baseAdd) {
                     baseAd = baseAdd;
-                    baseAd.setAd(activity, holderFoot.list_ad_view_layout, 8);
+                    if (baseAd != null && activity != null && holderFoot != null &&  holderFoot.list_ad_view_layout != null)  {
+                        baseAd.setAd(activity, holderFoot.list_ad_view_layout, 8);
+                    }
+
                 }
             });
         } else if (baseAd.ad_type != 1) {
-            baseAd.setAd(activity, holderFoot.list_ad_view_layout, 8);
+            if (holderFoot != null &&  holderFoot.list_ad_view_layout != null) {
+                baseAd.setAd(activity, holderFoot.list_ad_view_layout, 8);
+            }
         }
     }
 

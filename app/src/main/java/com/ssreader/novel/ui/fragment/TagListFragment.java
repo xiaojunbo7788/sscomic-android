@@ -45,11 +45,6 @@ public class TagListFragment extends BaseFragment {
     private TextView sortView2;
     private TextView sortView3;
 
-    public TagListFragment(String tab,int classType) {
-        this.tab = tab;
-        this.classType = classType;
-    }
-
     @Override
     public int initContentView() {
         return R.layout.fragment_base_book_stoare_banner_bottom_list_date;
@@ -58,6 +53,16 @@ public class TagListFragment extends BaseFragment {
     @Override
     public void initView() {
         this.SEX = ShareUitls.getInt(getActivity(), "sex", 1);
+        if (getArguments() != null) {
+            this.tab = (String) getArguments().getString("tab");
+            this.classType = getArguments().getInt("classType");
+        } else {
+            this.tab = "未知";
+            this.classType = 1;
+        }
+
+
+
         Log.e("sex",this.SEX+"");
         initSCRecyclerView(public_recycleview, RecyclerView.VERTICAL, 0);
         baseBookComics = new ArrayList<>();
