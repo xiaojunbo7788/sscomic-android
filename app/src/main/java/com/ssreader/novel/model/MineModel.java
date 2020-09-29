@@ -10,6 +10,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.ssreader.novel.R;
+import com.ssreader.novel.ui.activity.InviteActivity;
 import com.ssreader.novel.ui.dialog.BottomMenuDialog;
 import com.ssreader.novel.ui.view.screcyclerview.SCOnItemClickListener;
 import com.ssreader.novel.utils.cache.ClearCacheManager;
@@ -184,7 +185,8 @@ public class MineModel implements Cloneable {
                 activity.startActivity(new Intent(activity, TaskCenterActivity.class));
                 break;
             case "invite":
-                new MyShare(activity).ShareAPP();
+                activity.startActivity(new Intent(activity, InviteActivity.class));
+//                new MyShare(activity).ShareAPP();
                 break;
             case "history":
                 activity.startActivity(new Intent(activity, BaseOptionActivity.class)

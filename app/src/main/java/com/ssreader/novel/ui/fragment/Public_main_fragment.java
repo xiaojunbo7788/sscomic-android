@@ -30,6 +30,7 @@ import com.ssreader.novel.eventbus.ShelfDeleteRefresh;
 import com.ssreader.novel.eventbus.StoreHotWords;
 import com.ssreader.novel.eventbus.StoreScrollStatus;
 import com.ssreader.novel.eventbus.ToStore;
+import com.ssreader.novel.model.AppUpdate;
 import com.ssreader.novel.model.StoreHotWordBean;
 import com.ssreader.novel.ui.activity.SearchActivity;
 import com.ssreader.novel.ui.utils.ImageUtil;
@@ -308,10 +309,20 @@ public class Public_main_fragment extends BaseFragment {
                 fragmentList.add(new DiscoverFragment(type, 0));
                 break;
             case 4:
+                //TODO:fix
                 stringList.clear();
                 fragmentList.clear();
-                stringList.add(LanguageUtil.getString(activity, R.string.activity_main5));
-                fragmentList.add(new FanGroupFragment());
+                List<AppUpdate.WebURLBean>list = ShareUitls.getDataList(activity,"web_view_urlist", AppUpdate.WebURLBean.class);
+                if (list.size() > 0) {
+                    for (AppUpdate.WebURLBean temp:list) {
+                        stringList.add(temp.getPlay_title());
+                        fragmentList.add(FanGroupFragment.getInstance(temp.getPlay_url()));
+                    }
+                } else {
+                    stringList.add("未知");
+                    fragmentList.add(FanGroupFragment.getInstance(""));
+                }
+
                 break;
         }
     }

@@ -9,7 +9,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 7
-        versionName "1.1.8"
+        versionName "1.1.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -179,6 +179,9 @@ dependencies {
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
     // 流式布局
     implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    //圆角
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 
 configurations.all {

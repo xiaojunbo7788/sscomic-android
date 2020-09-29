@@ -13,7 +13,16 @@ public class AppUpdate {
     public AdStatusSettingBean ad_status_setting;
     public List<PushPassagewayBean> push_passageway;
     public String web_view_url;
+    private List<WebURLBean>web_view_urlist;
     private ProtocolBean protocol_list;
+
+    public List<WebURLBean> getWeb_view_urlist() {
+        return web_view_urlist;
+    }
+
+    public void setWeb_view_urlist(List<WebURLBean> web_view_urlist) {
+        this.web_view_urlist = web_view_urlist;
+    }
 
     public VersionUpdateBean getVersion_update() {
         return version_update;
@@ -63,7 +72,34 @@ public class AppUpdate {
         this.protocol_list = protocol_list;
     }
 
-    public class VersionUpdateBean {
+    public static class WebURLBean {
+        private String play_title;
+        private String play_url;
+
+        public String getPlay_title() {
+            if (play_title == null) {
+                return "";
+            }
+            return play_title;
+        }
+
+        public void setPlay_title(String play_title) {
+            this.play_title = play_title;
+        }
+
+        public String getPlay_url() {
+            if (play_url == null) {
+                play_url = "";
+            }
+            return play_url;
+        }
+
+        public void setPlay_url(String play_url) {
+            this.play_url = play_url;
+        }
+    }
+
+    public static class VersionUpdateBean {
 
         private int status;
         private String msg;

@@ -10,7 +10,6 @@ import android.widget.RadioGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.ssreader.novel.ui.fragment.FanGroupFragment;
 import com.umeng.socialize.UMShareAPI;
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BWNApplication;

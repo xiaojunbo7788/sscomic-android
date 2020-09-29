@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_gravity="center|top"
+    android:gravity="top|center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5C5AE4">
+    <include layout="@layout/public_sns_topbar" />
+    <ImageView
+        android:id="@+id/top_bg"
+        android:layout_below="@+id/public_sns_topbar_layout"
+        android:background="@mipmap/invite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/public_sns_topbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:visibility="invisible"
+                android:background="@mipmap/invite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="209dp">
+                <View
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="55dp"
+                    android:background="@drawable/invite_right_indictor"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <View
+                    android:layout_marginRight="-10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="55dp"
+                    android:background="@drawable/invite_left_indictor"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+
+            </RelativeLayout>
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginLeft="13dp"
+                android:background="@mipmap/invite_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:riv_corner_radius="6dp"
+                app:riv_mutate_background="true"
+                app:riv_oval="false"
+                app:riv_tile_mode="clamp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/white"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

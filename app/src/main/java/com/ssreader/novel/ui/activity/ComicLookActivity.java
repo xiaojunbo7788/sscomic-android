@@ -217,6 +217,8 @@ public class ComicLookActivity extends BaseActivity {
     private BaseAd baseAd;
     private PublicPurchaseDialog purchaseDialog;
 
+    private int selModel = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -277,6 +279,17 @@ public class ComicLookActivity extends BaseActivity {
         // 获取目录
         getCatalog();
         initEditTextListener();
+
+        //监听RecyclerView滚动状态
+        activity_comiclook_RecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if(recyclerView.getLayoutManager() != null) {
+                    getPositionAndOffset();
+                }
+            }
+        });
     }
 
     private void initEditTextListener() {
@@ -299,6 +312,24 @@ public class ComicLookActivity extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    private int lastOffset;
+    private int lastPosition;
+
+    /**
+     * 记录RecyclerView当前位置
+     */
+    private void getPositionAndOffset() {
+        LinearLayoutManager layoutManager = (LinearLayoutManager) activity_comiclook_RecyclerView.getLayoutManager();
+        //获取可视的第一个view
+        View topView = layoutManager.getChildAt(0);
+        if(topView != null) {
+            //获取与该view的顶部的偏移量
+            lastOffset = topView.getTop();
+            //得到该View的数组位置
+            lastPosition = layoutManager.getPosition(topView);
+        }
     }
 
     @OnClick({R.id.titlebar_back,
@@ -401,7 +432,29 @@ public class ComicLookActivity extends BaseActivity {
                     }
                     break;
                 case R.id.activity_comiclook_set:
-                    LookComicSetDialog.getLookComicSetDialog(activity);
+                    LookComicSetDialog.getLookComicSetDialog(activity,selModel, new LookComicSetDialog.LookComicSetDialogListener() {
+                        @Override
+                        public void changeReaderMode(int mode) {
+                            if (mode == selModel) return;
+                            //TODO:更改模式
+                            if (mode == 1) {
+                                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
+                                linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                                activity_comiclook_RecyclerView.setLayoutManager(linearLayoutManager);
+                                comicChapterCatalogAdapter.setV(false);
+                                comicChapterCatalogAdapter.notifyDataSetChanged();
+
+                            } else {
+                                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
+                                linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                                activity_comiclook_RecyclerView.setLayoutManager(linearLayoutManager);
+                                comicChapterCatalogAdapter.setV(true);
+                                comicChapterCatalogAdapter.notifyDataSetChanged();
+                            }
+                            selModel = mode;
+                            scrollToPosition();
+                        }
+                    });
                     break;
                 case R.id.activity_comiclook_xiazai:
                     Intent intentxiazai = new Intent(activity, ComicDownActivity.class);
@@ -447,6 +500,16 @@ public class ComicLookActivity extends BaseActivity {
             }
         }
     }
+
+    /**
+     * 让RecyclerView滚动到指定位置
+     */
+    private void scrollToPosition() {
+        if(activity_comiclook_RecyclerView.getLayoutManager() != null && lastPosition >= 0) {
+            ((LinearLayoutManager) activity_comiclook_RecyclerView.getLayoutManager()).scrollToPositionWithOffset(lastPosition, lastOffset);
+        }
+    }
+
 
     @Override
     public void initData() {

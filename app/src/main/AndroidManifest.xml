@@ -74,8 +74,8 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory"
         tools:targetApi="p">
-        <activity android:name=".ui.activity.TagListActivity"></activity>
-        <!-- Glide 处理HTTPs -->
+        <activity android:name=".ui.activity.InviteActivity"></activity>
+        <activity android:name=".ui.activity.TagListActivity" /> <!-- Glide 处理HTTPs -->
         <meta-data
             android:name="com.ssreader.novel.net.OkHttpAppGlideModule"
             android:value="GlideModule" /> <!-- 起始界面 -->

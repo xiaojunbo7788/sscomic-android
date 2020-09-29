@@ -2,6 +2,7 @@ package com.ssreader.novel.ui.adapter;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -50,6 +52,12 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     private Activity activity;
     private View footView;
     private ComicLookActivity.ItemOnclick itemOnclick;
+
+    private boolean isV = false;
+
+    public void setV(boolean v) {
+        isV = v;
+    }
 
     public ComicRecyclerViewAdapter(Activity activity, int WIDTH, int topHeight, List<BaseComicImage> list,
                                     View footView, ComicLookActivity.ItemOnclick itemOnclick) {
@@ -98,7 +106,17 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
                 layoutParams.topMargin = 0;
             }
             layoutParams.width = WIDTH;//默认
+
+            if (isV) {
+                NestedScrollView.LayoutParams lp = (NestedScrollView.LayoutParams)holder.contentView.getLayoutParams();
+                lp.gravity = Gravity.CENTER;
+                holder.contentView.setLayoutParams(lp);
+            }
+
             holder.frameLayout.setLayoutParams(layoutParams);
+
+
+
             holder.frameLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -168,6 +186,8 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         List<ImageView> comicImage;
         @BindView(R.id.item_comic_recyclerview_layout)
         FrameLayout frameLayout;
+        @BindView(R.id.item_comic_layout)
+        LinearLayout contentView;
 
         public MyViewHolder(View itemView) {
             super(itemView);

@@ -93,6 +93,7 @@ public class UpdateApp {
 
     private void next(AppUpdate dataBean, String response, UpdateAppInterface updateAppInterface) {
         if (dataBean != null) {
+            ShareUitls.setDataList(activity, "web_view_urlist", dataBean.getWeb_view_urlist());
             ShareUitls.putString(activity, "web_view_url", dataBean.web_view_url);
             AppUpdate.SystemSettingBean systemSettingBean = dataBean.system_setting;
             if (systemSettingBean != null) {

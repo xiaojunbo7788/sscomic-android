@@ -3,6 +3,7 @@ package com.ssreader.novel.ui.fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.webkit.DownloadListener;
@@ -24,8 +25,14 @@ public class FanGroupFragment extends BaseFragment {
     @BindView(R.id.fragment_fan_group_web)
     WebView webView;
 
-    public FanGroupFragment() {
+    private String url;
 
+    public static FanGroupFragment getInstance(String url) {
+        FanGroupFragment f = new FanGroupFragment();
+        Bundle args = new Bundle();
+        args.putSerializable("url",url);
+        f.setArguments(args);
+        return f;
     }
 
     @Override
@@ -64,7 +71,7 @@ public class FanGroupFragment extends BaseFragment {
 
     @Override
     public void initData() {
-        String url = ShareUitls.getString(activity, "web_view_url", "");
+        String url = (String) getArguments().getString("url");
         if (!TextUtils.isEmpty(url)) {
             webView.loadUrl(url);
         }
