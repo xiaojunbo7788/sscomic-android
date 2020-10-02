@@ -1012,7 +1012,7 @@ public class AudioSoundActivity extends BaseActivity {
             if (purchaseDialog != null && purchaseDialog.isShowing()){
                 return;
             }
-            purchaseDialog = new PublicPurchaseDialog(activity, Constant.AUDIO_CONSTANT, purchaseRefresh.isDown(), new PublicPurchaseDialog.BuySuccess() {
+            purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.AUDIO_CONSTANT, purchaseRefresh.isDown(), new PublicPurchaseDialog.BuySuccess() {
                 @Override
                 public void buySuccess(long[] ids, int num) {
                     purchaseRefresh.getAudioChapter().setIs_preview(0);

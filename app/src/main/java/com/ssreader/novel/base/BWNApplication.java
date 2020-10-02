@@ -119,14 +119,17 @@ public class BWNApplication extends Application {
     }
 
     private void initUM() {
-        UMConfigure.init(this, UMENG, UserUtils.getChannelName(this),
-                UMConfigure.DEVICE_TYPE_PHONE, "");
+        if (!BuildConfig.DEBUG) {
+            UMConfigure.init(this, UMENG, UserUtils.getChannelName(this),
+                    UMConfigure.DEVICE_TYPE_PHONE, "");
+        }
         if (USE_WEIXIN) {
             PlatformConfig.setWeixin(WEIXIN_PAY_APPID, WEIXIN_APP_SECRET);
         }
         if (USE_QQ) {
             PlatformConfig.setQQZone(QQ_APPID, QQ_SECRET);
         }
+
     }
 
     /**

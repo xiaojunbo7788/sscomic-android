@@ -182,6 +182,7 @@ dependencies {
 
     //圆角
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.1'
 }
 
 configurations.all {

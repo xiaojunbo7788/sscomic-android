@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
+import com.ssreader.novel.dialog.VipAlertDialog;
+import com.ssreader.novel.utils.MyShare;
 import com.suke.widget.SwitchButton;
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BWNApplication;
@@ -106,13 +108,16 @@ public class PublicPurchaseDialog extends Dialog {
     private String unit, subUnit;
     private long remain;
     private boolean auto_sub;
+    private String bookId;
+    private String vipContent;
 
     public void setOnPurchaseClickListener(OnPurchaseClickListener onPurchaseClickListener) {
         this.onPurchaseClickListener = onPurchaseClickListener;
     }
 
-    public PublicPurchaseDialog(Activity context, int productType, boolean isdown, BuySuccess buySuccess, boolean CanceledOnTouchOutside) {
+    public PublicPurchaseDialog(Activity context,String vipContent, int productType, boolean isdown, BuySuccess buySuccess, boolean CanceledOnTouchOutside) {
         super(context, R.style.BottomDialog);
+        this.vipContent = vipContent;
         this.isdown = isdown;
         this.productType = productType;
         this.buySuccess = buySuccess;
@@ -198,6 +203,7 @@ public class PublicPurchaseDialog extends Dialog {
      * @param downoption
      */
     public void initData(final long Id, final String chapterId, boolean isdown, Downoption downoption) {
+        this.bookId = String.valueOf(Id);
         String url = "";
         ReaderParams params = new ReaderParams(activity);
         if (productType == Constant.BOOK_CONSTANT) {
@@ -307,13 +313,42 @@ public class PublicPurchaseDialog extends Dialog {
                                         Dismiss();
                                     }
                                 } else if (mFlag == 0) {
-                                    activity.startActivity(new Intent(activity, NewRechargeActivity.class)
-                                            .putExtra("RechargeTitle", getCurrencyUnit(activity) + LanguageUtil.getString(activity, R.string.MineNewFragment_chongzhi))
-                                            .putExtra("RechargeRightTitle", LanguageUtil.getString(activity, R.string.BaoyueActivity_chongzhijilu))
-                                            .putExtra("RechargeType", "gold"));
-                                    if (isdown) {
-                                        Dismiss();
-                                    }
+                                    VipAlertDialog dialog = new VipAlertDialog.Builder(getContext()).setContent(vipContent).setVipAlertDialogListener(new VipAlertDialog.VipAlertDialogListener() {
+                                        @Override
+                                        public void onClickGoToVip() {
+                                            activity.startActivity(new Intent(activity, NewRechargeActivity.class)
+                                                    .putExtra("RechargeTitle", LanguageUtil.getString(activity, R.string.BaoyueActivity_title))
+                                                    .putExtra("RechargeType", "vip"));
+                                            if (isdown) {
+                                                Dismiss();
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onClickGoToRecharge() {
+                                            activity.startActivity(new Intent(activity, NewRechargeActivity.class)
+                                                    .putExtra("RechargeTitle", getCurrencyUnit(activity) + LanguageUtil.getString(activity, R.string.MineNewFragment_chongzhi))
+                                                    .putExtra("RechargeRightTitle", LanguageUtil.getString(activity, R.string.BaoyueActivity_chongzhijilu))
+                                                    .putExtra("RechargeType", "gold"));
+                                            if (isdown) {
+                                                Dismiss();
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onClickGoToShare() {
+                                            if (isdown) {
+                                                Dismiss();
+                                            }
+                                            new MyShare(activity)
+                                                    .setFlag(Constant.COMIC_CONSTANT)
+                                                    .setId(Long.parseLong(bookId))
+                                                    .Share();
+
+                                        }
+                                    }).create();
+                                    dialog.show();
+
                                 } else if (mFlag == 1) {
                                     purchaseSingleChapter(Id, chapterId, mNum);
                                 }

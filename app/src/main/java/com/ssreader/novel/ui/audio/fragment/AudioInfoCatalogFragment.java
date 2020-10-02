@@ -454,7 +454,7 @@ public class AudioInfoCatalogFragment extends BaseFragment {
             @Override
             public void onErrorResponse(String ex) {
                 if (ex != null && ex.equals("701") || ex.equals("601")) {
-                    purchaseDialog = new PublicPurchaseDialog(activity, Constant.AUDIO_CONSTANT, true, new PublicPurchaseDialog.BuySuccess() {
+                    purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.AUDIO_CONSTANT, true, new PublicPurchaseDialog.BuySuccess() {
                         @Override
                         public void buySuccess(long[] ids, int num) {
                             audioChapter.setIs_preview(0);

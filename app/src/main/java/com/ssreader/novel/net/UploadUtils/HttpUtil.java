@@ -72,6 +72,7 @@ public class HttpUtil {
         WaitDialog waitDialog = new WaitDialog(context, 0).ShowDialog(true);
         MultipartBody multipartBody = builder.build();
         Request request = new Request.Builder().url(url).post(new ProgressRequestBody(multipartBody, listener)).build();
+        final String fUrl = url;
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -90,7 +91,7 @@ public class HttpUtil {
             public void onResponse(Call call, Response response) throws IOException {
                 waitDialog.ShowDialog(false);
                 String result = response.body().string();
-                HttpUtils.getInstance().handleData(false, context, result, responseListener);
+                HttpUtils.getInstance().handleData(false,fUrl, context, result, responseListener);
             }
         });
     }

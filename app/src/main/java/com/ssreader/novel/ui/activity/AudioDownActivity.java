@@ -307,7 +307,7 @@ public class AudioDownActivity extends BaseActivity {
             public void onErrorResponse(String ex) {
                 showWaitDialog(false);
                 if (ex != null && ex.equals("701") || ex.equals("601")) {
-                    purchaseDialog = new PublicPurchaseDialog(activity, Constant.AUDIO_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
+                    purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.AUDIO_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
                         @Override
                         public void buySuccess(long[] ids, int num) {
                             for (AudioChapter audioChapter : audioChooseChapterList) {

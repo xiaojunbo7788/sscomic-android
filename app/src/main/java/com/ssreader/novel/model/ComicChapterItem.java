@@ -11,6 +11,7 @@ public class ComicChapterItem {
     public int total_comment;
     public int is_preview;//": 1, //是否预览章节 1是 0不是
     public  int  display_order;
+    public String recharge_content;
     public List<BaseComicImage> image_list;
 
     public long getComic_id() {

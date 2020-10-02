@@ -872,7 +872,7 @@ public class AudioAiActivity extends BaseActivity {
             if (purchaseDialog != null && purchaseDialog.isShowing()){
                 return;
             }
-            purchaseDialog = new PublicPurchaseDialog(activity, Constant.BOOK_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
+            purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.BOOK_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
                 @Override
                 public void buySuccess(long[] ids, int num) {
                     purchaseRefresh.getBookChapter().setIs_preview(0);

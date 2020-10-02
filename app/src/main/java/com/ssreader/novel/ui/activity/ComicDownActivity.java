@@ -297,7 +297,7 @@ public class ComicDownActivity extends BaseActivity {
                         public void onErrorResponse(String ex) {
                             waitDialog.dismissDialog();
                             if (ex != null && ex.equals("701")) {
-                                purchaseDialog = new PublicPurchaseDialog(activity, Constant.COMIC_CONSTANT, true, new PublicPurchaseDialog.BuySuccess() {
+                                purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.COMIC_CONSTANT, true, new PublicPurchaseDialog.BuySuccess() {
                                     @Override
                                     public void buySuccess(long[] ids, int num) {
                                         for (ComicChapter comicDownOption : comicDownOptionAdapter.comicDownOptionListChooseDwn) {

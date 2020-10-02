@@ -31,26 +31,131 @@
             <RelativeLayout
                 android:layout_marginLeft="13dp"
                 android:layout_marginRight="13dp"
-                android:background="@color/white"
+                android:background="@drawable/white_color_corner_4"
                 android:layout_width="match_parent"
                 android:layout_height="209dp">
                 <View
                     android:layout_marginLeft="-10dp"
-                    android:layout_marginTop="55dp"
+                    android:layout_marginTop="45dp"
                     android:background="@drawable/invite_right_indictor"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
                 <View
                     android:layout_marginRight="-10dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="55dp"
+                    android:layout_marginTop="45dp"
                     android:background="@drawable/invite_left_indictor"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
+                
+                <RelativeLayout
+                    android:id="@+id/invite_top_bg_btn"
+                    android:background="@drawable/invite_top_bg_border"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp">
+                    <TextView
+                        android:layout_marginLeft="19dp"
+                        android:gravity="left|center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:text="我的邀请人"/>
+                    <ImageView
+                        android:id="@+id/invite_right"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_win_right"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/invite_name"
+                        android:layout_toLeftOf="@+id/invite_right"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:textSize="14dp"
+                        tools:text="三少爷的剑"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/invite_top_bg_btn"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/invite_qr_img"
+                        android:src="@mipmap/ionc_eq"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"/>
+                    <LinearLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/invite_qr_img"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:text="已邀请"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="2dp"
+                            android:gravity="bottom|left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/invite_count"
+                                tools:text="999"
+                                android:textColor="#E63324"
+                                android:textSize="29dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_marginLeft="2dp"
+                                android:text="人"
+                                android:textColor="#E63324"
+                                android:textSize="11dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:textStyle="bold"
+                            android:text="我的邀请码"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/invite_code"
+                            android:layout_marginTop="4dp"
+                            tools:text="8FA6A"
+                            android:textColor="#E63324"
+                            android:textSize="29dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
 
 
             </RelativeLayout>
             <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/invite_btn"
                 android:layout_marginTop="18dp"
                 android:layout_marginRight="13dp"
                 android:layout_marginLeft="13dp"
@@ -63,11 +168,58 @@
                 app:riv_tile_mode="clamp"/>
 
             <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="wrap_content">
+                <View
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:rotation="90"/>
+                <View
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"/>
+                <View
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="21dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="邀请记录"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:rotation="90"/>
+                <View
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"/>
+                <View
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/s_squre"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"/>
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:background="@color/white"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:id="@+id/invite_recycler"
+                android:background="@drawable/white_color_corner_4"
                 android:layout_marginLeft="13dp"
                 android:layout_marginRight="13dp"
                 android:layout_width="match_parent"

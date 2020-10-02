@@ -15,6 +15,8 @@ public class Api {
 
     public static final String APP_SHARE = "/user/app-share";
 
+    public static final String APP_BIND_CODE = "/invite/bind-code";
+
     public static final String task_read = "/user/task-read";
 
     public static final String mBookStoreUrl = "/book/store";

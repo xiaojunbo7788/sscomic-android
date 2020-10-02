@@ -219,6 +219,8 @@ public class ComicLookActivity extends BaseActivity {
 
     private int selModel = 1;
 
+    private String vipContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -552,7 +554,7 @@ public class ComicLookActivity extends BaseActivity {
      */
     private void getBuy() {
         refreshLayout.setEnableLoadMore(false);
-        purchaseDialog = new PublicPurchaseDialog(activity, Constant.COMIC_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
+        purchaseDialog = new PublicPurchaseDialog(activity,vipContent, Constant.COMIC_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
             @Override
             public void buySuccess(long[] ids, int num) {
                 refreshLayout.setEnableLoadMore(true);
@@ -888,6 +890,7 @@ public class ComicLookActivity extends BaseActivity {
                         @Override
                         public void onResponse(final String result) {
                             ComicChapterItem comicChapterItem = gson.fromJson(result, ComicChapterItem.class);
+                            vipContent = comicChapterItem.recharge_content;
                             map.put(chapter_id, comicChapterItem);
                             if (HandleData) {
                                 HandleData(comicChapterItem, chapter_id, comic_id, activity);

@@ -380,7 +380,7 @@
     <string name="ReadActivity_oprice">原价：</string>
     <string name="ReadActivity_login_buy">登录后购买</string>
     <string name="ReadActivity_benzhangbuy">从本章开始购买</string>
-    <string name="ReadActivity_chongzhibuy">充值并购买</string>
+    <string name="ReadActivity_chongzhibuy">获取VIP无限看</string>
 
     <!--漫画详情-->
     <string name="fragment_comic_info_xiangqing">详情</string>

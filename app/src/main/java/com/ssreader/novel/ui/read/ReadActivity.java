@@ -378,7 +378,7 @@ public class ReadActivity extends BaseReadActivity {
                             });
                 } else if (type == 2) {
                     // 批量购买
-                    purchaseDialog = new PublicPurchaseDialog(activity, Constant.BOOK_CONSTANT,
+                    purchaseDialog = new PublicPurchaseDialog(activity,"", Constant.BOOK_CONSTANT,
                             false, null, true);
                     purchaseDialog.initData(mBookId, mPageLoader.bookChapter.chapter_id + "",
                             false, null);

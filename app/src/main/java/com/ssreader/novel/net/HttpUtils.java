@@ -57,6 +57,7 @@ public class HttpUtils {
      * @param responseListener
      */
     public void sendRequestRequestParams(Activity activity, final String url, final String body, final ResponseListener responseListener) {
+
         sendRequestRequestParams(activity, url, body, "", responseListener);
     }
 
@@ -68,7 +69,9 @@ public class HttpUtils {
             return;
         }
         if (InternetUtils.internet(activity)) {
-            MyToash.Log("bwhttp2", Constant.BASE_URL + url + " \n  " + body);
+            if (url != null) {
+                MyToash.Log("bwhttp ====> request", Constant.BASE_URL + url + " \n  " + body);
+            }
             OkHttp3.getInstance(activity).postAsyncHttp(url, body, new ResultCallback() {
                 @Override
                 public void onFailure(Request request, Exception e) {
@@ -85,7 +88,7 @@ public class HttpUtils {
                 @Override
                 public void onResponse(final String result) {
                     if (responseListener != null) {
-                        handleData(false, activity, result, responseListener);
+                        handleData(false,url, activity, result, responseListener);
                     }
                 }
             });
@@ -112,8 +115,8 @@ public class HttpUtils {
         });
     }
 
-    public void handleData(boolean subThread, Activity activity, String result, ResponseListener responseListener) {
-        MyToash.Log("bwhttp1", result);
+    public void handleData(boolean subThread,String url, Activity activity, String result, ResponseListener responseListener) {
+        MyToash.Log("bwhttp ====> response: url =",url+ " result =" + result);
         if (activity != null && !activity.isFinishing()) {
             handJsonData(subThread, result, responseListener, activity);
         }
@@ -217,7 +220,7 @@ public class HttpUtils {
             return;
         }
         if (InternetUtils.internet(activity)) {
-            MyToash.Log("bwhttp2", Constant.BASE_URL + url + " \n  " + body);
+            MyToash.Log("bwhttp === > request", Constant.BASE_URL + url + " \n  " + body);
             OkHttp3.getInstance(activity).postAsyncHttp(url, body, new ResultCallback() {
                 @Override
                 public void onFailure(Request request, Exception e) {
@@ -234,7 +237,7 @@ public class HttpUtils {
                 @Override
                 public void onResponse(final String result) {
                     if (responseListener != null) {
-                        handleData(true, activity, result, responseListener);
+                        handleData(true,url, activity, result, responseListener);
                     }
                 }
             });

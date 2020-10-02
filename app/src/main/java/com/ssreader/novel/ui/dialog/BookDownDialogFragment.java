@@ -224,7 +224,7 @@ public class BookDownDialogFragment extends BaseDialogFragment {
                             if (baseBook != null) {
                                 dismissAllowingStateLoss();
                             }
-                            PublicPurchaseDialog mPurchaseDialog = new PublicPurchaseDialog(activity, Constant.BOOK_CONSTANT,
+                            PublicPurchaseDialog mPurchaseDialog = new PublicPurchaseDialog(activity,"", Constant.BOOK_CONSTANT,
                                     true, new PublicPurchaseDialog.BuySuccess() {
                                 @Override
                                 public void buySuccess(long[] ids, int num) {

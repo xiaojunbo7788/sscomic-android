@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_color_corner_8"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/vip_alert_top"
+            android:background="@drawable/vip_alert_corner"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/white"
+            android:text="偷偷告诉你..." />
+
+        <TextView
+            android:id="@+id/vip_alert_content"
+            android:layout_below="@+id/vip_alert_top"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="除了分享可以免费看漫画，升级VIP后直接不用分享，还有提供国内高速线路！"/>
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/vip_alert_content"
+            android:id="@+id/vip_btn"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/vip_btn_corner"
+            android:layout_width="164dp"
+            android:layout_height="36dp">
+            <ImageView
+                android:src="@mipmap/icon_y_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:text="获取VIP无限看"/>
+        </LinearLayout>
+
+       <LinearLayout
+           android:layout_below="@+id/vip_btn"
+           android:layout_centerHorizontal="true"
+           android:id="@+id/recharge_btn"
+           android:orientation="vertical"
+           android:layout_gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_gravity="center"
+               android:layout_marginTop="17dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="12dp"
+               android:textColor="#838383"
+               android:text="充值购买松子"/>
+           <View
+               android:background="#838383"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"/>
+       </LinearLayout>
+
+        <View
+            android:id="@+id/vip_alert_line"
+            android:layout_below="@+id/recharge_btn"
+            android:layout_marginTop="18dp"
+            android:background="#F6F6F6"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"/>
+        <LinearLayout
+            android:layout_below="@+id/vip_alert_line"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <RelativeLayout
+                android:id="@+id/cancel_btn"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/live_error_cancel_text"
+                    android:layout_marginRight="0.6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="狠心拒绝"
+                    android:textColor="#ff525866"
+                    android:textSize="16sp" />
+                <View
+                    android:layout_alignParentRight="true"
+                    android:background="#F6F6F6"
+                    android:layout_width="0.6dp"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+            <Button
+                android:id="@+id/commit_btn"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="立即分享"
+                android:textColor="#FF7666"
+                style="?android:attr/borderlessButtonStyle"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
