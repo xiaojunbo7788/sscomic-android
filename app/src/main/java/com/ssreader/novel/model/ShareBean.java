@@ -17,6 +17,7 @@ public class ShareBean {
     }
 
     public static class InviteUserItem {
+        public int code = 0;
         private String nickname;
         private String created_at;
         private String userHead;

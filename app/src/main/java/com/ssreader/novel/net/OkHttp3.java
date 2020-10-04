@@ -74,6 +74,10 @@ public class OkHttp3 {
         postAsyncHttp(Constant.BASE_URL + url, json, callback, false);
     }
 
+    public void postOtherAsyncHttp(String url, String json, ResultCallback callback) {
+        postAsyncHttp(url, json, callback, false);
+    }
+
     /**
      * 异步post请求
      *

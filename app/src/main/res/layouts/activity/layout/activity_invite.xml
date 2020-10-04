@@ -12,7 +12,9 @@
     <ImageView
         android:id="@+id/top_bg"
         android:layout_below="@+id/public_sns_topbar_layout"
-        android:background="@mipmap/invite"
+        android:src="@mipmap/invite"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <androidx.core.widget.NestedScrollView
@@ -25,10 +27,14 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:visibility="invisible"
+                android:src="@mipmap/invite"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
                 android:background="@mipmap/invite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <RelativeLayout
+                android:layout_marginTop="-30dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginRight="13dp"
                 android:background="@drawable/white_color_corner_4"
@@ -64,14 +70,15 @@
                         android:textSize="14dp"
                         android:textColor="@color/black"
                         android:text="我的邀请人"/>
+
                     <ImageView
                         android:id="@+id/invite_right"
-                        android:layout_marginRight="5dp"
-                        android:layout_centerVertical="true"
-                        android:src="@mipmap/icon_win_right"
-                        android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:src="@mipmap/icon_win_right" />
                     <TextView
                         android:id="@+id/invite_name"
                         android:layout_toLeftOf="@+id/invite_right"

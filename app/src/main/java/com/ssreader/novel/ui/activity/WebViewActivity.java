@@ -64,7 +64,7 @@ public class WebViewActivity extends BaseActivity {
     @BindView(R.id.activity_webview)
     public WebView mWebView;
 
-    private String flag, title;
+    private String flag, title,form;
     private boolean is_otherBrowser;
 
     @Override
@@ -87,8 +87,65 @@ public class WebViewActivity extends BaseActivity {
         });
         http_URL = formIntent.getStringExtra("url");
         flag = formIntent.getStringExtra("flag");
+        form = formIntent.getStringExtra("form");
         title = formIntent.getStringExtra("title");
         is_otherBrowser = formIntent.getBooleanExtra("is_otherBrowser", false);
+        if (form != null && form.length() > 0) {
+            loadForm();
+        } else {
+            loadUrl();
+        }
+
+    }
+
+    private void loadForm() {
+        if (title != null) {
+            public_sns_topbar_title.setText(title);
+        }
+        WebSettings settings = mWebView.getSettings();
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        settings.setJavaScriptEnabled(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+        settings.setBlockNetworkImage(false);//解决图片不显示
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        mWebView.setDownloadListener(new MyWebViewDownLoadListener());  //在前面加入下载监听器
+        mWebView.setWebViewClient(new DemoWebViewClient());
+        mWebView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+                mUploadCallbackAboveL = filePathCallback;
+                // 判断权限
+                if (PermissionsUtil.hasPermission(activity, Manifest.permission.CAMERA)) {
+                    take();
+                } else {
+                    setPermission();
+                }
+                return true;
+            }
+
+            //<3.0
+            public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+                mUploadMessage = uploadMsg;
+                take();
+            }
+
+            //>3.0+
+            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType) {
+                mUploadMessage = uploadMsg;
+                take();
+            }
+
+            //>4.1.1
+            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
+                mUploadMessage = uploadMsg;
+                take();
+            }
+        });
+        js();
+        mWebView.loadDataWithBaseURL(null, form, "text/html", "utf-8", null);
+    }
+
+    private void loadUrl() {
         if (is_otherBrowser && http_URL != null && !TextUtils.isEmpty(http_URL)) {
             Intent intent2 = new Intent();
             intent2.setAction(Intent.ACTION_VIEW);

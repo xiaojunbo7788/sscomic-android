@@ -15,15 +15,12 @@ import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseActivity;
 import com.ssreader.novel.constant.Api;
 import com.ssreader.novel.model.InviteBindBean;
-import com.ssreader.novel.model.PurchaseDialogBean;
 import com.ssreader.novel.model.ShareBean;
 import com.ssreader.novel.net.HttpUtils;
 import com.ssreader.novel.net.ReaderParams;
 import com.ssreader.novel.ui.activity.adapter.InviteAdapter;
 import com.ssreader.novel.ui.dialog.SetCodeDialog;
 import com.ssreader.novel.ui.utils.MyToash;
-import com.ssreader.novel.utils.LanguageUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +42,9 @@ public class InviteActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     @BindView(R.id.invite_btn)
     RoundedImageView invite_btn;
+    @BindView(R.id.public_sns_topbar_back)
+    RelativeLayout backView;
+
     private InviteAdapter inviteAdapter;
 
     private ShareBean shareBean;
@@ -66,9 +66,9 @@ public class InviteActivity extends BaseActivity {
         topBgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (shareBean.bind_user != null && shareBean.bind_user.length() > 0) {
-//                    return;
-//                }
+                if (shareBean.bind_user != null && shareBean.bind_user.length() > 0) {
+                    return;
+                }
                 String name = "输入邀请人邀请码";
                 SetCodeDialog setCodeDialog = new SetCodeDialog();
                 setCodeDialog.showSetCodeDialog(activity, name, "");
@@ -92,6 +92,12 @@ public class InviteActivity extends BaseActivity {
                 if (shareBean != null) {
                     setShare(activity, shareBean.link, shareBean.title, shareBean.desc);
                 }
+            }
+        });
+        backView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -143,7 +149,7 @@ public class InviteActivity extends BaseActivity {
                                 if (shareBean.bind_user != null && shareBean.bind_user.length() > 0) {
                                     invite_name.setText(shareBean.bind_user);
                                 } else {
-                                    invite_name.setText("");
+                                    invite_name.setText("请填写");
                                 }
                                 if (shareBean.inviteInfo!= null && shareBean.inviteInfo.count!=null) {
                                     invite_count.setText(shareBean.inviteInfo.count);
@@ -151,8 +157,12 @@ public class InviteActivity extends BaseActivity {
                                     invite_count.setText("0");
                                 }
                                 invite_code.setText(shareBean.invite_code);
-                                if (shareBean.inviteInfo!= null && shareBean.inviteInfo.userList!=null) {
+                                if (shareBean.inviteInfo!= null && shareBean.inviteInfo.userList!=null && shareBean.inviteInfo.userList.size() > 0) {
                                     inviteAdapter.addData(shareBean.inviteInfo.userList);
+                                } else {
+                                    ShareBean.InviteUserItem userItem = new ShareBean.InviteUserItem();
+                                    userItem.code = -1;
+                                    inviteAdapter.addData(userItem);
                                 }
                             } else {
                                 MyToash.ToashError(activity,"数据有误");

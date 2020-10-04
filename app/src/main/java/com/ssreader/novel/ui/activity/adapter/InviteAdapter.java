@@ -1,6 +1,7 @@
 package com.ssreader.novel.ui.activity.adapter;
 
 import android.app.Activity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,8 +28,20 @@ public class InviteAdapter extends BaseQuickAdapter<ShareBean.InviteUserItem, Ba
         TextView nameView = holder.getView(R.id.user_name);
         ImageView imageView = holder.getView(R.id.user_head);
         TextView timeView = holder.getView(R.id.user_time);
-        nameView.setText(inviteUserItem.getNickname());
-        timeView.setText(inviteUserItem.getCreated_at());
-        MyGlide.GlideImageHeadNoSize((Activity) getContext(),inviteUserItem.getUserHead(),imageView);
+        TextView invite_right_view = holder.getView(R.id.invite_right_view);
+        if (inviteUserItem.code == -1) {
+            TextView eee_msg = holder.getView(R.id.eee_msg);
+            eee_msg.setVisibility(View.VISIBLE);
+            nameView.setVisibility(View.GONE);
+            imageView.setVisibility(View.GONE);
+            timeView.setVisibility(View.GONE);
+            invite_right_view.setVisibility(View.GONE);
+        } else {
+
+            nameView.setText(inviteUserItem.getNickname());
+            timeView.setText(inviteUserItem.getCreated_at());
+            MyGlide.GlideImageHeadNoSize((Activity) getContext(),inviteUserItem.getUserHead(),imageView);
+        }
+
     }
 }

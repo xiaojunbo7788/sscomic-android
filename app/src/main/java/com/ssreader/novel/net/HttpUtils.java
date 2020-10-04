@@ -99,6 +99,58 @@ public class HttpUtils {
         }
     }
 
+    /**
+     * 发送请求
+     *
+     * @param url
+     * @param body
+     * @param responseListener
+     */
+    public void sendOtherRequestRequestParams(Activity activity, final String url, final String body, final ResponseListener responseListener) {
+
+        sendOtherRequestRequestParams(activity, url, body, "", responseListener);
+    }
+
+    public void sendOtherRequestRequestParams(Activity activity, final String url, final String body, final String flagString, final ResponseListener responseListener) {
+        this.activity = activity;
+        this.flagString = flagString;
+        if ((activity == null || activity.isFinishing()) && responseListener != null) {
+            responseListener.onErrorResponse("");
+            return;
+        }
+        if (InternetUtils.internet(activity)) {
+            if (url != null) {
+                MyToash.Log("bwhttp ====> request",  url + " \n  " + body);
+            }
+            OkHttp3.getInstance(activity).postOtherAsyncHttp(url, body, new ResultCallback() {
+                @Override
+                public void onFailure(Request request, Exception e) {
+                    if (responseListener != null && activity != null && !activity.isFinishing()) {
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                responseListener.onErrorResponse(e.getMessage());
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onResponse(final String result) {
+                    if (responseListener != null) {
+                        handleData(false,url, activity, result, responseListener);
+                    }
+                }
+            });
+        } else {
+            if (responseListener != null) {
+                responseListener.onErrorResponse("no_net");
+            }
+        }
+    }
+
+
+
     public void downloadText(final String url, Context activity, final OnDownloadListenerText listener) {
         OkHttp3.getInstance(activity).getAsyncHttp(url, new ResultCallback() {
             @Override

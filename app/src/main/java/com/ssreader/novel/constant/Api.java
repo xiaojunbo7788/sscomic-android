@@ -414,4 +414,9 @@ public class Api {
     public static final String TagBookList = "/comic/list-by-sort";
 
     public static final String ClassBookList = "/comic/list-by-tags";
+
+    // 包月购买页
+    public static final String PAY_OTHER_URL = "/pay/otherpay";
+
+    public static final String PAY_CODE_URL = "/pay/codepay";
 }

@@ -145,24 +145,24 @@ public class SplashActivity extends FragmentActivity implements BaseInterface {
                 updateApp.getRequestData(true, null);
             }
             // 是否展示弹窗
-            if (ShareUitls.getBoolean(activity, "PraviteDialog", true) && !USE_LANAGUAGE) {
-                activity_home_viewpager_sex_next.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        GetDialog.PraviteDialog(activity, new GetDialog.OkCommit() {
-                            @Override
-                            public void success() {
-                                ShareUitls.putBoolean(activity, "PraviteDialog", false);
-                                // 获取权限
-                                requestReadPhoneState();
-                            }
-                        });
-                    }
-                });
-            } else {
+//            if (ShareUitls.getBoolean(activity, "PraviteDialog", true) && !USE_LANAGUAGE) {
+//                activity_home_viewpager_sex_next.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        GetDialog.PraviteDialog(activity, new GetDialog.OkCommit() {
+//                            @Override
+//                            public void success() {
+//                                ShareUitls.putBoolean(activity, "PraviteDialog", false);
+//                                // 获取权限
+//                                requestReadPhoneState();
+//                            }
+//                        });
+//                    }
+//                });
+//            } else {
                 // 获取权限
                 requestReadPhoneState();
-            }
+//            }
         } else {
             String response = ShareUitls.getString(activity, "Update", "");
             if (!TextUtils.isEmpty(response)) {

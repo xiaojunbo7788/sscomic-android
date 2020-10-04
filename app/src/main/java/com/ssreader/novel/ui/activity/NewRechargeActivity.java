@@ -9,13 +9,19 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.ssreader.novel.R;
+import com.ssreader.novel.model.pay.PayOtherBean;
+import com.ssreader.novel.net.HttpUtils;
+import com.ssreader.novel.net.ReaderParams;
 import com.ssreader.novel.pay.alipay.AlipayGoPay;
 import com.ssreader.novel.base.BaseActivity;
 import com.ssreader.novel.constant.Api;
@@ -30,7 +36,9 @@ import com.ssreader.novel.utils.UserUtils;
 import com.ssreader.novel.pay.wxpay.WXGoPay;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -174,8 +182,26 @@ public class NewRechargeActivity extends BaseActivity {
                         }
                     }
                     break;
-                case 2:
-                case 4:
+                case 2: {
+                    ReaderParams params = new ReaderParams(activity);
+                    params.putExtraParams("channel_id", palChannelBean.getChannel_id()+"");
+                    params.putExtraParams("goods_id", mGoosId);
+                    params.putExtraParams("type", palChannelBean.getChannel_code());
+                    String json = params.generateParamsJson();
+                    HttpUtils.getInstance().sendRequestRequestParams(activity, Api.PAY_CODE_URL, json, new HttpUtils.ResponseListener() {
+                        @Override
+                        public void onResponse(String response) {
+                            jumpFormWeb(response);
+                        }
+
+                        @Override
+                        public void onErrorResponse(String ex) {
+                            Log.e("ex",ex);
+                        }
+                    });
+                }
+                break;
+                case 4: {
                     // 应用内使用web
                     if (palChannelBean.getGateway() != null && !TextUtils.isEmpty(palChannelBean.getGateway())) {
                         Intent intent = new Intent();
@@ -195,11 +221,49 @@ public class NewRechargeActivity extends BaseActivity {
                         }
                         startActivity(intent);
                     }
+                }
                     break;
             }
         } else {
             MyToash.ToashError(activity, LanguageUtil.getString(activity, R.string.PayActivity_zhifucuowu));
         }
+    }
+
+    private void loadTest(String response) {
+        PayOtherBean payOtherBean = HttpUtils.getGson().fromJson(response, PayOtherBean.class);
+        String pp[] =payOtherBean.getPost_data().split("&");
+        Map<String,String>param = new HashMap<>();
+        for (int i=0;i<pp.length;i++) {
+            String temp = pp[i];
+            String temp2[]= temp.split("=");
+            param.put(temp2[0],temp2[1]);
+        }
+        Gson gson = new Gson();
+        String jsonStr = gson.toJson(param);
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                HttpUtils.getInstance().sendOtherRequestRequestParams(activity, payOtherBean.getPay_url(), jsonStr, new HttpUtils.ResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("response",response);
+                    }
+
+                    @Override
+                    public void onErrorResponse(String ex) {
+                        Log.e("ex",ex);
+                    }
+                });
+            }
+        });
+    }
+
+    private void jumpFormWeb(String form) {
+        Intent intent = new Intent();
+        intent.setClass(activity, WebViewActivity.class);
+        intent.putExtra("form", form);
+        intent.putExtra("title", "支付");
+        activity.startActivity(intent);
     }
 
     @Override

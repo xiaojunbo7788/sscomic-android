@@ -30,7 +30,8 @@ public class Constant {
     // appSecret
     public static final String mAppSecretKey = "caee1f9922be06cfc2016107fd303182";
     // IP域名
-    public static final String BASE_URL =  "http://api.sscomic.life";
+//    public static final String BASE_URL =  "http://api.sscomic.life";
+    public static final String BASE_URL =  "http://api.songshucangku.com";
 //     图片路径
     public static final String IMAGE_URL = "http://backend.songshucangku.com/";
 

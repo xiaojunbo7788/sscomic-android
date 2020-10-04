@@ -162,20 +162,21 @@ public class RechargeVipFragment extends BaseFragment {
         readerParams = new ReaderParams(activity);
         HttpUtils.getInstance().sendRequestRequestParams(activity,Api.mPayBaoyueCenterUrl, readerParams.generateParamsJson(),responseListener);
 
+        readerParams.putExtraParams("site_id",2);
         httpUtils.sendRequestRequestParams(activity, Api.MEMBER_CENTER, readerParams.generateParamsJson(), new HttpUtils.ResponseListener() {
             @Override
             public void onResponse(String response) {
                 BaseStoreMemberCenterBean memberCenterBean = gson.fromJson(response, BaseStoreMemberCenterBean.class);
-                if (memberCenterBean.getBanner() != null) {
+//                if (memberCenterBean.getBanner() != null) {
                     convenientBanner.setVisibility(View.VISIBLE);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)convenientBanner.getLayoutParams();
                     layoutParams.width = ScreenSizeUtils.getInstance(activity).getScreenWidth();
                     layoutParams.height = (layoutParams.width - ImageUtil.dp2px(activity, 20)) / 4;
                     convenientBanner.setLayoutParams(layoutParams);
                     ConvenientBanner.initBanner(activity, 3, memberCenterBean.getBanner(), convenientBanner, COMIC_CONSTANT);
-                } else {
-                    convenientBanner.setVisibility(View.GONE);
-                }
+//                } else {
+//                    convenientBanner.setVisibility(View.GONE);
+//                }
             }
 
             @Override
