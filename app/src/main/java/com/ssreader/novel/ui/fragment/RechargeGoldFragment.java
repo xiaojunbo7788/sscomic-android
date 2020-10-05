@@ -20,6 +20,7 @@ import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseFragment;
 import com.ssreader.novel.constant.Api;
 import com.ssreader.novel.eventbus.RefreshMine;
+import com.ssreader.novel.model.BaseStoreMemberCenterBean;
 import com.ssreader.novel.model.PayBeen;
 import com.ssreader.novel.net.HttpUtils;
 import com.ssreader.novel.net.ReaderParams;
@@ -28,8 +29,10 @@ import com.ssreader.novel.ui.adapter.RechargeGoldAdapter;
 import com.ssreader.novel.ui.utils.ImageUtil;
 import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.ui.utils.PublicCallBackSpan;
+import com.ssreader.novel.ui.view.banner.ConvenientBanner;
 import com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView;
 import com.ssreader.novel.utils.LanguageUtil;
+import com.ssreader.novel.utils.ScreenSizeUtils;
 import com.ssreader.novel.utils.SystemUtil;
 import com.ssreader.novel.utils.UserUtils;
 
@@ -41,6 +44,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
+
+import static com.ssreader.novel.constant.Constant.COMIC_CONSTANT;
 
 public class RechargeGoldFragment extends BaseFragment {
 
@@ -57,6 +62,10 @@ public class RechargeGoldFragment extends BaseFragment {
     List<TextView> rechargeTexts;
     @BindView(R.id.MineNewFragment_app_install_desc)
     TextView appInstallDesc;
+
+    @BindView(R.id.activity_baoyue_banner_male)
+    ConvenientBanner convenientBanner;
+
 
     public TextView textView;
     private TextView pay_discount_tv;
@@ -145,6 +154,29 @@ public class RechargeGoldFragment extends BaseFragment {
         readerParams = new ReaderParams(activity);
         HttpUtils.getInstance().sendRequestRequestParams(activity,Api.mPayRechargeCenterUrl,
                 readerParams.generateParamsJson(), responseListener);
+
+        readerParams.putExtraParams("site_id",2);
+        httpUtils.sendRequestRequestParams(activity, Api.MEMBER_CENTER, readerParams.generateParamsJson(), new HttpUtils.ResponseListener() {
+            @Override
+            public void onResponse(String response) {
+                BaseStoreMemberCenterBean memberCenterBean = gson.fromJson(response, BaseStoreMemberCenterBean.class);
+//                if (memberCenterBean.getBanner() != null) {
+                convenientBanner.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)convenientBanner.getLayoutParams();
+                layoutParams.width = ScreenSizeUtils.getInstance(activity).getScreenWidth();
+                layoutParams.height = (layoutParams.width - ImageUtil.dp2px(activity, 20)) / 4;
+                convenientBanner.setLayoutParams(layoutParams);
+                ConvenientBanner.initBanner(activity, 3, memberCenterBean.getBanner(), convenientBanner, COMIC_CONSTANT);
+//                } else {
+//                    convenientBanner.setVisibility(View.GONE);
+//                }
+            }
+
+            @Override
+            public void onErrorResponse(String ex) {
+
+            }
+        });
     }
 
     @Override

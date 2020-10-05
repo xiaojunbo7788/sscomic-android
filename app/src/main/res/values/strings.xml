@@ -378,7 +378,7 @@
     <string name="ReadActivity_yue">账户余额</string>
     <string name="ReadActivity_price">实付：</string>
     <string name="ReadActivity_oprice">原价：</string>
-    <string name="ReadActivity_login_buy">登录后购买</string>
+    <string name="ReadActivity_login_buy">登录领取免费书卷</string>
     <string name="ReadActivity_benzhangbuy">从本章开始购买</string>
     <string name="ReadActivity_chongzhibuy">获取VIP无限看</string>
 

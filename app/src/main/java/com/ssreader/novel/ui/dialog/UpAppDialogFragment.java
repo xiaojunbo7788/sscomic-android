@@ -39,6 +39,7 @@ import com.ssreader.novel.utils.ScreenSizeUtils;
 import com.ssreader.novel.utils.ShareUitls;
 
 import java.io.File;
+import java.io.IOException;
 
 import butterknife.BindView;
 
@@ -239,6 +240,13 @@ public class UpAppDialogFragment extends BaseDialogFragment {
     };
 
     private Intent installApp(Context pContext, File pFile) {
+//        String[] command = {"chmod", "777", pFile.getPath() };
+//        ProcessBuilder builder = new ProcessBuilder(command);
+//        try {
+//            builder.start();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         //TODO:移除版本缓存记录
         if (BWNApplication.applicationContext != null) {
             ShareUitls.putString(BWNApplication.applicationContext,"Update","");
@@ -255,8 +263,8 @@ public class UpAppDialogFragment extends BaseDialogFragment {
             _uri = FileProvider.getUriForFile(pContext, BuildConfig.APPLICATION_ID + ".fileprovider", pFile);
         } else {
             _uri = Uri.fromFile(pFile);
-            _Intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
+        _Intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         _Intent.setDataAndType(_uri, "application/vnd.android.package-archive");
         return _Intent;
     }

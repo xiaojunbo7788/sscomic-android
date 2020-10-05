@@ -12,6 +12,7 @@ import com.ssreader.novel.ui.activity.BaseOptionActivity;
 import com.ssreader.novel.ui.activity.BookInfoActivity;
 import com.ssreader.novel.ui.activity.ComicInfoActivity;
 import com.ssreader.novel.ui.activity.FeedBackActivity;
+import com.ssreader.novel.ui.activity.InviteActivity;
 import com.ssreader.novel.ui.activity.LoginActivity;
 import com.ssreader.novel.ui.activity.MainActivity;
 import com.ssreader.novel.ui.activity.NewRechargeActivity;
@@ -135,6 +136,9 @@ public class PublicIntent {
                         break;
                     case "login":
                         intent.setClass(activity, LoginActivity.class);
+                        break;
+                    case "invite":
+                        intent.setClass(activity, InviteActivity.class);
                         break;
                 }
                 break;

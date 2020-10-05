@@ -410,12 +410,14 @@ public class ComicInfoActivity extends BaseActivity {
                     @Override
                     public void getColor(int color) {
                         activity_comic_info_topbarD = color;
-                        activity.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                activity_comic_info_topbar.setBackgroundColor(activity_comic_info_topbarD);
-                            }
-                        });
+                        if (activity != null) {
+                            activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    activity_comic_info_topbar.setBackgroundColor(activity_comic_info_topbarD);
+                                }
+                            });
+                        }
                     }
                 });
             }

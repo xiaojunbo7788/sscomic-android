@@ -84,6 +84,16 @@
             </LinearLayout>
         </LinearLayout>
 
+        <com.ssreader.novel.ui.view.banner.ConvenientBanner
+            android:layout_marginTop="10dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:visibility="gone"
+            android:id="@+id/activity_baoyue_banner_male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:canLoop="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
