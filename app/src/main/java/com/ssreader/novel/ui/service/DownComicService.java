@@ -130,7 +130,7 @@ public class DownComicService extends IntentService {
                         if (!localPathFile.exists()) {
                             localPathFile.getParentFile().mkdirs();
                             File file = Glide.with(DownComicService.this)
-                                    .load(baseComicImage.image)
+                                    .load(baseComicImage.getImage())
                                     .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                                     .get();
                             FileManager.createFile(localPathFile, getBytesByFile(file));
@@ -187,7 +187,7 @@ public class DownComicService extends IntentService {
                         if (!localPathFile.exists()) {
                             localPathFile.getParentFile().mkdirs();
                             File file = Glide.with(DownComicService.this)
-                                    .load(baseComicImage.image)
+                                    .load(baseComicImage.getImage())
                                     .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                                     .get();
                             FileManager.createFile(localPathFile, getBytesByFile(file));

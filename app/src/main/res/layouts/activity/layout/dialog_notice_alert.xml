@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_color_corner_8"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/notice_alert_top"
+            android:background="@drawable/vip_alert_corner"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/white"
+            android:text="系统公告" />
+
+        <TextView
+            android:id="@+id/notice_alert_content"
+            android:layout_below="@+id/notice_alert_top"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="升级VIP后即可享受高清漫画，还有提供国内高速线路！"/>
+
+        <View
+            android:id="@+id/notice_alert_line"
+            android:layout_below="@+id/notice_alert_content"
+            android:layout_marginTop="23dp"
+            android:background="#F6F6F6"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"/>
+        <LinearLayout
+            android:layout_below="@+id/notice_alert_line"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/commit_btn"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="知道了"
+                android:textColor="#FF7666"
+                style="?android:attr/borderlessButtonStyle"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

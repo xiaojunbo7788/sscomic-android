@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ssreader.novel.manager.UserManager;
 import com.umeng.socialize.UMShareAPI;
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseFragment;
@@ -108,6 +109,7 @@ public class MineFragment extends BaseFragment {
         }
         if (!TextUtils.isEmpty(json)) {
             UserInfoItem userInfoItem = gson.fromJson(json, UserInfoItem.class);
+            UserManager.getInstance().setIsVip(userInfoItem.getIs_vip());
             Constant.currencyUnit = userInfoItem.getUnit();
             Constant.subUnit = userInfoItem.getSubUnit();
             // 存放货币

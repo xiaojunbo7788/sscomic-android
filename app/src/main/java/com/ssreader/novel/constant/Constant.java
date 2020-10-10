@@ -15,25 +15,24 @@ import java.util.List;
 public class Constant {
 
     //TODO:线上
-    // appKey
-    public static final String mAppkey = "wCDMZq0BYWMyd6qD";
-    // appSecret
-    public static final String mAppSecretKey = "lAB9XrdwCSWTvxjzTlfT7Nx6FSWGLamG";
-    // IP域名
-    public static final String BASE_URL = "https://app.sscomic.life";
-    //图片路径
-    public static final String IMAGE_URL = "https://www.syslly.com/";
+//    //// appKey
+//    public static final String mAppkey = "wCDMZq0BYWMyd6qD";
+//    // appSecret
+//    public static final String mAppSecretKey = "lAB9XrdwCSWTvxjzTlfT7Nx6FSWGLamG";
+//    // IP域名
+//    public static final String BASE_URL = "https://app.sscomic.life";
+//    //图片路径
+//    public static final String IMAGE_URL = "https://www.syslly.com/";
 
     //TODO:测试
     // appKey
-//    public static final String mAppkey = "0557723a55501453";
-//    // appSecret
-//    public static final String mAppSecretKey = "caee1f9922be06cfc2016107fd303182";
-//    // IP域名
-////    public static final String BASE_URL =  "http://api.sscomic.life";
-//    public static final String BASE_URL =  "http://api.songshucangku.com";
-////     图片路径
-//    public static final String IMAGE_URL = "http://backend.songshucangku.com/";
+    public static final String mAppkey = "0557723a55501453";
+    // appSecret
+    public static final String mAppSecretKey = "caee1f9922be06cfc2016107fd303182";
+    // IP域名
+    public static final String BASE_URL =  "http://api.songshucangku.com";
+//     图片路径
+    public static final String IMAGE_URL = "http://backend.songshucangku.com/";
 
 
     // 是否打开Log日志开关

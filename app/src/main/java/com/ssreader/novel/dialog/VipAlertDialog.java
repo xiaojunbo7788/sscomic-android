@@ -52,6 +52,7 @@ public class VipAlertDialog extends Dialog {
         private View layout;
         private String content;
         private VipAlertDialog dialog;
+        private boolean isHiddenRecharge = false;
 
         public Builder setContent(String content) {
             this.content = content;
@@ -60,6 +61,11 @@ public class VipAlertDialog extends Dialog {
 
         public Builder setVipAlertDialogListener(VipAlertDialogListener iVipAlertDialogListener) {
             this.iVipAlertDialogListener = iVipAlertDialogListener;
+            return this;
+        }
+
+        public Builder setHiddenRecharge(boolean hiddenRecharge) {
+            isHiddenRecharge = hiddenRecharge;
             return this;
         }
 
@@ -85,6 +91,9 @@ public class VipAlertDialog extends Dialog {
             Button commitButton = layout.findViewById(R.id.commit_btn);
             LinearLayout vipBtn = layout.findViewById(R.id.vip_btn);
             LinearLayout rechargeBtn = layout.findViewById(R.id.recharge_btn);
+            if (isHiddenRecharge) {
+                rechargeBtn.setVisibility(View.GONE);
+            }
 
             //TODO:事件
             vipBtn.setOnClickListener(new View.OnClickListener() {

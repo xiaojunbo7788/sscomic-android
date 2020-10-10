@@ -221,6 +221,8 @@ public class ComicLookActivity extends BaseActivity {
 
     private String vipContent;
 
+    private int lastItemCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -552,7 +554,12 @@ public class ComicLookActivity extends BaseActivity {
     /**
      * 购买
      */
+    private boolean isShowBuy = false;
     private void getBuy() {
+        if (isShowBuy) {
+            return;
+        }
+        isShowBuy = true;
         refreshLayout.setEnableLoadMore(false);
         purchaseDialog = new PublicPurchaseDialog(activity,vipContent, Constant.COMIC_CONSTANT, false, new PublicPurchaseDialog.BuySuccess() {
             @Override
@@ -851,6 +858,23 @@ public class ComicLookActivity extends BaseActivity {
                     }
                     canScrollVertically = false;
                 }
+
+
+                if (recyclerView.getLayoutManager() instanceof LinearLayoutManager) {
+                    LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                    int position = layoutManager.findLastCompletelyVisibleItemPosition();
+                    int itemCount = layoutManager.getItemCount();
+                    if (position >= 11) {
+                        if (comicChapterItem!=null && comicChapterItem.is_preview == 1) {
+                            getBuy();
+                        }
+                    }
+                    if (itemCount<10 && position >= itemCount - 2) {
+                        if (comicChapterItem!=null && comicChapterItem.is_preview == 1) {
+                            getBuy();
+                        }
+                    }
+                }
             }
         });
     }
@@ -997,7 +1021,8 @@ public class ComicLookActivity extends BaseActivity {
                         CurrentComicChapter.is_preview = comicChapterItem.is_preview;
                         ObjectBoxUtils.addData(CurrentComicChapter, ComicChapter.class);
                     }
-                    getBuy();
+                    //TODO:屏蔽
+//                    getBuy();
                 } else {
                     if (CurrentComicChapter.is_preview != comicChapterItem.is_preview) {
                         CurrentComicChapter.is_preview = comicChapterItem.is_preview;

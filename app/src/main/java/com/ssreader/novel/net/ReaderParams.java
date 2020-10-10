@@ -1,6 +1,9 @@
 package com.ssreader.novel.net;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 import com.ssreader.novel.BuildConfig;
 import com.ssreader.novel.constant.Constant;
@@ -46,6 +49,7 @@ public class ReaderParams {
         paramList.add("token=" + token);
         paramList.add("udid=" + udid);
         paramList.add("ver=" + ver);
+        paramList.add("bversion=" + getAppVersionCode(context));
 
         String marketChannel = UserUtils.getChannelName(context);
         paramList.add("marketChannel=" + marketChannel);
@@ -57,11 +61,28 @@ public class ReaderParams {
         nameValuePair.put("sysVer", sysVer);
         nameValuePair.put("time", time);
         nameValuePair.put("token", token);
+        nameValuePair.put("bversion", String.valueOf(getAppVersionCode(context)));
         nameValuePair.put("udid", udid);
         nameValuePair.put("ver", ver);
         nameValuePair.put("packageName", BuildConfig.APPLICATION_ID);
         nameValuePair.put("marketChannel", marketChannel);
 
+    }
+
+    /**
+     * 返回当前程序code
+     */
+    public int getAppVersionCode(Context context) {
+        int versionCode = 10;
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+            versionCode = pi.versionCode;
+            return versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return versionCode;
     }
 
     /**

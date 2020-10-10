@@ -127,8 +127,9 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             // 加载图片
             if (layoutParams.height <= MAXheigth) {
                 holder.comicImage.get(1).setVisibility(View.GONE);
-                MyGlide.GlideNewImage(activity, layoutParams.width, layoutParams.height, baseComicImage,
-                        holder.comicImage.get(0), baseComicImage.image);
+                MyGlide.GlideNewImageNew(activity, layoutParams.width, layoutParams.height, baseComicImage,
+                        holder.comicImage.get(0), baseComicImage.getImage());
+
             } else {
                 holder.comicImage.get(1).setVisibility(View.VISIBLE);
                 if (bitmapCache != null && bitmapCache.getBitmapFromCache(baseComicImage.image_id) != null) {
@@ -138,7 +139,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
                     File localPathFile = getLocalComicImageFile(baseComicImage);
                     if (localPathFile != null && localPathFile.exists()) {
                         byte[] bytes = FileManager.readFile(localPathFile.getAbsolutePath());
-                        Glide.with(activity).asBitmap().error(R.mipmap.icon_comic_def_w).load(bytes).into(new SimpleTarget<Bitmap>() {
+                        Glide.with(activity).asBitmap().error(R.mipmap.pic_default).load(bytes).into(new SimpleTarget<Bitmap>() {
                             @Override
                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                                 if (bitmapCache != null) {
@@ -149,7 +150,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
                             }
                         });
                     } else {
-                        Glide.with(activity).asBitmap().error(R.mipmap.icon_comic_def_w).load(baseComicImage.image).into(new SimpleTarget<Bitmap>() {
+                        Glide.with(activity).asBitmap().error(R.mipmap.pic_default).load(baseComicImage.getImage()).into(new SimpleTarget<Bitmap>() {
                             @Override
                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                                 if (bitmapCache != null) {

@@ -92,6 +92,35 @@
         android:layout_gravity="bottom"
         android:orientation="horizontal">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/comic_line_btn"
+                android:layout_marginRight="21dp"
+                android:textSize="11dp"
+                android:text="普通路线"
+                android:gravity="center"
+                android:textColor="#FF9A66"
+                android:layout_width="73dp"
+                android:layout_height="24dp"
+                android:background="@drawable/tab_sel_border"/>
+
+            <TextView
+                android:id="@+id/comic_clear_btn"
+                android:textSize="11dp"
+                android:text="标清"
+                android:gravity="center"
+                android:textColor="#FF9A66"
+                android:layout_width="73dp"
+                android:layout_height="24dp"
+                android:background="@drawable/tab_sel_border"/>
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/activity_comicdown_quanxuan"
             android:layout_width="0dp"

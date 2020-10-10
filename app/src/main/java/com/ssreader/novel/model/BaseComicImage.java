@@ -1,5 +1,7 @@
 package com.ssreader.novel.model;
 
+import com.ssreader.novel.manager.UserManager;
+
 public class BaseComicImage {
 
     public long comic_id;
@@ -9,7 +11,17 @@ public class BaseComicImage {
     public String update_time;
     public int width;
     public int height;
-    public String image;
+    private String image;
+
+    private boolean isUpdateImage = false;
+
+    public boolean isUpdateImage() {
+        return isUpdateImage;
+    }
+
+    public void setUpdateImage(boolean updateImage) {
+        isUpdateImage = updateImage;
+    }
 
     public long getComic_id() {
         return comic_id;
@@ -60,7 +72,33 @@ public class BaseComicImage {
     }
 
     public String getImage() {
-        return image;
+//        http://pic.syslly.com/comic/ahri8/songshu/a00149/003.jpg
+        if (isUpdateImage) {
+            return image;
+        }
+        if (UserManager.getInstance().getClearData() == 0) {
+            if (image != null && image.length() > 0) {
+                String[]imgs = image.split("/");
+                StringBuilder newImg = new StringBuilder();
+                for (int i = 0; i < imgs.length; i++) {
+                    if (i == imgs.length -1) {
+                        newImg.append("/900/");
+                        newImg.append(imgs[i]);
+                    } else {
+                        newImg.append(imgs[i]);
+                    }
+                }
+                isUpdateImage = true;
+                return newImg.toString();
+            } else {
+                isUpdateImage = true;
+                return "";
+            }
+        } else {
+            isUpdateImage = true;
+            return image;
+        }
+
     }
 
     public void setImage(String image) {

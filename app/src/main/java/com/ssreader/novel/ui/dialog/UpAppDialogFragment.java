@@ -29,6 +29,7 @@ import com.ssreader.novel.base.BaseDialogFragment;
 import com.ssreader.novel.model.AppUpdate;
 import com.ssreader.novel.net.DownLoadUtils.AppDownloadService;
 import com.ssreader.novel.net.DownLoadUtils.DownloadListener;
+import com.ssreader.novel.ui.activity.WebViewActivity;
 import com.ssreader.novel.ui.utils.ImageUtil;
 import com.ssreader.novel.ui.utils.MyShape;
 import com.ssreader.novel.ui.utils.MyToash;
@@ -140,18 +141,37 @@ public class UpAppDialogFragment extends BaseDialogFragment {
         dialog_updateapp_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!flag) {
-                    flag = true;
-                    Intent intent = new Intent(activity, AppDownloadService.class);
-                    activity.bindService(intent, connection, BIND_AUTO_CREATE);
-                }
-                if (updateBean.getStatus() == 1) {
-                    dismissAllowingStateLoss();
-                    MyToash.ToashSuccess(activity, LanguageUtil.getString(activity, R.string.app_upapp_hoytai));
+                //TODO:直接调入外部浏览器
+                if (activity != null) {
+                    Intent intent = new Intent();
+                    intent.setClass(activity, WebViewActivity.class);
+                    if (updateBean.getNew_url() != null && updateBean.getNew_url() != null) {
+                        intent.putExtra("url", updateBean.getNew_url());
+                    } else {
+                        intent.putExtra("url", updateBean.getUrl());
+                    }
+                    intent.putExtra("is_otherBrowser", true);
+                    activity.startActivity(intent);
                 } else {
-                    materialSeekBar.setVisibility(View.VISIBLE);
-                    dialog_updateapp_layout.setVisibility(View.GONE);
+                    dismissAllowingStateLoss();
                 }
+
+                if (BWNApplication.applicationContext != null) {
+                    ShareUitls.putString(BWNApplication.applicationContext,"Update","");
+                }
+
+//                if (!flag) {
+//                    flag = true;
+//                    Intent intent = new Intent(activity, AppDownloadService.class);
+//                    activity.bindService(intent, connection, BIND_AUTO_CREATE);
+//                }
+//                if (updateBean.getStatus() == 1) {
+//                    dismissAllowingStateLoss();
+//                    MyToash.ToashSuccess(activity, LanguageUtil.getString(activity, R.string.app_upapp_hoytai));
+//                } else {
+//                    materialSeekBar.setVisibility(View.VISIBLE);
+//                    dialog_updateapp_layout.setVisibility(View.GONE);
+//                }
             }
         });
     }

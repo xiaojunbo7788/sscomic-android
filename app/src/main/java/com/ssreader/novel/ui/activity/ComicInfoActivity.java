@@ -35,9 +35,12 @@ import com.ssreader.novel.base.BWNApplication;
 import com.ssreader.novel.base.BaseActivity;
 import com.ssreader.novel.constant.Api;
 import com.ssreader.novel.constant.Constant;
+import com.ssreader.novel.dialog.VipAlertDialog;
 import com.ssreader.novel.eventbus.RefreshComicShelf;
 import com.ssreader.novel.eventbus.RefreshShelf;
 import com.ssreader.novel.eventbus.RefreshShelfCurrent;
+import com.ssreader.novel.manager.UserDataEnum;
+import com.ssreader.novel.manager.UserManager;
 import com.ssreader.novel.model.BaseAd;
 import com.ssreader.novel.model.BaseBookComic;
 import com.ssreader.novel.model.BaseLabelBean;
@@ -49,6 +52,7 @@ import com.ssreader.novel.model.Comment;
 import com.ssreader.novel.eventbus.CommentRefresh;
 import com.ssreader.novel.net.ReaderParams;
 import com.ssreader.novel.ui.adapter.MyFragmentPagerAdapter;
+import com.ssreader.novel.ui.dialog.BottomMenuDialog;
 import com.ssreader.novel.ui.fragment.ComicinfoCommentFragment;
 import com.ssreader.novel.ui.fragment.ComicinfoMuluFragment;
 import com.ssreader.novel.ui.utils.AndroidWorkaround;
@@ -58,10 +62,13 @@ import com.ssreader.novel.ui.utils.MyShape;
 import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.ui.utils.PaletteHelper;
 import com.ssreader.novel.ui.view.StarLayout;
+import com.ssreader.novel.ui.view.screcyclerview.SCOnItemClickListener;
+import com.ssreader.novel.utils.AppCommon;
 import com.ssreader.novel.utils.InternetUtils;
 import com.ssreader.novel.utils.LanguageUtil;
 import com.ssreader.novel.utils.MyShare;
 import com.ssreader.novel.utils.ObjectBoxUtils;
+import com.ssreader.novel.utils.UserUtils;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -77,6 +84,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.ssreader.novel.constant.Constant.AgainTime;
+import static com.ssreader.novel.constant.Constant.getCurrencyUnit;
 import static com.ssreader.novel.ui.utils.MyShape.setMyshapeComicBg;
 import static com.ssreader.novel.ui.utils.StatusBarUtil.setStatusTextColor;
 
@@ -134,6 +142,12 @@ public class ComicInfoActivity extends BaseActivity {
 
     @BindView(R.id.fragment_comicinfo_mulu_dangqian_layout)
     RelativeLayout positionControlLayout;
+
+    @BindView(R.id.comic_line_btn)
+    TextView comic_line_btn;
+
+    @BindView(R.id.comic_clear_btn)
+    TextView comic_clear_btn;
 
     private List<Fragment> fragmentList;
     private List<String> tabList;
@@ -278,7 +292,143 @@ public class ComicInfoActivity extends BaseActivity {
         if (baseComic.is_read == 1) {
             fragment_comicinfo_current_goonread.setText(LanguageUtil.getString(activity, R.string.ReadHistoryFragment_goon_read));
         }
+        makeBottomViewData();
         setNoNetLayout();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (UserManager.getInstance().getLineData() == UserDataEnum.UserLineData.UserLineNormal) {
+            comic_line_btn.setText("普通线路");
+        } else {
+            comic_line_btn.setText("VIP线路");
+        }
+
+        if (UserManager.getInstance().getLineData() == UserDataEnum.UserClearData.UserClearNormal) {
+            comic_clear_btn.setText("标清");
+        } else {
+            comic_clear_btn.setText("超清");
+        }
+    }
+
+    private void makeBottomViewData() {
+
+        if (UserManager.getInstance().getLineData() == UserDataEnum.UserLineData.UserLineNormal) {
+            comic_line_btn.setText("普通线路");
+        } else {
+            comic_line_btn.setText("VIP线路");
+        }
+
+        if (UserManager.getInstance().getLineData() == UserDataEnum.UserClearData.UserClearNormal) {
+            comic_clear_btn.setText("标清");
+        } else {
+            comic_clear_btn.setText("超清");
+        }
+
+
+        //线路/清晰度
+        comic_line_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[]lines = {"普通线路","VIP线路"};
+                AppCommon.showSelectedDialog(activity, lines, new SCOnItemClickListener() {
+                    @Override
+                    public void OnItemClickListener(int flag, int position, Object O) {
+                        if (!UserUtils.isLogin(activity)) {
+                            Intent intent = new Intent();
+                            intent.setClass(activity, LoginActivity.class);
+                            activity.startActivity(intent);
+                            return;
+                        }
+                        if (position == 0) {
+                            UserManager.getInstance().setLineData(UserDataEnum.UserLineData.UserLineNormal);
+                            comic_line_btn.setText("普通线路");
+                            //TODO:刷新一下
+                        } else if (position == 1) {
+                            //是否vip
+                            if (UserManager.getInstance().getIsVip() == 1) {
+                                UserManager.getInstance().setLineData(UserDataEnum.UserLineData.UserLineVip);
+                                comic_line_btn.setText("VIP线路");
+                                //TODO:刷新一下
+                            } else {
+                                showVipDialog();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void OnItemLongClickListener(int flag, int position, Object O) {
+                    }
+                });
+            }
+        });
+
+        comic_clear_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[]lines = {"标清","超清"};
+                AppCommon.showSelectedDialog(activity, lines, new SCOnItemClickListener() {
+                    @Override
+                    public void OnItemClickListener(int flag, int position, Object O) {
+                        if (!UserUtils.isLogin(activity)) {
+                            Intent intent = new Intent();
+                            intent.setClass(activity, LoginActivity.class);
+                            activity.startActivity(intent);
+                            return;
+                        }
+                        if (position == 0) {
+                            UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearNormal);
+                            comic_clear_btn.setText("标清");
+                            //TODO:刷新一下
+                        } else if (position == 1) {
+                            //是否vip
+                            if (UserManager.getInstance().getIsVip() == 1) {
+                                UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip);
+                                comic_clear_btn.setText("超清");
+                                //TODO:刷新一下
+                            } else {
+                                showVipDialog();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void OnItemLongClickListener(int flag, int position, Object O) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    private void showVipDialog() {
+        VipAlertDialog dialog = new VipAlertDialog.Builder(activity).setHiddenRecharge(true).setContent("升级VIP后即可享受高清漫画，还有提供国内高速线路！").setVipAlertDialogListener(new VipAlertDialog.VipAlertDialogListener() {
+            @Override
+            public void onClickGoToVip() {
+                activity.startActivity(new Intent(activity, NewRechargeActivity.class)
+                        .putExtra("RechargeTitle", LanguageUtil.getString(activity, R.string.BaoyueActivity_title))
+                        .putExtra("RechargeType", "vip"));
+            }
+
+            @Override
+            public void onClickGoToRecharge() {
+                activity.startActivity(new Intent(activity, NewRechargeActivity.class)
+                        .putExtra("RechargeTitle", getCurrencyUnit(activity) + LanguageUtil.getString(activity, R.string.MineNewFragment_chongzhi))
+                        .putExtra("RechargeRightTitle", LanguageUtil.getString(activity, R.string.BaoyueActivity_chongzhijilu))
+                        .putExtra("RechargeType", "gold"));
+            }
+
+            @Override
+            public void onClickGoToShare() {
+                new MyShare(activity)
+                        .setFlag(Constant.COMIC_CONSTANT)
+                        .setId(comic_id)
+                        .Share();
+
+            }
+        }).create();
+        dialog.show();
     }
 
     @OnClick(value = {R.id.fragment_comicinfo_current_goonread, R.id.titlebar_back,
@@ -552,6 +702,7 @@ public class ComicInfoActivity extends BaseActivity {
             }
         }
     };
+
 
     public interface MuluLorded {
 

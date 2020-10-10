@@ -15,6 +15,18 @@ public class AppUpdate {
     public String web_view_url;
     private List<WebURLBean>web_view_urlist;
     private ProtocolBean protocol_list;
+    private String system_notice;
+
+    public String getSystem_notice() {
+        if (system_notice == null) {
+            return "";
+        }
+        return system_notice;
+    }
+
+    public void setSystem_notice(String system_notice) {
+        this.system_notice = system_notice;
+    }
 
     public List<WebURLBean> getWeb_view_urlist() {
         return web_view_urlist;
@@ -104,6 +116,16 @@ public class AppUpdate {
         private int status;
         private String msg;
         private String url;
+        private String new_url;
+
+        public String getNew_url() {
+            return new_url;
+        }
+
+        public void setNew_url(String new_url) {
+            this.new_url = new_url;
+        }
+
 
         public int getStatus() {
             return status;

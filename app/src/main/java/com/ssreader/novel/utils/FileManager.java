@@ -370,13 +370,13 @@ public class FileManager {
     public static File getLocalComicImageFile(BaseComicImage baseComicImage) {
         String ImgName = "";
         String localPath = FileManager.getManhuaSDCardRoot().concat(baseComicImage.comic_id + "/").concat(baseComicImage.chapter_id + "/");
-        if (baseComicImage.image.contains(".jpg")) {
+        if (baseComicImage.getImage().contains(".jpg")) {
             ImgName = baseComicImage.image_id + ".jpg";
-        } else if (baseComicImage.image.contains(".jpeg")) {
+        } else if (baseComicImage.getImage().contains(".jpeg")) {
             ImgName = baseComicImage.image_id + ".jpeg";
-        } else if (baseComicImage.image.contains(".png")) {
+        } else if (baseComicImage.getImage().contains(".png")) {
             ImgName = baseComicImage.image_id + ".png";
-        } else if (baseComicImage.image.contains(".webp")) {
+        } else if (baseComicImage.getImage().contains(".webp")) {
             ImgName = baseComicImage.image_id + ".webp";
         }
         if (ImgName.equals("")) {

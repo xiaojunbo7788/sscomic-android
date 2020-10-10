@@ -35,6 +35,7 @@ public class UpdateApp {
 
     public void getRequestData(boolean isnext, final UpdateAppInterface updateAppInterface) {
         ReaderParams readerParams = new ReaderParams(activity);
+
         HttpUtils.getInstance().sendRequestRequestParams(activity,Api.check_setting, readerParams.generateParamsJson(), new HttpUtils.ResponseListener() {
                     @Override
                     public void onResponse(String response) {

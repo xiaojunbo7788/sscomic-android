@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.ssreader.novel.dialog.NoticeAlertDialog;
 import com.umeng.socialize.UMShareAPI;
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BWNApplication;
@@ -98,6 +99,17 @@ public class MainActivity extends BaseActivity {
         String Update = ShareUitls.getString(activity, "Update", "");
         if (!TextUtils.isEmpty(Update)) {
             AppUpdate dataBean = gson.fromJson(Update, AppUpdate.class);
+
+            //弹出公告
+            activity_main_RadioGroup.post(new Runnable() {
+                @Override
+                public void run() {
+                    NoticeAlertDialog dialog = new NoticeAlertDialog.Builder(activity).setContent(dataBean.getSystem_notice()).create();
+                    dialog.show();
+                }
+            });
+
+
             if (dataBean.version_update.getStatus() != 0) {
                 activity_main_RadioGroup.post(new Runnable() {
                     @Override

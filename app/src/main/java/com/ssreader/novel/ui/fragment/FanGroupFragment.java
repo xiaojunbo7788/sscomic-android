@@ -63,6 +63,11 @@ public class FanGroupFragment extends BaseFragment {
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setJavaScriptEnabled(true);
         settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+        settings.setDomStorageEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setAppCacheEnabled(true);
+
         settings.setBlockNetworkImage(false);//解决图片不显示
         settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 //        webView.setDownloadListener(new MyWebViewDownLoadListener());
