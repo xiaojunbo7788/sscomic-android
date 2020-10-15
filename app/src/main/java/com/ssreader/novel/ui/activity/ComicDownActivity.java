@@ -200,7 +200,7 @@ public class ComicDownActivity extends BaseActivity {
             comic_line_btn.setText("VIP线路");
         }
 
-        if (UserManager.getInstance().getLineData() == UserDataEnum.UserClearData.UserClearNormal) {
+        if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearNormal) {
             comic_clear_btn.setText("标清");
         } else {
             comic_clear_btn.setText("超清");
@@ -215,7 +215,7 @@ public class ComicDownActivity extends BaseActivity {
             comic_line_btn.setText("VIP线路");
         }
 
-        if (UserManager.getInstance().getLineData() == UserDataEnum.UserClearData.UserClearNormal) {
+        if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearNormal) {
             comic_clear_btn.setText("标清");
         } else {
             comic_clear_btn.setText("超清");

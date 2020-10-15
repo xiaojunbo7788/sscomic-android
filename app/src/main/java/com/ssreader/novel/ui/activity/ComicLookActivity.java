@@ -863,15 +863,18 @@ public class ComicLookActivity extends BaseActivity {
                 if (recyclerView.getLayoutManager() instanceof LinearLayoutManager) {
                     LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
                     int position = layoutManager.findLastCompletelyVisibleItemPosition();
-                    int itemCount = layoutManager.getItemCount();
-                    if (position >= 11) {
-                        if (comicChapterItem!=null && comicChapterItem.is_preview == 1) {
-                            getBuy();
+
+                    if (comicChapterItem!=null && comicChapterItem.image_list != null) {
+                        int itemCount = comicChapterItem.image_list.size();
+                        if (position >= 10) {
+                            if (comicChapterItem.is_preview == 1) {
+                                getBuy();
+                            }
                         }
-                    }
-                    if (itemCount<10 && position >= itemCount - 2) {
-                        if (comicChapterItem!=null && comicChapterItem.is_preview == 1) {
-                            getBuy();
+                        if (itemCount<10 && position >= itemCount - 2) {
+                            if (comicChapterItem.is_preview == 1) {
+                                getBuy();
+                            }
                         }
                     }
                 }
@@ -899,10 +902,10 @@ public class ComicLookActivity extends BaseActivity {
             if (HandleData) {
                 setBottomText(false);
             }
-            ComicChapterItem comicChapterItem = map.get(chapter_id);
-            if (comicChapterItem != null && comicChapterItem.is_preview == 0) {
+            ComicChapterItem item = map.get(chapter_id);
+            if (item != null && item.is_preview == 0) {
                 if (HandleData) {
-                    HandleData(comicChapterItem, chapter_id, comic_id, activity);
+                    HandleData(item, chapter_id, comic_id, activity);
                 }
                 return;
             }
@@ -913,7 +916,7 @@ public class ComicLookActivity extends BaseActivity {
             HttpUtils.getInstance().sendRequestRequestParams(activity,Api.COMIC_chapter, readerParams.generateParamsJson(),  new HttpUtils.ResponseListener() {
                         @Override
                         public void onResponse(final String result) {
-                            ComicChapterItem comicChapterItem = gson.fromJson(result, ComicChapterItem.class);
+                            comicChapterItem = gson.fromJson(result, ComicChapterItem.class);
                             vipContent = comicChapterItem.recharge_content;
                             map.put(chapter_id, comicChapterItem);
                             if (HandleData) {
@@ -940,7 +943,7 @@ public class ComicLookActivity extends BaseActivity {
                                     if (comicChapter != null) {
                                         String s = comicChapter.ImagesText;
                                         if (s != null) {
-                                            ComicChapterItem comicChapterItem = gson.fromJson(s, ComicChapterItem.class);
+                                            comicChapterItem = gson.fromJson(s, ComicChapterItem.class);
                                             map.put(chapter_id, comicChapterItem);
                                             if (HandleData) {
                                                 HandleData(comicChapterItem, chapter_id, comic_id, activity);

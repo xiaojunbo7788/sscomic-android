@@ -2,6 +2,7 @@ package com.ssreader.novel.ui.adapter;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,6 +130,7 @@ public class ComicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
                 holder.comicImage.get(1).setVisibility(View.GONE);
                 MyGlide.GlideNewImageNew(activity, layoutParams.width, layoutParams.height, baseComicImage,
                         holder.comicImage.get(0), baseComicImage.getImage());
+                Log.e("===== baseComicImage",baseComicImage.getImage());
 
             } else {
                 holder.comicImage.get(1).setVisibility(View.VISIBLE);

@@ -85,11 +85,12 @@ public class BaseComicImage {
                         newImg.append("/900/");
                         newImg.append(imgs[i]);
                     } else {
-                        newImg.append(imgs[i]);
+                        newImg.append(imgs[i]+"/");
                     }
                 }
                 isUpdateImage = true;
-                return newImg.toString();
+                image = newImg.toString();
+                return image;
             } else {
                 isUpdateImage = true;
                 return "";

@@ -100,16 +100,16 @@ public class MainActivity extends BaseActivity {
         if (!TextUtils.isEmpty(Update)) {
             AppUpdate dataBean = gson.fromJson(Update, AppUpdate.class);
 
-            //弹出公告
-            activity_main_RadioGroup.post(new Runnable() {
-                @Override
-                public void run() {
-                    NoticeAlertDialog dialog = new NoticeAlertDialog.Builder(activity).setContent(dataBean.getSystem_notice()).create();
-                    dialog.show();
-                }
-            });
-
-
+            if (dataBean.getSystem_notice() != null && dataBean.getSystem_notice().length() > 0) {
+                //弹出公告
+                activity_main_RadioGroup.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        NoticeAlertDialog dialog = new NoticeAlertDialog.Builder(activity).setContent(dataBean.getSystem_notice()).create();
+                        dialog.show();
+                    }
+                });
+            }
             if (dataBean.version_update.getStatus() != 0) {
                 activity_main_RadioGroup.post(new Runnable() {
                     @Override
