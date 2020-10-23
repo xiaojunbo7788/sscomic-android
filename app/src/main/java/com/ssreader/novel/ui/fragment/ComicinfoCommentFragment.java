@@ -114,93 +114,98 @@ public class ComicinfoCommentFragment extends BaseFragment {
     }
 
     public void setComicInfo(BaseBookComic comicInfo) {
-        if (comicInfo != null) {
-            //TODO:作者
-            if (comicInfo.author2 != null && comicInfo.author2.size() > 0) {
-                layouts.get(0).removeAllViews();
-                infoLayout.get(0).setVisibility(View.VISIBLE);
-                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
-                for (BaseBookComic.ComicTag author:comicInfo.author2) {
-                    author.setType(1);
-                    labels.add(author);
-                }
-                setTag2(layouts.get(0), labels,0);
-            } else {
-                infoLayout.get(0).setVisibility(View.GONE);
-            }
-
-            //TODO:标签
-            if (comicInfo.tag != null && !comicInfo.tag.isEmpty()) {
-                layouts.get(1).removeAllViews();
-                infoLayout.get(1).setVisibility(View.VISIBLE);
-                List<String> labels = new ArrayList<>();
-                for (BaseTag baseTag : comicInfo.tag) {
-                    if (baseTag != null && !TextUtils.isEmpty(baseTag.getTab())) {
-                        labels.add(baseTag.getTab());
+        try {
+            if (comicInfo != null) {
+                //TODO:作者
+                if (comicInfo.author2 != null && comicInfo.author2.size() > 0) {
+                    layouts.get(0).removeAllViews();
+                    infoLayout.get(0).setVisibility(View.VISIBLE);
+                    List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                    for (BaseBookComic.ComicTag author:comicInfo.author2) {
+                        author.setType(1);
+                        labels.add(author);
                     }
+                    setTag2(layouts.get(0), labels,0);
+                } else {
+                    infoLayout.get(0).setVisibility(View.GONE);
                 }
-                setTag(layouts.get(1), labels,1);
-            } else {
-                infoLayout.get(1).setVisibility(View.GONE);
-            }
 
-            //TODO:分类
-            if (comicInfo.tags != null && !comicInfo.tags.isEmpty()) {
-                layouts.get(2).removeAllViews();
-                infoLayout.get(2).setVisibility(View.VISIBLE);
-                List<String> labels = new ArrayList<>();
-                for (String text : comicInfo.tags) {
-                    if (!TextUtils.isEmpty(text)) {
-                        labels.add(text);
+                //TODO:标签
+                if (comicInfo.tag != null && comicInfo.tag.size() > 0) {
+                    layouts.get(1).removeAllViews();
+                    infoLayout.get(1).setVisibility(View.VISIBLE);
+                    List<String> labels = new ArrayList<>();
+                    for (BaseTag baseTag : comicInfo.tag) {
+                        if (baseTag != null && !TextUtils.isEmpty(baseTag.getTab())) {
+                            labels.add(baseTag.getTab());
+                        }
                     }
+                    setTag(layouts.get(1), labels,1);
+                } else {
+                    infoLayout.get(1).setVisibility(View.GONE);
                 }
-                setTag(layouts.get(2), labels,2);
-            } else {
-                infoLayout.get(2).setVisibility(View.GONE);
-            }
 
-            //TODO:原著
-            if (comicInfo.original2 != null && comicInfo.original2.size() > 0) {
-                layouts.get(3).removeAllViews();
-                infoLayout.get(3).setVisibility(View.VISIBLE);
-                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
-                for (BaseBookComic.ComicTag original:comicInfo.original2) {
-                    original.setType(2);
-                    labels.add(original);
+                //TODO:分类
+                if (comicInfo.tags != null && comicInfo.tags.size() > 0) {
+                    layouts.get(2).removeAllViews();
+                    infoLayout.get(2).setVisibility(View.VISIBLE);
+                    List<String> labels = new ArrayList<>();
+                    for (String text : comicInfo.tags) {
+                        if (!TextUtils.isEmpty(text)) {
+                            labels.add(text);
+                        }
+                    }
+                    setTag(layouts.get(2), labels,2);
+                } else {
+                    infoLayout.get(2).setVisibility(View.GONE);
                 }
-                setTag2(layouts.get(3), labels,4);
-            } else {
-                infoLayout.get(3).setVisibility(View.GONE);
-            }
 
-            //TODO:汉化组
-            if (comicInfo.sinici2 != null && comicInfo.sinici2.size() > 0) {
-                layouts.get(4).removeAllViews();
-                infoLayout.get(4).setVisibility(View.VISIBLE);
-                List<BaseBookComic.ComicTag> labels = new ArrayList<>();
-                for (BaseBookComic.ComicTag sinici:comicInfo.sinici2) {
-                    sinici.setType(3);
-                    labels.add(sinici);
+                //TODO:原著
+                if (comicInfo.original2 != null && comicInfo.original2.size() > 0) {
+                    layouts.get(3).removeAllViews();
+                    infoLayout.get(3).setVisibility(View.VISIBLE);
+                    List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                    for (BaseBookComic.ComicTag original:comicInfo.original2) {
+                        original.setType(2);
+                        labels.add(original);
+                    }
+                    setTag2(layouts.get(3), labels,4);
+                } else {
+                    infoLayout.get(3).setVisibility(View.GONE);
                 }
-                setTag2(layouts.get(4), labels,3);
-            } else {
-                infoLayout.get(4).setVisibility(View.GONE);
-            }
 
-            if (!TextUtils.isEmpty(comicInfo.created_at)) {
-                infoLayout.get(5).setVisibility(View.VISIBLE);
-                textViews.get(0).setText(comicInfo.created_at);
-            } else {
-                infoLayout.get(5).setVisibility(View.GONE);
-            }
+                //TODO:汉化组
+                if (comicInfo.sinici2 != null && comicInfo.sinici2.size() > 0) {
+                    layouts.get(4).removeAllViews();
+                    infoLayout.get(4).setVisibility(View.VISIBLE);
+                    List<BaseBookComic.ComicTag> labels = new ArrayList<>();
+                    for (BaseBookComic.ComicTag sinici:comicInfo.sinici2) {
+                        sinici.setType(3);
+                        labels.add(sinici);
+                    }
+                    setTag2(layouts.get(4), labels,3);
+                } else {
+                    infoLayout.get(4).setVisibility(View.GONE);
+                }
 
-            if (!TextUtils.isEmpty(comicInfo.last_chapter_time)) {
-                infoLayout.get(6).setVisibility(View.VISIBLE);
-                textViews.get(1).setText(comicInfo.last_chapter_time);
-            } else {
-                infoLayout.get(6).setVisibility(View.GONE);
+                if (!TextUtils.isEmpty(comicInfo.created_at)) {
+                    infoLayout.get(5).setVisibility(View.VISIBLE);
+                    textViews.get(0).setText(comicInfo.created_at);
+                } else {
+                    infoLayout.get(5).setVisibility(View.GONE);
+                }
+
+                if (!TextUtils.isEmpty(comicInfo.last_chapter_time)) {
+                    infoLayout.get(6).setVisibility(View.VISIBLE);
+                    textViews.get(1).setText(comicInfo.last_chapter_time);
+                } else {
+                    infoLayout.get(6).setVisibility(View.GONE);
+                }
             }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
+
     }
 
     /**

@@ -660,7 +660,7 @@ public class ReadActivity extends BaseReadActivity {
     }
 
     private void BankActivity() {
-        if (baseBook.book_id < LOCAL_BOOKID) {
+        if (baseBook != null && baseBook.book_id < LOCAL_BOOKID) {
             if (mPageLoader != null) {
                 mPageLoader.saveRecord();
             }

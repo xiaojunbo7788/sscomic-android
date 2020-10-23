@@ -126,13 +126,17 @@ public abstract class BaseRecAdapter<T, K extends BaseRecViewHolder> extends Rec
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    BasescOnItemClickListener.OnItemClickListener(0, position, list.get(position));
+                    if (BasescOnItemClickListener != null) {
+                        BasescOnItemClickListener.OnItemClickListener(0, position, list.get(position));
+                    }
                 }
             });
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    BasescOnItemClickListener.OnItemLongClickListener(0, position, list.get(position));
+                    if (BasescOnItemClickListener != null) {
+                        BasescOnItemClickListener.OnItemLongClickListener(0, position, list.get(position));
+                    }
                     return true;
                 }
             });

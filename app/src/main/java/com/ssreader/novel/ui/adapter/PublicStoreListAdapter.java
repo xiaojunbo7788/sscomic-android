@@ -54,6 +54,11 @@ public class PublicStoreListAdapter extends BaseRecAdapter<BaseBookComic, Public
         BasescOnItemClickListener = scOnItemClickListener;
     }
 
+    @Override
+    public int getItemCount() {
+        return list == null ? 0 : list.size();
+    }
+
     public PublicStoreListAdapter(Activity activity, int style, List<BaseBookComic> list) {
         super(list, activity);
         this.style = style;
@@ -116,7 +121,10 @@ public class PublicStoreListAdapter extends BaseRecAdapter<BaseBookComic, Public
                 }
                 viewHolder.name.setText(baseBookComic.name);
                 viewHolder.description.setText(baseBookComic.description);
-                viewHolder.author.setText(baseBookComic.author.replaceAll(",", " "));
+                if (baseBookComic.author != null) {
+                    viewHolder.author.setText(baseBookComic.author.replaceAll(",", " "));
+                }
+
                 String str = "";
                 if (baseBookComic.tag != null) {
                     for (BaseTag tag : baseBookComic.tag) {
@@ -192,7 +200,9 @@ public class PublicStoreListAdapter extends BaseRecAdapter<BaseBookComic, Public
                     viewHolder.itemStoreText2.setText(str);
                 }
             } else {
-                viewHolder.itemStoreText2.setText(baseBookComic.author.replaceAll(",", " "));
+                if (baseBookComic.author != null) {
+                    viewHolder.itemStoreText2.setText(baseBookComic.author.replaceAll(",", " "));
+                }
             }
             if (baseBookComic.book_id != 0 || baseBookComic.audio_id != 0) {
                 MyGlide.GlideImageNoSize(activity, baseBookComic.cover, viewHolder.itemStoreImg);

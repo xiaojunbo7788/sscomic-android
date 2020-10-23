@@ -88,10 +88,8 @@ public class BaseListFragment extends BaseFragment {
     private int SEX, OPTION;
     private String rank_type;
 
-    public BaseListFragment(int productType, int OPTION, int SEX) {
-        this.productType = productType;
-        this.SEX = SEX;
-        this.OPTION = OPTION;
+    public BaseListFragment() {
+
     }
 
     public BaseListFragment(int productType, int OPTION, String recommend_id, TextView titlebar_text) {
@@ -116,6 +114,14 @@ public class BaseListFragment extends BaseFragment {
 
     @Override
     public void initView() {
+
+        if (getArguments() != null) {
+            this.productType =  getArguments().getInt("productType");
+            this.recommend_id = (String) getArguments().getString("recommend_id");
+            this.OPTION =  getArguments().getInt("OPTION");
+            this.SEX = getArguments().getInt("SEX");
+        }
+
         initSCRecyclerView(public_recycleview, RecyclerView.VERTICAL, 0);
         baseBookComics = new ArrayList<>();
         baseLabelBeans = new ArrayList<>();

@@ -200,8 +200,22 @@ public class BaseOptionActivity extends BaseActivity {
                 // 免费
             case WANBEN:
                 // 完结
-                baseButterKnifeFragment1 = new BaseListFragment(productType, OPTION, 1);
-                baseButterKnifeFragment2 = new BaseListFragment(productType, OPTION, 2);
+                baseButterKnifeFragment1 = new BaseListFragment();
+                Bundle baseButterKnifeFragment1args = new Bundle();
+                baseButterKnifeFragment1args.putInt("productType",productType);
+                baseButterKnifeFragment1args.putInt("OPTION",OPTION);
+                baseButterKnifeFragment1args.putInt("SEX",1);
+                baseButterKnifeFragment1.setArguments(baseButterKnifeFragment1args);
+
+
+                baseButterKnifeFragment2 = new BaseListFragment();
+                Bundle baseButterKnifeFragment2args = new Bundle();
+                baseButterKnifeFragment2args.putInt("productType",productType);
+                baseButterKnifeFragment2args.putInt("OPTION",OPTION);
+                baseButterKnifeFragment2args.putInt("SEX",2);
+                baseButterKnifeFragment2.setArguments(baseButterKnifeFragment2args);
+
+
                 tabList.add(LanguageUtil.getString(activity, R.string.storeFragment_boy));
                 tabList.add(LanguageUtil.getString(activity, R.string.storeFragment_gril));
                 fragmentList.add(baseButterKnifeFragment1);
@@ -236,7 +250,13 @@ public class BaseOptionActivity extends BaseActivity {
                     public_sns_topbar_right_tv.setText("标签列表");
                     public_sns_topbar_right_tv.setTextColor(ContextCompat.getColor(activity, R.color.maincolor));
                 }
-                baseButterKnifeFragment1 = new BaseListFragment(productType, OPTION, 1);
+                baseButterKnifeFragment1 = new BaseListFragment();
+                Bundle baseButterKnifeFragment3args = new Bundle();
+                baseButterKnifeFragment3args.putInt("productType",productType);
+                baseButterKnifeFragment3args.putInt("OPTION",OPTION);
+                baseButterKnifeFragment3args.putInt("SEX",1);
+                baseButterKnifeFragment1.setArguments(baseButterKnifeFragment3args);
+
                 fragmentList.add(baseButterKnifeFragment1);
                 break;
             case COLLECTION:
@@ -341,8 +361,21 @@ public class BaseOptionActivity extends BaseActivity {
                 String recommend_id = IntentFrom.getStringExtra("recommend_id");
                 if (recommend_id.equals("0")) {
                     public_sns_topbar_title.setText(LanguageUtil.getString(activity, R.string.StoreFragment_xianshimianfei));
-                    baseButterKnifeFragment1 = new BaseListFragment(productType, OPTION, 1);
-                    baseButterKnifeFragment2 = new BaseListFragment(productType, OPTION, 2);
+                    baseButterKnifeFragment1 = new BaseListFragment();
+                    Bundle baseButterKnifeFragment4args = new Bundle();
+                    baseButterKnifeFragment4args.putInt("productType",productType);
+                    baseButterKnifeFragment4args.putInt("OPTION",OPTION);
+                    baseButterKnifeFragment4args.putInt("SEX",1);
+                    baseButterKnifeFragment1.setArguments(baseButterKnifeFragment4args);
+
+                    baseButterKnifeFragment2 = new BaseListFragment();
+                    Bundle baseButterKnifeFragment5args = new Bundle();
+                    baseButterKnifeFragment5args.putInt("productType",productType);
+                    baseButterKnifeFragment5args.putInt("OPTION",OPTION);
+                    baseButterKnifeFragment5args.putInt("SEX",2);
+                    baseButterKnifeFragment2.setArguments(baseButterKnifeFragment5args);
+
+
                     fragmentList.add(baseButterKnifeFragment1);
                     fragmentList.add(baseButterKnifeFragment2);
                     tabList.add(LanguageUtil.getString(activity, R.string.storeFragment_boy));

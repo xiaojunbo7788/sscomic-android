@@ -1414,7 +1414,7 @@ public class ComicLookActivity extends BaseActivity {
      * @param chapterId
      */
     private void postDanmuBean(long chapterId) {
-        if (currentDanmuPage == 0) {
+        if (comicLookDanmuView != null && currentDanmuPage == 0) {
             comicLookDanmuView.clearDanmakusOnScreen();
             comicLookDanmuView.clear();
         }
