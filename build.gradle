@@ -9,7 +9,7 @@ buildscript {
     ext.objectboxVersion = '2.5.1'
     dependencies {
         classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.6.4'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
     }
 }

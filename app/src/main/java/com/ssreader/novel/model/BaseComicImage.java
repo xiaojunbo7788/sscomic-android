@@ -82,7 +82,26 @@ public class BaseComicImage {
                 StringBuilder newImg = new StringBuilder();
                 for (int i = 0; i < imgs.length; i++) {
                     if (i == imgs.length -1) {
-                        newImg.append("/900/");
+                        newImg.append("500/");
+                        newImg.append(imgs[i]);
+                    } else {
+                        newImg.append(imgs[i]+"/");
+                    }
+                }
+                isUpdateImage = true;
+                image = newImg.toString();
+                return image;
+            } else {
+                isUpdateImage = true;
+                return "";
+            }
+        } else if (UserManager.getInstance().getClearData() == 1) {
+            if (image != null && image.length() > 0) {
+                String[]imgs = image.split("/");
+                StringBuilder newImg = new StringBuilder();
+                for (int i = 0; i < imgs.length; i++) {
+                    if (i == imgs.length -1) {
+                        newImg.append("900/");
                         newImg.append(imgs[i]);
                     } else {
                         newImg.append(imgs[i]+"/");

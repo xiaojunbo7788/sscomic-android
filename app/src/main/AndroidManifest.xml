@@ -78,7 +78,8 @@
         <activity android:name=".ui.activity.TagListActivity" /> <!-- Glide 处理HTTPs -->
         <meta-data
             android:name="com.ssreader.novel.net.OkHttpAppGlideModule"
-            android:value="GlideModule" /> <!-- 起始界面 -->
+            android:value="GlideModule" />
+        <!-- 起始界面 -->
         <activity
             android:name=".ui.activity.SplashActivity"
             android:configChanges="orientation|uiMode|screenSize|navigation|locale|mcc|mnc|screenLayout|density"

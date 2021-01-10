@@ -26,12 +26,15 @@ public class UserDataEnum {
      * 清晰度
      * */
     @IntDef({UserClearData.UserClearNormal,
-            UserClearData.UserClearVip})
+            UserClearData.UserClearVip1,
+            UserClearData.UserClearVip2})
     @Retention(RetentionPolicy.SOURCE)
     public @interface UserClearData {
         //普通
         int UserClearNormal = 0;
         //vip
-        int UserClearVip = 1;
+        int UserClearVip1 = 1;
+        //vip
+        int UserClearVip2 = 2;
     }
 }

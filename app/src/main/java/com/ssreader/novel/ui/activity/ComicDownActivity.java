@@ -202,6 +202,8 @@ public class ComicDownActivity extends BaseActivity {
 
         if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearNormal) {
             comic_clear_btn.setText("标清");
+        } else if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearVip1) {
+            comic_clear_btn.setText("高清");
         } else {
             comic_clear_btn.setText("超清");
         }
@@ -217,7 +219,9 @@ public class ComicDownActivity extends BaseActivity {
 
         if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearNormal) {
             comic_clear_btn.setText("标清");
-        } else {
+        } else if (UserManager.getInstance().getClearData() == UserDataEnum.UserClearData.UserClearVip1) {
+            comic_clear_btn.setText("高清");
+        }  else {
             comic_clear_btn.setText("超清");
         }
 
@@ -262,7 +266,7 @@ public class ComicDownActivity extends BaseActivity {
         comic_clear_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[]lines = {"标清","超清"};
+                String[]lines = {"标清","高清","超清"};
                 AppCommon.showSelectedDialog(activity, lines, new SCOnItemClickListener() {
                     @Override
                     public void OnItemClickListener(int flag, int position, Object O) {
@@ -279,7 +283,16 @@ public class ComicDownActivity extends BaseActivity {
                         } else if (position == 1) {
                             //是否vip
                             if (UserManager.getInstance().getIsVip() == 1) {
-                                UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip);
+                                UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip1);
+                                comic_clear_btn.setText("高清");
+                                //TODO:刷新一下
+                            } else {
+                                showVipDialog();
+                            }
+                        } else if (position == 2) {
+                            //是否vip
+                            if (UserManager.getInstance().getIsVip() == 1) {
+                                UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip2);
                                 comic_clear_btn.setText("超清");
                                 //TODO:刷新一下
                             } else {

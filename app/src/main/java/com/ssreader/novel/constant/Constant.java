@@ -38,7 +38,7 @@ public class Constant {
     // 是否打开Log日志开关
     public final static boolean SUE_LOG = true;
     // 友盟统计
-    public static final String UMENG = "5f29503db4b08b653e91316f";
+    public static final String UMENG = "5f5daed6a4ae0a7f7d043505";
     // 微信appId
     public static final String WEIXIN_PAY_APPID = "";
     // 微信secret
