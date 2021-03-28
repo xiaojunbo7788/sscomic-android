@@ -12,34 +12,30 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import com.ssreader.novel.R;
 import com.ssreader.novel.base.BaseFragment;
 import com.ssreader.novel.eventbus.StoreHotWords;
-import com.ssreader.novel.eventbus.ToStore;
 import com.ssreader.novel.model.BannerBottomItem;
+import com.ssreader.novel.model.BannerNoticeBean;
 import com.ssreader.novel.model.BaseLabelBean;
 import com.ssreader.novel.model.BookComicStoare;
 import com.ssreader.novel.model.PublicIntent;
 import com.ssreader.novel.net.MainHttpTask;
 import com.ssreader.novel.ui.adapter.BannerBottomItemAdapter;
 import com.ssreader.novel.ui.adapter.PublicMainAdapter;
+import com.ssreader.novel.ui.adapter.TextAdapter;
 import com.ssreader.novel.ui.utils.ImageUtil;
-import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.ui.view.AdaptionGridViewNoMargin;
 import com.ssreader.novel.ui.view.banner.ConvenientBanner;
 import com.ssreader.novel.ui.view.screcyclerview.SCRecyclerView;
 import com.ssreader.novel.utils.ScreenSizeUtils;
 
 import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+import me.haowen.textbanner.TextBanner;
 import static com.ssreader.novel.constant.Constant.BOOK_CONSTANT;
 import static com.ssreader.novel.constant.Constant.AUDIO_CONSTANT;
 import static com.ssreader.novel.constant.Constant.COMIC_CONSTANT;
@@ -54,11 +50,16 @@ public class StoreFragment extends BaseFragment {
     private List<BaseLabelBean> list;
     private BannerBottomItemAdapter bottomItemAdapter;
     private PublicMainAdapter publicMainAdapter;
+    TextBanner noticeView;
+
+    private List<BannerNoticeBean>hotWordArray = new ArrayList<>();
 
     private int productType;
     // 性别 1 = 男，  2 = 女
     private int channel_id = 1;
     private Public_main_fragment.OnChangeSex changeSex;
+
+    TextAdapter simpleAdapter;
 
     public StoreFragment() {
 
@@ -113,6 +114,10 @@ public class StoreFragment extends BaseFragment {
         list = new ArrayList<>();
         bannerBottomItems = new ArrayList<>();
         View view = LayoutInflater.from(activity).inflate(R.layout.head_book_store_item, null);
+        noticeView = view.findViewById(R.id.textBanner);
+        simpleAdapter = new TextAdapter(getContext(),R.layout.item_text_banner_simple, hotWordArray);
+        noticeView.setAdapter(simpleAdapter);
+
         viewHolder = new ViewHolder(view);
 
         ViewGroup.LayoutParams layoutParams = viewHolder.mStoreBannerFrameLayout.getLayoutParams();
@@ -190,6 +195,13 @@ public class StoreFragment extends BaseFragment {
                 if (viewHolder.mStoreEntranceGridMale.getNumColumns() != bannerBottomItems.size()) {
                     viewHolder.mStoreEntranceGridMale.setNumColumns(bannerBottomItems.size());
                 }
+                if ((bookStoare.getAnnouncement() != null)) {
+                    for (BannerNoticeBean noticeBean:bookStoare.getAnnouncement()) {
+                        hotWordArray.add(noticeBean);
+                    }
+                }
+                simpleAdapter.notifyDataChange();
+
                 bottomItemAdapter.notifyDataSetChanged();
             }
             List<BaseLabelBean> label = bookStoare.getLabel();
@@ -216,6 +228,12 @@ public class StoreFragment extends BaseFragment {
                 if (viewHolder.mStoreEntranceGridMale.getNumColumns() != bannerBottomItems.size()) {
                     viewHolder.mStoreEntranceGridMale.setNumColumns(bannerBottomItems.size());
                 }
+                if ((comicStoare.getAnnouncement() != null)) {
+                    for (BannerNoticeBean noticeBean:comicStoare.getAnnouncement()) {
+                        hotWordArray.add(noticeBean);
+                    }
+                }
+                simpleAdapter.notifyDataChange();
                 bottomItemAdapter.notifyDataSetChanged();
             }
             list.addAll(comicStoare.getLabel());

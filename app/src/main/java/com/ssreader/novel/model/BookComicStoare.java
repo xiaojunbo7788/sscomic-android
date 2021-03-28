@@ -8,6 +8,15 @@ public class BookComicStoare {
     private List<BaseLabelBean> label;
     private List<String> hot_word;
     private List<BannerBottomItem> menus_tabs;
+    private List<BannerNoticeBean> announcement;
+
+    public List<BannerNoticeBean> getAnnouncement() {
+        return announcement;
+    }
+
+    public void setAnnouncement(List<BannerNoticeBean> announcement) {
+        this.announcement = announcement;
+    }
 
     public List<PublicIntent> getBanner() {
         return banner;

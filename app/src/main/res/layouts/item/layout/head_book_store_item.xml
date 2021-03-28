@@ -39,4 +39,20 @@
         android:background="@color/white"
         android:gravity="center"
         android:numColumns="5" />
+    <RelativeLayout
+        android:background="@drawable/m_top_bg_border"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <me.haowen.textbanner.TextBanner
+            android:id="@+id/textBanner"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            app:delayTime="5000"
+            app:duration="800" />
+
+    </RelativeLayout>
 </LinearLayout>

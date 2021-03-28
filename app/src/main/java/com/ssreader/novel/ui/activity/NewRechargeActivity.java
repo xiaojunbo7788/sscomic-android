@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
@@ -202,25 +203,36 @@ public class NewRechargeActivity extends BaseActivity {
                 }
                 break;
                 case 4: {
+
+                    final Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(palChannelBean.getLink_url()));
+                    // 注意此处的判断intent.resolveActivity()可以返回显示该Intent的Activity对应的组件名
+                    // 官方解释 : Name of the component implementing an activity that can display the intent
+                    this.startActivity(intent);
+
                     // 应用内使用web
-                    if (palChannelBean.getGateway() != null && !TextUtils.isEmpty(palChannelBean.getGateway())) {
-                        Intent intent = new Intent();
-                        intent.setClass(activity, WebViewActivity.class);
-                        intent.putExtra("title", palChannelBean.getTitle());
-                        if (palChannelBean.getGateway().contains("?")) {
-                            intent.putExtra("url", palChannelBean.getGateway() +
-                                    "&token=" + UserUtils.getToken(activity) +
-                                    "&goods_id=" + mGoosId);
-                        } else {
-                            intent.putExtra("url", palChannelBean.getGateway() +
-                                    "?token=" + UserUtils.getToken(activity) +
-                                    "&goods_id=" + mGoosId);
-                        }
-                        if (palChannelBean.getPay_type() == 2) {
-                            intent.putExtra("is_otherBrowser", true);
-                        }
-                        startActivity(intent);
-                    }
+//                    if (palChannelBean.getGateway() != null && !TextUtils.isEmpty(palChannelBean.getGateway())) {
+//                        Intent intent = new Intent();
+//                        intent.setClass(activity, WebViewActivity.class);
+//                        intent.putExtra("title", palChannelBean.getTitle());
+//                        if (palChannelBean.getGateway().contains("?")) {
+//                            intent.putExtra("url", palChannelBean.getGateway() +
+//                                    "&token=" + UserUtils.getToken(activity) +
+//                                    "&goods_id=" + mGoosId);
+//                        } else {
+//                            intent.putExtra("url", palChannelBean.getGateway() +
+//                                    "?token=" + UserUtils.getToken(activity) +
+//                                    "&goods_id=" + mGoosId);
+//                        }
+//                        if (palChannelBean.getPay_type() == 2) {
+//                            intent.putExtra("is_otherBrowser", true);
+//                        }
+//                        startActivity(intent);
+//                    }
+
+
+
                 }
                     break;
             }

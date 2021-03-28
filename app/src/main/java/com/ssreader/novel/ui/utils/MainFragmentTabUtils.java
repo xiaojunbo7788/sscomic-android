@@ -1,5 +1,7 @@
 package com.ssreader.novel.ui.utils;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -10,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.gyf.immersionbar.ImmersionBar;
 import com.ssreader.novel.R;
 import com.ssreader.novel.eventbus.RefreshMine;
+import com.ssreader.novel.model.AppUpdate;
 import com.ssreader.novel.ui.activity.MainActivity;
 import com.ssreader.novel.ui.adapter.MyFragmentPagerAdapter;
 import com.ssreader.novel.ui.fragment.Public_main_fragment;
@@ -51,10 +54,7 @@ public class MainFragmentTabUtils implements RadioGroup.OnCheckedChangeListener 
                 }
                 break;
             case R.id.activity_main_fan_group:
-                if (possition != 2) {
-                    setStatusTextColor(true, mainActivity);
-                    IntentFragment(2);
-                }
+                clickYu();
                 break;
             case R.id.activity_main_discovery:
                 if (possition != 3) {
@@ -121,5 +121,28 @@ public class MainFragmentTabUtils implements RadioGroup.OnCheckedChangeListener 
 
     private FragmentTransaction obtainFragmentTransaction() {
         return fragmentManager.beginTransaction();
+    }
+
+    private void clickYu() {
+        if (possition != 2) {
+//            RadioButton radioButton = mainActivity.findViewById(R.id.activity_main_fan_group);
+//            radioButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.selector_home_5_2, 0, 0);
+//            radioButton.setTextColor(mainActivity.getResources().getColor(R.color.home_color_selector_2));
+            List<AppUpdate.WebURLBean>list = ShareUitls.getDataList(mainActivity,"web_view_urlist", AppUpdate.WebURLBean.class);
+            if (list !=null && list.size() > 0) {
+                AppUpdate.WebURLBean webURLBean = list.get(0);
+                if (webURLBean.getWebview() == 0) {
+                    final Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(webURLBean.getPlay_url()));
+                    // 注意此处的判断intent.resolveActivity()可以返回显示该Intent的Activity对应的组件名
+                    // 官方解释 : Name of the component implementing an activity that can display the intent
+                    mainActivity.startActivity(intent);
+                    return;
+                }
+            }
+            setStatusTextColor(true, mainActivity);
+            IntentFragment(2);
+        }
     }
 }

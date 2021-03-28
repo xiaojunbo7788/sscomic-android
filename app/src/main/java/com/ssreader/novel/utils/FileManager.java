@@ -7,6 +7,7 @@ import android.os.StatFs;
 
 import com.ssreader.novel.base.BWNApplication;
 import com.ssreader.novel.constant.Constant;
+import com.ssreader.novel.manager.UserManager;
 import com.ssreader.novel.model.BaseComicImage;
 import com.ssreader.novel.model.BookChapter;
 import com.ssreader.novel.model.ChapterContent;
@@ -382,7 +383,7 @@ public class FileManager {
         if (ImgName.equals("")) {
             return null;
         }
-        File localPathFile = new File(localPath.concat(ImgName) + "bw");
+        File localPathFile = new File(localPath.concat(ImgName) + "bw"+ UserManager.getInstance().getClearData());
         return localPathFile;
     }
 

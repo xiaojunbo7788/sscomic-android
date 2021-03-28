@@ -496,4 +496,12 @@
     <string name="share_wecate">微信好友</string>
     <string name="share_qq">QQ好友</string>
     <string name="share_qq_friend">QQ空间</string>
+
+
+    <declare-styleable name="ViewsFlipper">
+        <attr name="flipInterval" format="integer"/>
+        <attr name="flipDuration" format="integer"/>
+    </declare-styleable>
+
+
 </resources>

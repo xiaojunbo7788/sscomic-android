@@ -272,6 +272,15 @@ public class PayBeen {
             private String channel_code;
             private int pay_type;
             private String gateway;
+            private String link_url;
+
+            public String getLink_url() {
+                return link_url;
+            }
+
+            public void setLink_url(String link_url) {
+                this.link_url = link_url;
+            }
 
             public String getIcon() {
                 return icon;

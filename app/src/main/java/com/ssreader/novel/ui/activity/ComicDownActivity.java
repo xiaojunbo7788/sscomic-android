@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -33,6 +34,7 @@ import com.ssreader.novel.ui.dialog.PublicPurchaseDialog;
 import com.ssreader.novel.ui.dialog.WaitDialog;
 import com.ssreader.novel.ui.fragment.ComicinfoMuluFragment;
 import com.ssreader.novel.ui.service.DownComicService;
+import com.ssreader.novel.ui.utils.GlideCacheUtil;
 import com.ssreader.novel.ui.utils.MyToash;
 import com.ssreader.novel.ui.view.screcyclerview.SCOnItemClickListener;
 import com.ssreader.novel.utils.AppCommon;
@@ -42,6 +44,7 @@ import com.ssreader.novel.utils.MyShare;
 import com.ssreader.novel.utils.ObjectBoxUtils;
 import com.ssreader.novel.utils.SystemUtil;
 import com.ssreader.novel.utils.UserUtils;
+import com.ssreader.novel.utils.cache.BitmapCache;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -279,12 +282,14 @@ public class ComicDownActivity extends BaseActivity {
                         if (position == 0) {
                             UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearNormal);
                             comic_clear_btn.setText("标清");
+                            BitmapCache.getInstance().clearCache();
                             //TODO:刷新一下
                         } else if (position == 1) {
                             //是否vip
                             if (UserManager.getInstance().getIsVip() == 1) {
                                 UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip1);
                                 comic_clear_btn.setText("高清");
+                                BitmapCache.getInstance().clearCache();
                                 //TODO:刷新一下
                             } else {
                                 showVipDialog();
@@ -294,6 +299,7 @@ public class ComicDownActivity extends BaseActivity {
                             if (UserManager.getInstance().getIsVip() == 1) {
                                 UserManager.getInstance().setClearData(UserDataEnum.UserClearData.UserClearVip2);
                                 comic_clear_btn.setText("超清");
+                                BitmapCache.getInstance().clearCache();
                                 //TODO:刷新一下
                             } else {
                                 showVipDialog();

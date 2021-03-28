@@ -1,6 +1,7 @@
 package com.ssreader.novel.ui.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -45,6 +46,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.ssreader.novel.ui.utils.StatusBarUtil.setStatusTextColor;
+
 public class MainActivity extends BaseActivity {
 
     @BindView(R.id.activity_main_FrameLayout)
@@ -60,6 +63,9 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.activity_main_mine)
     public RadioButton activity_main_mine;
     private List<Fragment> fragmentArrayList;
+
+    @BindView(R.id.activity_main_fan_group)
+    RadioButton radioButton;
 
     @Override
     public int initContentView() {
@@ -92,6 +98,8 @@ public class MainActivity extends BaseActivity {
         if (!InternetUtils.internet(activity)) {
             MyToash.ToashError(activity, R.string.splashactivity_nonet);
         }
+
+
     }
 
     @Override
@@ -203,4 +211,5 @@ public class MainActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(activity).onActivityResult(requestCode, resultCode, data);
     }
+
 }

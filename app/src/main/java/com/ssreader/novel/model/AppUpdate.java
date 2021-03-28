@@ -87,6 +87,15 @@ public class AppUpdate {
     public static class WebURLBean {
         private String play_title;
         private String play_url;
+        private int webview;
+
+        public int getWebview() {
+            return webview;
+        }
+
+        public void setWebview(int webview) {
+            this.webview = webview;
+        }
 
         public String getPlay_title() {
             if (play_title == null) {
